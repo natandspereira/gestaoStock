@@ -13,3 +13,4 @@
 [2025-07-01 03:12:28] Erro ao conectar ao banco de dados: SQLSTATE[HY000] [2002] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
 [2025-07-01 03:13:55] Erro ao conectar ao banco de dados: SQLSTATE[HY000] [2002] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
 [2025-07-01 03:14:53] Erro ao conectar ao banco de dados: SQLSTATE[HY000] [2002] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+[2025-07-01 20:33:47] Erro ao conectar ao banco de dados: SQLSTATE[HY000] [1049] Unknown database 'db_gestao_stock'

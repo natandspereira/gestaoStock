@@ -75,7 +75,53 @@ form .container input{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
+form .container span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+form .container span #inputCheckBox{
+  width: 30px;
+  height: 30px;
+  appearance: auto;
+  -webkit-appearance: checkbox;
+  cursor: pointer;
+  margin-left: 80px;
+  padding: 0;
+  background-color: white;
+}
+
+form .container span p{
+    font-size: 0.8rem;
+    width: 100%;
+    text-align: center;
+    margin-right: 60px;
+}
+
 form .container input::placeholder{
     text-align: center;
     text-transform: uppercase;
+}
+
+form .container button{
+    margin-top: 20px;
+    width: 100px;
+    padding: 10px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: 0.8s;
+} 
+
+form .container #btnCadastrar:hover{
+    background-color: #F57C00;
+    color: white;
+}
+
+form .container #btnSair:hover{
+    background-color: #666666;
+    color: white;
 }

@@ -23,7 +23,7 @@ body::-webkit-scrollbar {
 header{
     background-color: #666666;
     width: 100vw;
-    padding: 10px;
+    padding: 15px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -76,6 +76,10 @@ main #gestaoStock h1{
     color: #001E27;
 }
 
+main #gestaoStock p{
+    font-size: 1.1rem;
+}
+
 main #gestaoStock button{
     margin-top: 30px;
     padding: 10px;
@@ -84,6 +88,7 @@ main #gestaoStock button{
      background-color: #666666;
     color: white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
 } 
 /* CONTROLE */
 main #controle{
@@ -162,6 +167,7 @@ main #relacionamento button{
      background-color: #666666;
     color: white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
 }
 
 /* FINANCEIRA */
@@ -292,5 +298,82 @@ main #valores .container div button{
      background-color: #666666;
     color: white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
 }
 
+/* PRONTO */
+main #pronto{
+    width: 100vw;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #666666;
+}
+
+main #pronto h2{
+    color: white;
+}
+
+main #pronto .container{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+main #pronto .container p{
+    color: white;
+} 
+
+#iconCircle{
+    color: white;
+} 
+
+main #pronto .container span label{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-top: 10px;
+    gap: 10px;
+} 
+
+main #pronto #linkDemonstracao{
+    margin-top: 20px;
+}
+main #pronto #linkDemonstracao a{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* FOOTER */
+footer{
+    width: 200px;
+    height: 200px;
+    background-color: #ECEEEE;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 50px 50px 0 0;
+}
+
+footer .logo{
+    margin-left: 20px;
+}
+
+footer .logo img{
+    width: 250px;
+}
+
+footer p{
+    color: black;
+    font-weight: bold;
+}
+footer .redesSociais svg{
+    width: 60px;
+    margin-right: 20px;
+}

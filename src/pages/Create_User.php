@@ -32,11 +32,11 @@ include __DIR__ . '/../data/DB.php';
             <input type="text" name="matricula" placeholder="matricula" required>
             <input type="file" name="imagem_url">
             <span>
-                <input type="checkbox" required>
-                <p>Li e concordo com os <span>Termos de uso</span></p>
+                <input type="checkbox" id="inputCheckBox" required>
+                <p>Li e concordo com os Termos de uso</p>
             </span>
-            <button>cadastrar</button>
-            <button>sair</button>
+            <button id="btnCadastrar">cadastrar</button>
+            <button id="btnSair">sair</button>
         </div>
     </form>
 </body>
