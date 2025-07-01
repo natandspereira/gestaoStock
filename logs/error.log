@@ -9,3 +9,7 @@
 [2025-06-30 20:46:24] Erro ao conectar ao banco de dados: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo for localhostsss failed: Este host n?o ? conhecido. 
 [2025-06-30 20:50:33] Erro: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo for localhostsss failed: Este host n�o � conhecido. 
 [2025-06-30 20:51:29] Erro ao conectar ao banco de dados: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo for localhostsss failed: Este host n�o � conhecido. 
+[2025-07-01 03:08:51] Erro ao conectar ao banco de dados: SQLSTATE[HY000] [2002] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+[2025-07-01 03:12:28] Erro ao conectar ao banco de dados: SQLSTATE[HY000] [2002] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+[2025-07-01 03:13:55] Erro ao conectar ao banco de dados: SQLSTATE[HY000] [2002] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+[2025-07-01 03:14:53] Erro ao conectar ao banco de dados: SQLSTATE[HY000] [2002] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente

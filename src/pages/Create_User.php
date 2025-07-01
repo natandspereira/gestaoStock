@@ -1,5 +1,5 @@
 <?php 
-include __DIR__ . '../../data/DB.php';
+include __DIR__ . '/../data/DB.php';
 ?>
 
 <!DOCTYPE html>
