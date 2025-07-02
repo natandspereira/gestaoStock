@@ -377,3 +377,88 @@ footer .redesSociais svg{
     width: 60px;
     margin-right: 20px;
 }
+
+/* BACKGROUND DO MODAL */
+#modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); 
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+/* CAIXA DO MODAL */
+.modal .container {
+  background: #666666;
+  padding: 30px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+  height: 500px;
+  text-align: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.textoModal{
+    color: white;
+}
+
+/* FORMULÁRIO DO MODAL */
+.modal .container form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.modal .container label i{
+    color: white;
+    font-size: 40px;
+}
+
+.modal .container form input{
+    margin-top: 10px;
+    width: 350px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    padding: 10px;
+}
+
+.modal .container form input::placeholder{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.modal .container form textarea{
+    margin-top: 20px;
+    width: 350px;
+    height: 100px;
+    text-transform: uppercase;
+    outline: none;
+    padding: 10px;
+}
+
+.modal .container form textarea::placeholder{
+    text-align: center;
+}
+
+.modal .container form button{
+    margin-top: 20px;
+    width: 100px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
