@@ -1,0 +1,18 @@
+const btnMenu = document.getElementById('iconMenu');
+const menu = document.getElementById('menu');
+
+
+function abrirMenu(){
+    btnMenu.addEventListener("click", (event)=>{
+         event.stopPropagation();
+         const display = window.getComputedStyle(menu).display;
+         menu.style.display = (display === 'flex') ? 'none' : 'flex';
+    });
+
+    window.addEventListener("click", (event)=>{
+        if(!menu.contains(event.target) && event.target !== btnMenu){
+            menu.style.display = "none";
+        }
+    });
+}
+
