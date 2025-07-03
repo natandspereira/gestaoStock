@@ -1,3 +1,7 @@
+<?php 
+include './src/data/DB_Login.php';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -12,7 +16,7 @@
     <!-- LINK FAVICON -->
     <link rel="shortcut icon" href="./src/assets/img/favicon_logo.ico" type="image/x-icon">
     <!-- LINK SCRIPT MODAL -->
-     <script src="./src/scripts/modal.js" defer></script>
+     <script src="./src/scripts/Modal.js" defer></script>
 </head>
 
 <body>
@@ -23,7 +27,7 @@
         </div>
         <span></span>
         <div class="btnHeader">
-            <a href="./src/pages/Login.php">Entrar</a>
+            <a href="./src/pages/Login.php" target="_blank">Entrar</a>
             <button class="abrirModal">Quero conhecer</button>
         </div>
     </header>
