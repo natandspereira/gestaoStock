@@ -35,43 +35,48 @@ if (!isset($_SESSION['usuario'])) {
     <main>
         <!-- MENU -->
         <aside class="menu" id="menu">
-            <!-- PERFIL -->
-            <label for="">
-                <i class="material-icons" id="iconPerfil">account_box</i>
-                <p>Perfil</p>
-            </label>
-            <!-- CLIENTES -->
-            <label for="">
-                <i class="material-icons" id="iconClientes">group</i>
-                <p>Clientes</p>
-            </label>
-            <!-- FORNECEDORES -->
-            <label for="">
-                <i class="material-icons" id="iconClientes">box</i>
-                <p>Fornecedores</p>
-            </label>
-            <!-- TECNICOS -->
-            <label for="">
-                <i class="material-icons" id="iconClientes">groups_2</i>
-                <p>Tecnicos</p>
-            </label>
-            <!-- EQUIPAMENTOS -->
-            <label for="">
-                <i class="material-icons" id="iconClientes">construction</i>
-                <p>Equipamentos</p>
-            </label>
-            <!-- SUPORTE -->
-            <label for="">
-                <i class="material-icons" id="iconClientes">support_agent</i>
-                <p>Suporte</p>
-            </label>
-            <!-- BOTÃO LOGOUT -->
-            <label for="">
-                <form action="../data/DB_Logout.php" method="post">
-                    <i class="material-icons" id="iconClientes">logout</i>
-                    <p>Sair</p>
-                </form>
-            </label>
+            <div class="nomeUsuario">
+                <p>Bem vindo(a), <?= htmlspecialchars($_SESSION['usuario']); ?></p>
+            </div>
+            <div class="menuIcon">
+                <!-- PERFIL -->
+               <span>
+                     <i class="material-icons" id="iconPerfil">account_box</i>
+                     <p>Perfil</p>
+               </span>
+                <!-- CLIENTES -->
+                <span>
+                    <i class="material-icons" id="iconClientes">group</i>
+                    <p>Clientes</p>
+                </span>
+                <!-- TECNICOS -->
+               <span>
+                     <i class="material-icons" id="iconTecnicos">groups_2</i>
+                     <p>Técnicos</p>
+               </span>
+                <!-- EQUIPAMENTOS -->
+                <span>
+                    <i class="material-icons" id="iconEquipamentos">construction</i>
+                    <p>Equipamentos</p>
+                </span>
+                 <!-- FORNECEDORES -->
+                <span>
+                     <i class="material-icons" id="iconFornecedores">groups_3</i>
+                     <p class="iconFornecedores" >Fornecedores</p>
+                </span>
+                <!-- SUPORTE -->
+                <span>
+                    <i class="material-icons" id="iconSuporte">support_agent</i>
+                    <p>Suporte</p>
+                </span>
+                <!-- BOTÃO LOGOUT -->
+                <span>
+                    <form action="../data/DB_Logout.php" method="post">
+                        <i class="material-icons" id="iconLogout">logout</i>
+                        <p>Sair</p>
+                    </form>
+                </span>
+            </div>
         </aside>
     </main>
 </body>

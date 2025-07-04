@@ -6,7 +6,7 @@ function abrirMenu(){
     btnMenu.addEventListener("click", (event)=>{
          event.stopPropagation();
          const display = window.getComputedStyle(menu).display;
-         menu.style.display = (display === 'flex') ? 'none' : 'flex';
+         menu.style.display = (display === 'none') ? 'flex' : 'none';
     });
 
     window.addEventListener("click", (event)=>{
