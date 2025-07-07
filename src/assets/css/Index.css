@@ -606,7 +606,7 @@ footer .redesSociais svg{
     }
     }
 
-@media (min-width:768px){
+@media (min-width:768px) and (max-width:920px){
     main #gestaoStock h1{
         margin-top: 50px;
     }

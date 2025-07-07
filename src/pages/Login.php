@@ -1,5 +1,5 @@
 <?php 
-// include __DIR__ . '/src/pages/Create_User.php';
+include '../data/DB_Login.php';
 ?>
 
 
@@ -26,9 +26,9 @@
             <p>Bem-vindo! Faça login para gerenciar seu estoque</p>
             <!-- INPUT USUÁRIO -->
               <div class="inputUsuario">
-                <label id="nome">
+                <label id="matricula">
                     <i class="material-icons" id="iconAccount">account_circle</i>
-                    <input type="text" name="nome" id="nome" placeholder="Usuário">
+                    <input type="text" name="matricula" id="matricula" placeholder="Usuário">
                 </label>
               </div>
             <!-- INPUT SENHA   -->
