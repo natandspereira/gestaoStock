@@ -12,7 +12,6 @@
 /* BODY */
 body{
    overflow: scroll;
-   
 } 
 
 body::-webkit-scrollbar {
@@ -461,4 +460,234 @@ footer .redesSociais svg{
     border: none;
     border-radius: 5px;
     text-transform: uppercase;
+}
+
+/* MEDIA QUERIES */
+/* MAX-WIDTH 765PX */
+@media (max-width:765px) {
+    /* HEADER */
+    header{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 10px !important;
+    }
+
+    header .logo img{
+        width: 150px;
+    }
+
+    header .btnHeader{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+    }
+
+    header .btnHeader a{
+        text-transform: uppercase;
+        font-size: 0.8rem;
+    }
+
+    header .btnHeader button{
+        width: 120px;
+        height: 40px;
+        text-align: center;
+        font-size: 0.8rem;
+    }
+
+    /* MAIN */
+    main #gestaoStock{
+           font-size: 0.8rem;  
+    }
+
+    main #gestaoStock h1{
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    main #gestaoStock p{
+        font-size: 0.8rem; 
+         text-align: center;
+    }
+
+    main #controle h2{
+        text-align: center;
+    }
+
+    main #controle p{
+        text-align: center;
+        font-size: 0.9rem;
+        max-width: 350px;
+    }
+
+    main #relacionamento{
+        height: 600px;
+    }
+
+    main #relacionamento h2{
+        text-align: center;
+    }
+
+    main #relacionamento .container {
+       flex-direction: column !important;
+       gap: 10px;
+    }
+
+    main #relacionamento .container div{
+        width: 180px;
+        height: 180px;
+        font-size: 0.9rem;
+    }
+
+    main #relacionamento .container div p{
+        text-align: center;
+        margin: 10px auto;
+    }
+
+    main #financeira{
+        height: 600px;
+    }
+
+     main #financeira h2{
+        text-align: center;
+     }
+
+     main #financeira .container{
+        flex-direction: column !important;
+        gap: 10px;
+     }
+
+     main #financeira .container div{
+         width: 200px;
+        height: 150px;
+        font-size: 0.9rem;
+     }
+
+     main #financeira .container div p{
+        margin: 20px auto;
+        text-align: center;
+     }
+
+     main #eficiencia h2{
+        text-align: center;
+     }
+
+     main #eficiencia .container p{
+        font-size: 0.9rem;
+        max-width: 350px;
+     }
+
+     main #pronto h2{
+        text-align: center;
+     }
+    
+     main #pronto .container p{
+        font-size: 0.9rem;
+        max-width: 350px;
+        text-align: center;
+     }
+
+    /* FOOTER */
+    footer .logo{
+        margin-right: 20px;
+    }
+    footer .logo img{
+        width: 150px;
+    }
+
+    footer p{
+        font-size: 0.9rem;
+    }
+
+    footer .redesSociais svg{
+        width: 40px;
+    }
+    }
+
+@media (min-width:768px){
+    main #gestaoStock h1{
+        margin-top: 50px;
+    }
+    main #gestaoStock p{
+        text-align: center;
+        font-size: 1.2rem;
+        width: 700px;
+    }
+
+    main #gestaoStock button{
+        font-size: 1.2rem;
+    }
+
+    main #controle .container p{
+        text-align: center;
+        font-size: 1.2rem;
+        width: 700px;
+    }
+
+    main #relacionamento .container p{
+        font-size: 1.2rem;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    main #relacionamento button{
+        font-size: 1.2rem;
+    }
+
+    main #financeira{
+        height: 600px;
+    }
+
+    main #financeira .container{
+        flex-direction: column !important;
+        gap: 10px;
+    }
+
+    main #financeira .container div{
+        height: 150px;
+    }
+
+    main #financeira .container div p{
+        margin: 20px auto;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+
+    main #eficiencia h2{
+        font-size: 1.8rem;
+    }
+
+    main #eficiencia .container p{
+        font-size: 1.2rem;
+        width: 600px;
+    }
+
+    main #pronto h2{
+        text-align: center;
+        font-size: 1.8rem;
+    }
+
+     main #pronto .container p{
+        font-size: 1.2rem;
+        width: 600px;
+     }
+
+     main #pronto .container #linkDemonstracao{
+        text-align: center;
+     }
+
+     /* FOOTER */
+     footer .logo img{
+        width: 200px;
+     }
+
+     footer p{
+        width: 200px;
+     }
+
+    footer .redesSociais svg{
+        width: 40px;
+     }
 }

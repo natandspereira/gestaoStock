@@ -1,5 +1,5 @@
 <?php 
-include '../data/DB_Login.php';
+// include __DIR__ . '/src/pages/Create_User.php';
 ?>
 
 
@@ -28,7 +28,7 @@ include '../data/DB_Login.php';
               <div class="inputUsuario">
                 <label id="nome">
                     <i class="material-icons" id="iconAccount">account_circle</i>
-                    <input type="text" name="matricula" id="matricula" placeholder="Usuário">
+                    <input type="text" name="nome" id="nome" placeholder="Usuário">
                 </label>
               </div>
             <!-- INPUT SENHA   -->
