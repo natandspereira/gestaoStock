@@ -20,7 +20,7 @@ include __DIR__ . '/../data/DB.php';
                 header('Location: ../pages/Dashboard_User.php');
                 exit();
              }else{
-                echo "Matrícula ou senha inválidos.";
+                header('Location: ../pages/Login.php?erro=1');
                 exit();
              }
        }catch(PDOException $erro){

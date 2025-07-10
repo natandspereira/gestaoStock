@@ -1,18 +1,20 @@
-const btnMenu = document.getElementById('iconMenu');
-const menu = document.getElementById('menuUsuario');
+console.log("Menu.js carregado");
 
 
-function abrirMenu(){
-    btnMenu.addEventListener("click", (event)=>{
-         event.stopPropagation();
-         const display = window.getComputedStyle(menu).display;
-         menu.style.display = (display === 'none') ? 'flex' : 'none';
+document.addEventListener("DOMContentLoaded", () => {
+    const btnMenu = document.getElementById('iconMenu');
+    const menu = document.getElementById('menuUsuario');
+
+    btnMenu.addEventListener('click', (event) => {
+        event.stopPropagation();
+        menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
     });
 
-    window.addEventListener("click", (event)=>{
-        if(!menu.contains(event.target) && event.target !== btnMenu){
-            menu.style.display = "none";
+    // Fecha o menu ao clicar fora dele
+    window.addEventListener('click', (event) => {
+        if (!menu.contains(event.target) && event.target !== btnMenu) {
+            menu.style.display = 'none';
         }
     });
-}
+});
 

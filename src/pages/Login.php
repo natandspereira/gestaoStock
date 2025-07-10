@@ -1,5 +1,9 @@
 <?php 
 include '../data/DB_Login.php';
+
+if (isset($_GET['erro']) && $_GET['erro'] == 1) {
+    echo "<script>alert('Matrícula ou senha inválidos.');</script>";
+}
 ?>
 
 
@@ -28,14 +32,14 @@ include '../data/DB_Login.php';
               <div class="inputUsuario">
                 <label id="matricula">
                     <i class="material-icons" id="iconAccount">account_circle</i>
-                    <input type="text" name="matricula" id="matricula" placeholder="Usuário">
+                    <input type="text" name="matricula" id="matricula" placeholder="Usuário" required>
                 </label>
               </div>
             <!-- INPUT SENHA   -->
               <div class="inputSenha">
                 <label id="senha">
                     <i class="material-icons" id="iconLock">lock</i>
-                    <input type="password" name="senha" id="senha" placeholder="Senha">
+                    <input type="password" name="senha" id="senha" placeholder="Senha" required>
                 </label>
               </div>  
             <!-- BOTÃO -->
