@@ -1,5 +1,7 @@
 <?php 
 include __DIR__ . '/../data/DB_Create_User.php';
+
+
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +25,7 @@ include __DIR__ . '/../data/DB_Create_User.php';
         </div>
     </header>
     <!-- FORMULÁRIO -->
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
         <div class="container">
             <h3>Criar conta</h3>
             <p>Preencha o formulário abaixo para criar sua conta</p>
@@ -35,7 +37,7 @@ include __DIR__ . '/../data/DB_Create_User.php';
             <input type="password" name="confirmar_senha" placeholder="confirmar a nova senha" required>
             <input type="email" name="email" placeholder="informe o seu email" required>
             <input type="text" name="matricula" placeholder="matricula" required>
-            <input type="file" name="imagem_url">
+            <input type="file" name="image" accept="image/*" required>
             <span>
                 <input type="checkbox" id="inputCheckBox" required>
                 <p>Li e concordo com os Termos de uso</p>

@@ -1,5 +1,5 @@
 const btnMenu = document.getElementById('iconMenu');
-const menu = document.getElementById('menu');
+const menu = document.getElementById('menuUsuario');
 
 
 function abrirMenu(){

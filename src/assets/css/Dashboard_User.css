@@ -7,19 +7,97 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
+    list-style: none;
 }
 
 /* HEADER */
 header{
-    background-color: #3C3C3C;
+    background-color: #666666;
 }
 
 header nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 5px;
 }
 
 header nav #iconMenu{
-    margin-left: 60px;
+    margin-left: 50px;
+    font-size: 2rem;
+    color: white;
 }
+
+header nav img{
+    width: 250px;
+}
+/* HR */
+hr{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding:1px;
+}
+/* MAIN */
+/* ASIDE */
+main #nomeUsuario{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+main #nomeUsuario .imgUsuario img{
+    width: 40px;
+}
+main #nomeUsuario p{
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+}
+main #menuUsuario{
+     background-color: #666666;
+     width: 17%;
+     height: 100vh;
+     display: none;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     border: none;
+     border-radius: 0 10px 10px 0;
+}
+/* UL */
+main  #perfil, #suporte, #fornecedores, #clientes, #tecnicos, #equipamentos, #sair{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   color: white;
+   width: 100%;
+   gap: 0.5rem;
+   padding: 10px;
+   transition: 0.8s;
+   border:none;
+   border-radius: 10px;
+   cursor: pointer;
+}
+
+main #sair a{
+    text-decoration: none;
+    color: white;
+}
+/* ICONE */
+i#iconAccount,
+i#iconSuporte, i#fornecedores, i#clientes, i#tecnicos, i#equipamentos, i#sair {
+    font-size: 2rem;
+    display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+main #perfil:hover, #suporte:hover, #fornecedores:hover, #clientes:hover, #tecnicos:hover, #equipamentos:hover, #sair:hover{
+    background-color: #F57C00;
+}
+
+
+
