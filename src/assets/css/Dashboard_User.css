@@ -101,4 +101,9 @@ main #perfil:hover, #suporte:hover, #fornecedores:hover, #clientes:hover, #tecni
 }
 
 
-
+#conteudoPerfil{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}

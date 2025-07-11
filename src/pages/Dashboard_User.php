@@ -35,6 +35,8 @@ $dataHora = date("d/m/y H:i:s");
      <script src="/gestaoStock/src/scripts/Menu.js?v=1" defer></script>
     <!-- SCRIPT LOGOUT  -->
      <script src="/gestaoStock/src/scripts/Logout.js?v=1" defer></script>
+    <!-- SCRIPT PROFILE -->
+     <script src="/gestaoStock/src/scripts/Profile.js?v=1" defer></script>
 </head>
 
 <body>
@@ -110,6 +112,8 @@ $dataHora = date("d/m/y H:i:s");
                 </ul>
             </div>
         </aside>
+        <!-- PÁGINA PERFIL -->
+         <div id="conteudoPerfil"></div>
     </main>
 </body>
 
