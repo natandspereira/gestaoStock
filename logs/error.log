@@ -15,3 +15,4 @@
 [2025-07-01 03:14:53] Erro ao conectar ao banco de dados: SQLSTATE[HY000] [2002] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
 [2025-07-01 20:33:47] Erro ao conectar ao banco de dados: SQLSTATE[HY000] [1049] Unknown database 'db_gestao_stock'
 [2025-07-11 19:32:14] Erro ao conectar ao banco de dados: SQLSTATE[HY000] [1049] Unknown database 'db_gestao_stock'
+[2025-07-21 19:45:21] Erro ao criar usuário: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'teste@teste.com' for key 'email'

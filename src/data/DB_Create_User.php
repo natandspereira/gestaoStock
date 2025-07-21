@@ -36,27 +36,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-    // ✅ Upload da imagem
-    if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
-        $ext = strtolower(pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION));
-        if (in_array($ext, ['jpg', 'jpeg', 'png'])) {
-            $uniqueName = uniqid() . '.' . $ext;
-            $fullPath = $dirPath . DIRECTORY_SEPARATOR . $uniqueName;
+    // Upload da imagem
+if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
+    $ext = strtolower(pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION));
+    if (in_array($ext, ['jpg', 'jpeg', 'png'])) {
+        $uniqueName = uniqid() . '.' . $ext;
+        $fullPath = $dirPath . DIRECTORY_SEPARATOR . $uniqueName;
 
-            if (move_uploaded_file($_FILES['image']['tmp_name'], $fullPath)) {
-                // ✅ Caminho salvo no banco de dados (relativo)
-                $imagem_url = $urlBase . '/' . $uniqueName;
-            } else {
-                echo "<script>alert('Erro ao mover a imagem. Verifique permissões da pasta.');</script>";
-                exit;
-            }
+        if (move_uploaded_file($_FILES['image']['tmp_name'], $fullPath)) {
+            // Caminho salvo no banco de dados (relativo)
+            $imagem_url = $urlBase . '/' . $uniqueName;
         } else {
-            echo "<script>alert('Somente JPG, JPEG ou PNG são permitidos');</script>";
+            echo "<script>alert('Erro ao mover a imagem. Verifique permissões da pasta.');</script>";
             exit;
         }
+    } else {
+        echo "<script>alert('Somente JPG, JPEG ou PNG são permitidos');</script>";
+        exit;
     }
+}
 
-    // ✅ Salva no banco
+// Se nenhuma imagem for enviada, define imagem padrão
+if (empty($imagem_url)) {
+    $imagem_url = $urlBase . '/profile_user.svg';
+}
+
+
+    // Salva no banco
     $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
 
     try {

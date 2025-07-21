@@ -8,6 +8,7 @@
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
     list-style: none;
+    overflow: hidden;
 }
 
 /* HEADER */
@@ -56,6 +57,7 @@ main .imgUploadUsuario{
     height: 100px;
     border-radius: 10%;
     object-fit: cover;
+    margin-top: 200px;
 }
 
 main .opcaoMenu{
@@ -63,15 +65,16 @@ main .opcaoMenu{
 }
 
 main #menuUsuario{
-     background-color: #666666;
-     width: 200px;
-     height: 100vh;
-     display: none;
-     align-items: center;
-     justify-content: center;
-     flex-direction: column;
-     border: none;
-     border-radius: 0 10px 10px 0;
+       background-color: #666;
+  width: 200px;
+  height: 100vh;
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+     
 }
 
 
@@ -101,9 +104,35 @@ main #perfil:hover, #suporte:hover, #fornecedores:hover, #clientes:hover, #tecni
 }
 
 
-#conteudoPerfil{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+/* Área principal de conteúdo */
+#painelConteudo {
+  margin-left: 0;
+  padding: 20px;
+  flex-grow: 1;
+  width: 100%;
+  transition: margin-left 0.3s ease;
+  background: #f9f9f9;
+  min-height: 100vh;
+}
+
+/* Quando o menu estiver aberto */
+body.menu-aberto #painelConteudo {
+  margin-left: 200px;
+}
+
+/* Conteúdo individual */
+.conteudo {
+  display: none; /* Escondido por padrão */
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+  flex-direction: column;
+}
+
+/* Quando ativo, exibe com centralização */
+.conteudo.ativo {
+  display: flex;
 }

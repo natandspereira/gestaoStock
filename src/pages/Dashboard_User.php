@@ -35,8 +35,8 @@ $dataHora = date("d/m/y H:i:s");
      <script src="/gestaoStock/src/scripts/Menu.js?v=1" defer></script>
     <!-- SCRIPT LOGOUT  -->
      <script src="/gestaoStock/src/scripts/Logout.js?v=1" defer></script>
-    <!-- SCRIPT PROFILE -->
-     <script src="/gestaoStock/src/scripts/Profile.js?v=1" defer></script>
+    <!-- SCRIPT BTN MENU -->
+     <script src="/gestaoStock/src/scripts/Btn_Menu.js?v=1" defer></script>
 </head>
 
 <body>
@@ -112,8 +112,15 @@ $dataHora = date("d/m/y H:i:s");
                 </ul>
             </div>
         </aside>
-        <!-- PÁGINA PERFIL -->
-         <div id="conteudoPerfil"></div>
+         <!-- Área de conteúdo ao lado do aside -->
+        <section id="painelConteudo">
+            <div id="conteudoPerfil" class="conteudo"></div>
+            <div id="conteudoClientes" class="conteudo"></div>
+            <div id="conteudoTecnicos" class="conteudo"></div>
+            <div id="conteudoEquipamentos" class="conteudo"></div>
+            <div id="conteudoFornecedores" class="conteudo"></div>
+            <div id="conteudoSuporte" class="conteudo"></div>
+        </section>
     </main>
 </body>
 

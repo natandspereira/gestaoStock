@@ -1,5 +1,4 @@
 <?php 
-include '../data/DB_Profile.php';
 
 ?>
 
@@ -9,8 +8,7 @@ include '../data/DB_Profile.php';
 <body class="bodyProfile">
     <main>
         <div class="container">
-            <h1>Profile</h1>
+            <h1>Suporte</h1>
         </div>
     </main>
 </body>
-
