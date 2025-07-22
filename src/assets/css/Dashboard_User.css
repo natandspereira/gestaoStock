@@ -8,7 +8,6 @@
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
     list-style: none;
-    overflow: hidden;
 }
 
 /* HEADER */
@@ -103,8 +102,7 @@ main #perfil:hover, #suporte:hover, #fornecedores:hover, #clientes:hover, #tecni
     background-color: #F57C00;
 }
 
-
-/* Área principal de conteúdo */
+/* ÁREA DE CONTEÚDO AO LADO DO ASIDE */
 #painelConteudo {
   margin-left: 0;
   padding: 20px;
@@ -115,14 +113,12 @@ main #perfil:hover, #suporte:hover, #fornecedores:hover, #clientes:hover, #tecni
   min-height: 100vh;
 }
 
-/* Quando o menu estiver aberto */
 body.menu-aberto #painelConteudo {
   margin-left: 200px;
 }
 
-/* Conteúdo individual */
 .conteudo {
-  display: none; /* Escondido por padrão */
+  display: none; 
   align-items: center;
   justify-content: center;
   min-height: 100vh;
@@ -132,7 +128,14 @@ body.menu-aberto #painelConteudo {
   flex-direction: column;
 }
 
-/* Quando ativo, exibe com centralização */
 .conteudo.ativo {
   display: flex;
+} 
+
+/* ÁREA DASHBOARD USUÁRIO */
+#dashboardUser{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+

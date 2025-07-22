@@ -55,6 +55,8 @@ $dataHora = date("d/m/y H:i:s");
      <hr>
     <!-- MAIN -->
     <main>
+        
+        <!-- ASIDE -->
         <aside id="menuUsuario">
             <!-- NOME USUÁRIO -->
              <div id="nomeUsuario">
@@ -65,7 +67,6 @@ $dataHora = date("d/m/y H:i:s");
                             <img src="../assets/img/default.png" class="imgUploadUsuario" alt="Sem imagem">
                         <?php endif; ?>
 
-                       
                 </div>
                 <p>
                     <?= htmlspecialchars($_SESSION['usuario']);?>
@@ -112,7 +113,7 @@ $dataHora = date("d/m/y H:i:s");
                 </ul>
             </div>
         </aside>
-         <!-- Área de conteúdo ao lado do aside -->
+        <!-- ÁREA DE CONTEÚDO AO LADO DO ASIDE -->
         <section id="painelConteudo">
             <div id="conteudoPerfil" class="conteudo"></div>
             <div id="conteudoClientes" class="conteudo"></div>
