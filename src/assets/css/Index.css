@@ -1,693 +1,561 @@
-/* IMPORT FONT GOOGLE */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* RESET CONFIG PAGE  */
-*{
+/* RESETE PÁGINA */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-     font-family: "Montserrat", sans-serif;
-} 
+    font-family: "Montserrat", sans-serif;
+}
+
+/* ROOT CORES */
+:root {
+    --background-color-header: #666666;
+    --color-title: #001E27;
+    --color-title2: #ffffff;
+    --background-color-section: #F7F7F7;
+    --background-color-section2: #666666;
+    --background-color-footer: #ECEEEE;
+    --background-color-modal: #666666;
+}
 
 /* BODY */
-body{
-   overflow: scroll;
-} 
+body {
+    overflow: scroll;
+}
 
 body::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 /* HEADER */
-header{
-    background-color: #666666;
-    width: 100vw;
-    padding: 15px;
+header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    flex-direction: row;
+    background-color: var(--background-color-header);
+    padding: 5px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    width: 100vw;
     position: fixed;
 }
 
-
-header .btnHeader a{
-    text-decoration: none;
-    color: white;
-    cursor: pointer;
-    margin-right: 10px;
-} 
-
-header .btnHeader button{
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-     background-color: white;
-    color: black;
-    cursor: pointer;
-}
-
-/* LOGO */
-header .logo img{
-    width: 200px;
-    margin-left: 20px;
-} 
-
-/* MAIN */
-main{
-     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-/* GESTÃO STOCK */
-main #gestaoStock{
-    width: 100vw;
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background-color: #F7F7F7;
-    color: black;
-}
-
-main #gestaoStock h1{
-    color: #001E27;
-}
-
-main #gestaoStock p{
-    font-size: 1.1rem;
-}
-
-main #gestaoStock button{
-    margin-top: 30px;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-     background-color: #666666;
-    color: white;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    cursor: pointer;
-} 
-/* CONTROLE */
-main #controle{
-    width: 100vw;
-    height: 300px;
-    background-color: #F57C00;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-main #controle h2{
-    margin-bottom: 20px;
-    color: white;
-}
-
-main #controle .container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
-
-main #controle .container p{
-    text-align: center;
-    color: white;
-    width: 850px;
-}
-
-/* RELACIONAMENTO */
-main #relacionamento{
-    width: 100vw;
-    height: 400px;
-    background-color: #FFFFFF;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-} 
-
-main #relacionamento h2{
-    margin-top: 30px;
-    color: #001E27;
-}
-
-main #relacionamento .container{
-    margin-top: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-main #relacionamento .container div{
-    width: 300px;
-    height: 200px;
-    border: none;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    margin-right: 20px;
-    padding: 10px;
-}
-
-main #relacionamento .container div p{
-    text-align: left;                
-    line-height: 1.2;  
-     margin: 20px 0;                  
-    padding: 10px;
-}
-
-main #relacionamento button{
-     margin-top: 40px;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-     background-color: #666666;
-    color: white;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    cursor: pointer;
-}
-
-/* FINANCEIRA */
-main #financeira{
-    margin-top: 60px;
-    width: 100vw;
-    height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background-color: #F7F7F7;
-} 
-
-main #financeira h2{
-    color: #001E27;
-}
-
-main #financeira .container{
-     margin-top: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-main #financeira .container div{
-     width: 300px;
-    height: 200px;
-    border: none;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    margin-right: 20px;
-    padding: 10px;
-    background-color: #F7F7F7;
-}
-
-#div2{
-    background-color: #ECEEEE !important;
-}
-
-main #financeira .container div p{
-    text-align: left;                
-    line-height: 1.2;  
-    margin: 50px 0;                  
-    padding: 10px;
-}
-
-/* EFICIENCIA */
-main #eficiencia{
-    width: 100vw;
-    height: 350px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background-color:#001E27;
-}
-
-main #eficiencia h2{
-    margin-top: 20px;
-    color: white;
-}
-
-main #eficiencia .container{
-     margin-top: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} 
-
-main #eficiencia .container p{
-    color: white;
-    width: 800px;
-} 
-
-/* VALORES */
-main #valores{
-    width: 100vw;
-    height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-main #valores .container{
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} 
-
-main #valores .container div{
-    border: 1px solid black;
-    border-radius: 10px;
-    width: 350px;
-    height: 350px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 20px;
-}
-
-main #valores .container #valorMes{
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #001E27;
-}
-
-main #valores .container div span #iconCircle{
-    color: green;
-}
-
-main #valores .container div span label{
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    margin-top: 10px;
-    gap: 10px;
-}
-
-main #valores .container div button{
-    margin-top: 20px;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-     background-color: #666666;
-    color: white;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    cursor: pointer;
-}
-
-/* PRONTO */
-main #pronto{
-    width: 100vw;
-    height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background-color: #666666;
-}
-
-main #pronto h2{
-    color: white;
-}
-
-main #pronto .container{
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-main #pronto .container p{
-    color: white;
-} 
-
-#iconCircle{
-    color: white;
-} 
-
-main #pronto .container span label{
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    margin-top: 10px;
-    gap: 10px;
-} 
-
-main #pronto #linkDemonstracao{
-    margin-top: 20px;
-}
-main #pronto #linkDemonstracao a{
-    text-decoration: none;
-    color: white;
-    cursor: pointer;
-}
-
-/* FOOTER */
-footer{
-    width: 200px;
-    height: 200px;
-    background-color: #ECEEEE;
-    width: 100vw;
+header nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-radius: 50px 50px 0 0;
+    flex-direction: row;
+    width: 100vw;
 }
 
-footer .logo{
+nav #imgLogo img {
+    width: 300px;
     margin-left: 20px;
 }
 
-footer .logo img{
-    width: 250px;
+nav #btnHeader a {
+    text-decoration: none;
+    text-transform: capitalize;
+    margin-right: 20px;
+    color: white;
+    position: relative;
 }
 
-footer p{
-    color: black;
-    font-weight: bold;
+nav #btnHeader a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    transition: 0.3s ease-in-out;
 }
-footer .redesSociais svg{
-    width: 60px;
+
+nav #btnHeader a:hover::after {
+    width: 100%;
+}
+
+header .modalLogin, header .modalContac {
+    display: none; /* Inicialmente oculto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+header .modalContent, header .modalContentForm {
+    width: 500px;
+    height: 620px;
+    background-color: var(--background-color-modal);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+header .modalContent>#iconCancel, header .modalContentForm>#iconCancelForm {
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end; /* Use 'flex-end' para alinhar o ícone à direita */
+    align-items: center;
+    color: white;
+    font-size: 3rem;
+}
+
+header .modalContent>iframe, header .modalContentForm>iframe {
+    flex: 1;
+    border: none;
+    display: block;
+}
+
+
+
+.btnForm {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: capitalize;
     margin-right: 20px;
 }
 
-/* BACKGROUND DO MODAL */
-#modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5); 
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
+/* MAIN */
+#txtGestao {
+    text-align: center;
+    background-color: var(--background-color-section);
+    height: 300px;
+    padding: 60px;
 }
 
-/* CAIXA DO MODAL */
-.modal .container {
-  background: #666666;
-  padding: 30px;
-  border-radius: 8px;
-  width: 100%;
-  max-width: 500px;
-  height: 500px;
-  text-align: center;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+#txtGestao h1 {
+    margin: 30px auto;
+    color: var(--color-title);
+    font-weight: bold;
 }
 
-.textoModal{
+#txtGestao p {
+    text-align: center;
+    width: 650px;
+    margin: 0 auto;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 1.1rem;
+}
+
+#txtGestao button {
+    margin-top: 10px;
+    background-color: #666666;
     color: white;
 }
 
-/* FORMULÁRIO DO MODAL */
-.modal .container form{
+/* SEÇÃO TXT CONTROLE */
+#txtControle {
+    text-align: center;
+    width: 100vw;
+    height: 460px;
+    padding: 60px;
+}
+
+#txtControle h2 {
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--color-title);
+}
+
+#container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#txtControle #container p {
+    width: 900px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 50px;
+    font-size: 1.1rem;
+}
+
+#txtControle #container img {
+    width: 500px;
+    border: 2px solid #001E27;
+    border-radius: 10px;
+}
+
+/* SEÇÃO TXT RELACIONAMENTO */
+#txtRelacionamento {
+    text-align: center;
+    width: 100vw;
+    height: 500px;
+    padding: 60px;
+    background-color: var(--background-color-section);
+}
+
+#txtRelacionamento h2 {
+    color: var(--color-title);
+    margin-bottom: 20px;
+}
+
+#txtRelacionamento #container p {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 1.1rem;
+    width: 600px;
+}
+
+#txtRelacionamento #container img {
+    width: 500px;
+    border: 2px solid #001E27;
+    border-radius: 10px;
+}
+
+#txtRelacionamento button {
+    margin-top: 10px;
+    background-color: #666666;
+    color: white;
+}
+
+/* SEÇÃO TXT FINANCEIRO */
+#txtFinanceiro {
+    text-align: center;
+    width: 100vw;
+    height: 350px;
+    padding: 60px;
+}
+
+#txtFinanceiro h2 {
+    color: var(--color-title);
+}
+
+#txtFinanceiro #container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#txtFinanceiro #container div {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 200px;
+    height: 200px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+#txtFinanceiro #container div i {
+    margin-top: 50px;
+    color: green;
+    font-size: 3rem;
+}
+
+#txtFinanceiro #container div p {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+/* SEÇÃO TXT EFICIÊNCIA */
+#txtEficiencia {
+    text-align: center;
+    width: 100vw;
+    height: 450px;
+    padding: 60px;
+    background-color: var(--background-color-section);
+}
+
+#txtEficiencia h2 {
+    color: var(--color-title);
+    margin-bottom: 20px;
+}
+
+#txtEficiencia #container {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 1.1rem;
+    gap: 10px;
+}
+
+#txtEficiencia #container>p {
+    width: 650px;
+}
+
+
+#txtEficiencia #container img {
+    width: 500px;
+    border: 2px solid #001E27;
+    border-radius: 10px;
+}
+
+/* SEÇÃO TXT VALORES */
+#txtValores {
+    text-align: center;
+    width: 100vw;
+    height: 350px;
+    padding: 60px;
+}
+
+#txtValores #container {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-top: 20px;
+    border-radius: 10px;
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.modal .container label i{
-    color: white;
-    font-size: 40px;
+#txtValores #container>p:nth-child(1) {
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
-.modal .container form input{
+#txtValores #container>p:nth-child(2) {
+    color: var(--color-title);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+#txtValores #container span label {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 2px;
+    margin-top: 5px;
+}
+
+#txtValores #container span label i {
+    color: green;
+}
+
+#container button {
     margin-top: 10px;
-    width: 350px;
-    height: 40px;
-    border: none;
-    border-radius: 5px;
-    outline: none;
-    padding: 10px;
+    background-color: #666666;
+    color: white;
 }
 
-.modal .container form input::placeholder{
+/* SEÇÃO TXT PRONTO */
+#txtPronto {
     text-align: center;
-    text-transform: uppercase;
+    width: 100vw;
+    height: 300px;
+    padding: 60px;
+    background-color: var(--background-color-section2);
+    color: white;
 }
 
-.modal .container form textarea{
-    margin-top: 20px;
-    width: 350px;
-    height: 100px;
-    text-transform: uppercase;
-    outline: none;
-    padding: 10px;
+#txtPronto #container {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex-direction: column;
+    margin-top: 10px;
 }
 
-.modal .container form textarea::placeholder{
+#txtPronto #container span label {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+#txtPronto #container span label i {
+    color: white;
+}
+
+#txtPronto #container a:nth-child(1) {
+    text-decoration: none;
+    color: white;
+}
+
+/* FOOTER */
+footer {
     text-align: center;
+    width: 100vw;
+    height: 300px;
+    padding: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--background-color-footer);
 }
 
-.modal .container form button{
-    margin-top: 20px;
-    width: 100px;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    text-transform: uppercase;
+footer #logoFooter img {
+    width: 300px;
+    margin-left: 20px;
 }
 
-/* MEDIA QUERIES */
-/* MAX-WIDTH 765PX */
-@media (max-width:765px) {
+footer #redesSociais {
+    width: 150px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width:768px) {
+
     /* HEADER */
-    header{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        padding: 10px !important;
-    }
-
-    header .logo img{
+    header>nav>#imgLogo>img {
         width: 150px;
     }
 
-    header .btnHeader{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-right: 15px;
+    header>nav>#btnHeader>button {
+        font-size: .5rem;
+        width: 100px;
+        height: 20px;
+        padding: 0;
     }
 
-    header .btnHeader a{
-        text-transform: uppercase;
+    header>nav>#btnHeader>a {
+        font-size: 1rem;
+    }
+
+    /* TXT GESTÃO */
+    #txtGestao h1 {
+        font-size: .8rem;
+    }
+
+    #txtGestao p {
+        font-size: .8rem;
+        width: 300px;
+
+    }
+
+    /* TXT CONTROLE */
+    #txtControle {
+        height: 500px;
+    }
+
+    #txtControle h2 {
+        font-size: .8rem;
+    }
+
+    #txtControle #container {
+        flex-direction: column;
+    }
+
+    #txtControle #container>p {
+        font-size: .8rem;
+        width: 350px;
+    }
+
+    #txtControle #container>img {
+        width: 300px;
+    }
+
+    /* TXT RELACIONAMENTO */
+    #txtRelacionamento h2 {
+        font-size: .8rem;
+    }
+
+    #txtRelacionamento #container {
+        flex-direction: column;
+    }
+
+    #txtRelacionamento #container>img {
+        width: 300px;
+        margin-bottom: 20px;
+    }
+
+    #txtRelacionamento #container>p {
+        font-size: .8rem;
+        width: 350px;
+    }
+
+    /* TXT FINANCEIRO */
+    #txtFinanceiro {
+        height: 480px !important;
+    }
+
+    #txtFinanceiro h2 {
+        font-size: .8rem;
+    }
+
+    #txtFinanceiro #container {
+        flex-direction: column;
+    }
+
+    #txtFinanceiro #container>div {
+        width: 150px;
+        height: 110px;
+        padding: 5px;
+    }
+
+    #txtFinanceiro #container>div>i {
+        font-size: 2rem;
+        margin-top: 5px;
+    }
+
+    #txtFinanceiro #container>div>p {
+        font-size: .8rem;
+    }
+
+    /* TXT EFICIÊNCIA */
+    #txtEficiencia h2 {
         font-size: 0.8rem;
     }
 
-    header .btnHeader button{
-        width: 120px;
-        height: 40px;
-        text-align: center;
-        font-size: 0.8rem;
+    #txtEficiencia #container {
+        flex-direction: column;
     }
 
-    /* MAIN */
-    main #gestaoStock{
-           font-size: 0.8rem;  
+    #txtEficiencia #container>p {
+        font-size: .8rem;
+        width: 350px;
     }
 
-    main #gestaoStock h1{
+    #txtEficiencia #container>img {
+        width: 300px;
+        margin-bottom: 20px;
+    }
+
+    /* TXT VALORES */
+    #txtValores #container {
+        width: 300px;
+        font-size: .8rem;
+    }
+
+    #txtValores #container>span {
+        font-size: .8rem;
+    }
+
+    /* TXT PRONTO */
+    #txtPronto h2 {
+        font-size: .8rem;
+    }
+
+    #txtPronto #container {
+        font-size: .8rem;
+    }
+
+    #txtPronto #container>p:nth-child(1) {
+        margin-bottom: 10px;
+    }
+
+    #txtPronto #container>#linkDemonstracao {
         margin-top: 10px;
-        text-align: center;
     }
-
-    main #gestaoStock p{
-        font-size: 0.8rem; 
-         text-align: center;
-    }
-
-    main #controle h2{
-        text-align: center;
-    }
-
-    main #controle p{
-        text-align: center;
-        font-size: 0.9rem;
-        max-width: 350px;
-    }
-
-    main #relacionamento{
-        height: 600px;
-    }
-
-    main #relacionamento h2{
-        text-align: center;
-    }
-
-    main #relacionamento .container {
-       flex-direction: column !important;
-       gap: 10px;
-    }
-
-    main #relacionamento .container div{
-        width: 180px;
-        height: 180px;
-        font-size: 0.9rem;
-    }
-
-    main #relacionamento .container div p{
-        text-align: center;
-        margin: 10px auto;
-    }
-
-    main #financeira{
-        height: 600px;
-    }
-
-     main #financeira h2{
-        text-align: center;
-     }
-
-     main #financeira .container{
-        flex-direction: column !important;
-        gap: 10px;
-     }
-
-     main #financeira .container div{
-         width: 200px;
-        height: 150px;
-        font-size: 0.9rem;
-     }
-
-     main #financeira .container div p{
-        margin: 20px auto;
-        text-align: center;
-     }
-
-     main #eficiencia h2{
-        text-align: center;
-     }
-
-     main #eficiencia .container p{
-        font-size: 0.9rem;
-        max-width: 350px;
-     }
-
-     main #pronto h2{
-        text-align: center;
-     }
-    
-     main #pronto .container p{
-        font-size: 0.9rem;
-        max-width: 350px;
-        text-align: center;
-     }
 
     /* FOOTER */
-    footer .logo{
-        margin-right: 20px;
-    }
-    footer .logo img{
-        width: 150px;
+    footer {
+        flex-direction: column;
     }
 
-    footer p{
-        font-size: 0.9rem;
-    }
-
-    footer .redesSociais svg{
-        width: 40px;
-    }
-    }
-
-@media (min-width:768px) and (max-width:920px){
-    main #gestaoStock h1{
-        margin-top: 50px;
-    }
-    main #gestaoStock p{
-        text-align: center;
-        font-size: 1.2rem;
-        width: 700px;
-    }
-
-    main #gestaoStock button{
-        font-size: 1.2rem;
-    }
-
-    main #controle .container p{
-        text-align: center;
-        font-size: 1.2rem;
-        width: 700px;
-    }
-
-    main #relacionamento .container p{
-        font-size: 1.2rem;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    main #relacionamento button{
-        font-size: 1.2rem;
-    }
-
-    main #financeira{
-        height: 600px;
-    }
-
-    main #financeira .container{
-        flex-direction: column !important;
-        gap: 10px;
-    }
-
-    main #financeira .container div{
-        height: 150px;
-    }
-
-    main #financeira .container div p{
-        margin: 20px auto;
-        text-align: center;
-        font-size: 1.2rem;
-    }
-
-    main #eficiencia h2{
-        font-size: 1.8rem;
-    }
-
-    main #eficiencia .container p{
-        font-size: 1.2rem;
-        width: 600px;
-    }
-
-    main #pronto h2{
-        text-align: center;
-        font-size: 1.8rem;
-    }
-
-     main #pronto .container p{
-        font-size: 1.2rem;
-        width: 600px;
-     }
-
-     main #pronto .container #linkDemonstracao{
-        text-align: center;
-     }
-
-     /* FOOTER */
-     footer .logo img{
+    footer>#logoFooter>img {
         width: 200px;
-     }
+    }
 
-     footer p{
-        width: 200px;
-     }
+    footer>p {
+        font-size: .8rem;
+    }
 
-    footer .redesSociais svg{
-        width: 40px;
-     }
+    footer>#redesSociais {
+        width: 120px;
+    }
 }

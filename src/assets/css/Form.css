@@ -1,0 +1,78 @@
+
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+body .iconCancel{
+    margin-top: 10px;
+    color: white;
+    font-size: 3rem;
+}
+
+body form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+}
+
+body .logo{
+    margin-top: 10px;
+}
+
+body form>.inputsContact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.inputsContact>label {
+    position: relative;
+    width: 250px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputsContact>label>i {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #666;
+    font-size: 22px;
+    pointer-events: none;
+}
+
+.inputsContact>label>input {
+    width: 300px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    text-align: center;
+}
+
+.inputsContact>label>input::placeholder {
+    text-align: center;
+}
+
+.inputsContact>button {
+    width: 100px;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+.inputsContact>label>#textForm {
+    width: 300px;
+    outline: none;
+}
+
+
