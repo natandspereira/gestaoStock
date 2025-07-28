@@ -1,3 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* RESETE PÁGINA */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+:root {
+    --background-color: #666666;
+    --background-color2: #F57C00;
+    --background-color3: #830808ef;
+    --color-span: #198FC6;
+}
+
 body {
     display: flex;
     align-items: center;
@@ -22,11 +39,20 @@ body .logo{
     margin-top: 10px;
 }
 
+body form>h1, form>p{
+    margin: 10px 0;
+}
+
+body>form>.inputsLogin>p>span{
+    margin: 0 5px;
+}
+
 body form>.inputsLogin {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin: 10px 0;
 }
 
 .inputsLogin>label {
@@ -43,7 +69,7 @@ body form>.inputsLogin {
     top: 50%;
     left: 10px;
     transform: translateY(-50%);
-    color: #666;
+    color: var(--background-color);
     font-size: 22px;
     pointer-events: none;
 }
@@ -64,7 +90,25 @@ body form>.inputsLogin {
 .inputsLogin>button {
     width: 100px;
     padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
     text-transform: capitalize;
+    cursor: pointer;
+    transition: .8s;
 }
+
+.inputsLogin>#entrar:hover{
+    background-color: var(--background-color2);
+    color: white;
+}
+
+.inputsLogin>p>span{
+    color: var(--color-span);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+
 

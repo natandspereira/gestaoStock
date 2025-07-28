@@ -57,6 +57,7 @@ $matricula = $usuarioSessao['matricula'] ?? 'Sem matrícula';
         <aside>
             <label for="">
                 <img src="<?= htmlspecialchars($imagem); ?>" alt="Imagem do usuário">
+                <i class="material-icons iconMenu" id="iconClose">cancel</i>
                 <p><?= htmlspecialchars($matricula); ?></p>
             </label>
             <label for="">

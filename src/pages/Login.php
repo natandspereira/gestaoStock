@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <i class="material-icons" id="iconCircle">lock</i>
                 <input type="password" id="senha" name="senha" placeholder="Senha" required>
             </label>
-            <button type="submit">entrar</button>
+            <button type="submit" id="entrar">entrar</button>
             <button type="button" id="btnCadastro">cadastro</button>
             <p>Esqueceu sua senha?<span>Recupere a sua senha aqui</span></p>
         </div>

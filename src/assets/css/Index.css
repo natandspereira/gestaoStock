@@ -78,7 +78,7 @@ nav #btnHeader a:hover::after {
 }
 
 header .modalLogin, header .modalContac {
-    display: none; /* Inicialmente oculto */
+    display: none; 
     position: fixed;
     top: 0;
     left: 0;
@@ -92,12 +92,12 @@ header .modalLogin, header .modalContac {
 
 header .modalContent, header .modalContentForm {
     width: 500px;
-    height: 620px;
+    height: 500px;
     background-color: var(--background-color-modal);
     border-radius: 8px;
     overflow: hidden;
     position: relative;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
 }
@@ -105,7 +105,7 @@ header .modalContent, header .modalContentForm {
 header .modalContent>#iconCancel, header .modalContentForm>#iconCancelForm {
     cursor: pointer;
     display: flex;
-    justify-content: flex-end; /* Use 'flex-end' para alinhar o ícone à direita */
+    justify-content: flex-end; 
     align-items: center;
     color: white;
     font-size: 3rem;

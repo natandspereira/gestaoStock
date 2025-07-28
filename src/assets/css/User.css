@@ -14,6 +14,7 @@
     --border-color: #D32F2F;
     --border-color1: #2583FF;
     --border-color2: #0F9B4E;
+    --border-color3: #666666;
 }
 
 /* HEADER */
@@ -59,17 +60,28 @@ nav>#iconCircle {
     height: 100vh;
     text-align: center;
     color: white;
+    position: relative;
 }
 
-#menu>aside>label:nth-child(1)>p{
+#menu>aside>label:nth-child(1)>p {
     margin-top: 2px;
 }
 
-#menu>aside>label:nth-child(1)>img{
-    width: 80px;
+#menu>aside>label:nth-child(1)>img {
+    width: 70px;
+    margin-top: 60px;
 }
 
-#menu>aside>label:nth-child(2){
+#menu>aside>label:nth-child(1)>i {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2.5rem;
+    cursor: pointer;
+
+}
+
+#menu>aside>label:nth-child(2) {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -81,9 +93,10 @@ nav>#iconCircle {
     transition: .8s;
 }
 
-#menu>aside>label:nth-child(2):hover{
+#menu>aside>label:nth-child(2):hover {
     background-color: var(--background-color2);
 }
+
 /* MAIN */
 .container:nth-child(1) {
     display: flex;
@@ -114,7 +127,7 @@ nav>#iconCircle {
 
 #cost {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    width: 250px;
+    width: 260px;
     height: 110px;
     border-left: 6px solid var(--border-color2);
     border-radius: 10px;
@@ -181,6 +194,7 @@ nav>#iconCircle {
     justify-content: center;
     flex-direction: column;
     cursor: pointer;
+    border-left: 6px solid var(--border-color3);
 }
 
 #equipamentRegistration,
@@ -215,4 +229,46 @@ nav>#iconCircle {
 #history>p {
     font-size: 0.8rem;
     text-align: center;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 765px) {
+    #menu>aside {
+        top: 0;
+        position: fixed;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin-top: 10px !important;
+    }
+
+    .container:nth-child(2)>span,
+    .container:nth-child(3)>span {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .container:nth-child(1)>#equipment,
+    #amount,
+    #cost {
+        width: 240px;
+        height: 140px;
+    }
+
+    .container:nth-child(1)>#equipment>p,
+    #amount>p,
+    #cost>p {
+        width: 200px;
+    }
+
+    #cost>span {
+        margin-top: 3px;
+    }
 }
