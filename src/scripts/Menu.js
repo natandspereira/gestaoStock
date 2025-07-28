@@ -1,20 +1,21 @@
-console.log("Menu.js carregado");
+function menu() {
+    document.addEventListener('DOMContentLoaded', () => {
+        const btnMenu = document.querySelector('.iconMenu');
+        const menuAside = document.querySelector('#menu');
 
-
-document.addEventListener("DOMContentLoaded", () => {
-    const btnMenu = document.getElementById('iconMenu');
-    const menu = document.getElementById('menuUsuario');
-
-    btnMenu.addEventListener('click', (event) => {
-        event.stopPropagation();
-        menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
-    });
-
-    // Fecha o menu ao clicar fora dele
-    window.addEventListener('click', (event) => {
-        if (!menu.contains(event.target) && event.target !== btnMenu) {
-            menu.style.display = 'none';
+        if (btnMenu && menuAside) {
+            btnMenu.addEventListener('click', () => {
+                // ALTERNA ENTRE 'FLEX E 'NONE
+                menuAside.style.display = menuAside.style.display === 'flex' ? 'none' : 'flex';
+            });
         }
-    });
-});
 
+        window.addEventListener('click', function(e){
+            if(e.target === menuAside){
+                menuAside.style.display = 'none';
+            }
+        })
+    });
+}
+
+menu();
