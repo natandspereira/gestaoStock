@@ -1,6 +1,0 @@
-/node_modules/
-/vendor/
-.env
-*.log
-*.tmp
-*.cache
