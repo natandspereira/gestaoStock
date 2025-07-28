@@ -63,8 +63,9 @@ nav>#iconCircle {
     position: relative;
 }
 
-#menu>aside>label:nth-child(1)>p {
-    margin-top: 2px;
+#menu>aside>label:nth-child(1)>div{
+    border: 2px solid white;
+    width: 100px;
 }
 
 #menu>aside>label:nth-child(1)>img {
@@ -81,19 +82,25 @@ nav>#iconCircle {
 
 }
 
-#menu>aside>label:nth-child(2) {
+#menu>aside>label:nth-child(2), aside>label:nth-child(3), aside>label:nth-child(4), aside>label:nth-child(5), aside>label:nth-child(6), aside>label:nth-child(7), aside>label:nth-child(8) {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
+    flex-direction: column;
+    margin-top: 10px;
     gap: 5px;
     text-transform: capitalize;
     padding: 10px;
     border-radius: 5px;
     transition: .8s;
+    cursor: pointer;
 }
 
-#menu>aside>label:nth-child(2):hover {
+#menu>aside>label:nth-child(2)>i, aside>label:nth-child(3)>i, aside>label:nth-child(4)>i, aside>label:nth-child(5)>i, aside>label:nth-child(6)>i, aside>label:nth-child(7)>i, aside>label:nth-child(8)>i{
+    font-size: 2.5rem;
+}
+
+#menu>aside>label:nth-child(2):hover, aside>label:nth-child(3):hover, aside>label:nth-child(4):hover, aside>label:nth-child(5):hover, aside>label:nth-child(6):hover, aside>label:nth-child(7):hover, aside>label:nth-child(8):hover {
     background-color: var(--background-color2);
 }
 

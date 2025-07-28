@@ -1,5 +1,6 @@
-<?php 
+<?php
 require_once '../classes/Autoload.php';
+require_once 'Logout.php';
 session_start();
 
 $usuarioSessao = $_SESSION['usuario'] ?? null;
@@ -37,11 +38,13 @@ $matricula = $usuarioSessao['matricula'] ?? 'Sem matrícula';
     <!-- LINK CSS -->
     <link rel="stylesheet" href="../assets/css/User.css">
     <!-- LINK FAVICON -->
-     <link rel="shortcut icon" href="../assets/img/favicon_logo.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/img/favicon_logo.ico" type="image/x-icon">
     <!-- LINK ICONS GOOGLE -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- LINK SCRIPT MENU -->
     <script src="../scripts/Menu.js" defer></script>
+    <!-- LINK SCRIPT BTN CLOSE MENU  -->
+     <script src="../scripts/BtnCloseMenu.js" defer></script>
 </head>
 
 <body>
@@ -55,15 +58,47 @@ $matricula = $usuarioSessao['matricula'] ?? 'Sem matrícula';
     <!-- MENU ASIDE -->
     <div id="menu">
         <aside>
-            <label for="">
+            <label for="close">
                 <img src="<?= htmlspecialchars($imagem); ?>" alt="Imagem do usuário">
-                <i class="material-icons iconMenu" id="iconClose">cancel</i>
+                <i class="material-icons iconMenu" name="close" id="iconClose">cancel</i>
                 <p><?= htmlspecialchars($matricula); ?></p>
             </label>
-            <label for="">
-                 <i class="material-icons iconMenu" id="iconProfile">manage_accounts</i>
+            <!-- PERFIL -->
+            <label for="profile">
+                <i class="material-icons iconMenu" name="profile" id="iconProfile">manage_accounts</i>
                 <p>perfil</p>
             </label>
+            <!-- CLIENTES -->
+            <label for="clients">
+                <i class="material-icons iconMenu" name="clients" id="iconClients">groups</i>
+                <p>clientes</p>
+            </label>
+            <!-- EQUIPAMENTOS -->
+            <label for="equipment">
+                <i class="material-icons iconMenu" name="equipment" id="iconEquipment">construction</i>
+                <p>equipamentos</p>
+            </label>
+            <!-- FORNECEDORES -->
+            <label for="suppliers">
+                <i class="material-icons iconMenu" name="suppliers" id="iconSuppliers">group</i>
+                <p>fornecedores</p>
+            </label>
+            <!-- SUPORTE -->
+             <label for="support">
+                <i class="material-icons iconMenu" name="support" id="iconSupport">support_agent</i>
+                <p>suporte</p>
+            </label>
+            <!-- FEEDBACK -->
+             <label for="feedback">
+                <i class="material-icons iconMenu" name="feedback" id="iconFeedback">thumbs_up_down</i>
+                <p>feedback</p>
+            </label>
+            <!-- SAIR -->
+             <label for="logout">
+                <i class="material-icons iconMenu" name="logout" id="iconLogout">keyboard_double_arrow_left</i>
+                <p>sair</p>
+            </label>
+
         </aside>
     </div>
     <!-- MAIN -->
