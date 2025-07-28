@@ -1,0 +1,109 @@
+/* IMPORT FONT GOOGLE */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* RESET CONFIG PAGE  */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    list-style: none;
+}
+
+/* HEADER */
+header{
+    background-color: #666666;
+}
+
+header nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+header nav #iconMenu{
+    margin-left: 50px;
+    font-size: 2rem;
+    color: white;
+}
+
+header nav img{
+    width: 250px;
+}
+/* HR */
+hr{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding:1px;
+}
+/* MAIN */
+/* ASIDE */
+main #nomeUsuario{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+main #nomeUsuario p{
+    text-align: center;
+    color: white;
+}
+
+main .imgUploadUsuario{
+    width: 100px;
+    height: 100px;
+    border-radius: 10%;
+    object-fit: cover;
+}
+
+main .opcaoMenu{
+    margin-top: 10px;
+}
+
+main #menuUsuario{
+     background-color: #666666;
+     width: 200px;
+     height: 100vh;
+     display: none;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     border: none;
+     border-radius: 0 10px 10px 0;
+}
+
+
+/* UL */
+main #menuUsuario .opcaoMenu #perfil, #suporte, #fornecedores, #clientes, #tecnicos, #equipamentos, #sair{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   color: white;
+   width: 100%;
+   gap: 0.5rem;
+   padding: 10px;
+   transition: 0.8s;
+   border:none;
+   border-radius: 10px;
+   cursor: pointer;
+}
+
+main #menuUsuario .opcaoMenu #sair a{
+    text-decoration: none;
+    color: white;
+}
+
+main #perfil:hover, #suporte:hover, #fornecedores:hover, #clientes:hover, #tecnicos:hover, #equipamentos:hover, #sair:hover{
+    background-color: #F57C00;
+}
+
+
+#conteudoPerfil{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}

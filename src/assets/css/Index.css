@@ -1,0 +1,693 @@
+/* IMPORT FONT GOOGLE */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* RESET CONFIG PAGE  */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+     font-family: "Montserrat", sans-serif;
+} 
+
+/* BODY */
+body{
+   overflow: scroll;
+} 
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* HEADER */
+header{
+    background-color: #666666;
+    width: 100vw;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+}
+
+
+header .btnHeader a{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    margin-right: 10px;
+} 
+
+header .btnHeader button{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+     background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+/* LOGO */
+header .logo img{
+    width: 200px;
+    margin-left: 20px;
+} 
+
+/* MAIN */
+main{
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+/* GESTÃO STOCK */
+main #gestaoStock{
+    width: 100vw;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #F7F7F7;
+    color: black;
+}
+
+main #gestaoStock h1{
+    color: #001E27;
+}
+
+main #gestaoStock p{
+    font-size: 1.1rem;
+}
+
+main #gestaoStock button{
+    margin-top: 30px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+     background-color: #666666;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+} 
+/* CONTROLE */
+main #controle{
+    width: 100vw;
+    height: 300px;
+    background-color: #F57C00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+main #controle h2{
+    margin-bottom: 20px;
+    color: white;
+}
+
+main #controle .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+main #controle .container p{
+    text-align: center;
+    color: white;
+    width: 850px;
+}
+
+/* RELACIONAMENTO */
+main #relacionamento{
+    width: 100vw;
+    height: 400px;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+} 
+
+main #relacionamento h2{
+    margin-top: 30px;
+    color: #001E27;
+}
+
+main #relacionamento .container{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main #relacionamento .container div{
+    width: 300px;
+    height: 200px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-right: 20px;
+    padding: 10px;
+}
+
+main #relacionamento .container div p{
+    text-align: left;                
+    line-height: 1.2;  
+     margin: 20px 0;                  
+    padding: 10px;
+}
+
+main #relacionamento button{
+     margin-top: 40px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+     background-color: #666666;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+}
+
+/* FINANCEIRA */
+main #financeira{
+    margin-top: 60px;
+    width: 100vw;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #F7F7F7;
+} 
+
+main #financeira h2{
+    color: #001E27;
+}
+
+main #financeira .container{
+     margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main #financeira .container div{
+     width: 300px;
+    height: 200px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-right: 20px;
+    padding: 10px;
+    background-color: #F7F7F7;
+}
+
+#div2{
+    background-color: #ECEEEE !important;
+}
+
+main #financeira .container div p{
+    text-align: left;                
+    line-height: 1.2;  
+    margin: 50px 0;                  
+    padding: 10px;
+}
+
+/* EFICIENCIA */
+main #eficiencia{
+    width: 100vw;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color:#001E27;
+}
+
+main #eficiencia h2{
+    margin-top: 20px;
+    color: white;
+}
+
+main #eficiencia .container{
+     margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+
+main #eficiencia .container p{
+    color: white;
+    width: 800px;
+} 
+
+/* VALORES */
+main #valores{
+    width: 100vw;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+main #valores .container{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+
+main #valores .container div{
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 350px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+main #valores .container #valorMes{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #001E27;
+}
+
+main #valores .container div span #iconCircle{
+    color: green;
+}
+
+main #valores .container div span label{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+main #valores .container div button{
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+     background-color: #666666;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+}
+
+/* PRONTO */
+main #pronto{
+    width: 100vw;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #666666;
+}
+
+main #pronto h2{
+    color: white;
+}
+
+main #pronto .container{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+main #pronto .container p{
+    color: white;
+} 
+
+#iconCircle{
+    color: white;
+} 
+
+main #pronto .container span label{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-top: 10px;
+    gap: 10px;
+} 
+
+main #pronto #linkDemonstracao{
+    margin-top: 20px;
+}
+main #pronto #linkDemonstracao a{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* FOOTER */
+footer{
+    width: 200px;
+    height: 200px;
+    background-color: #ECEEEE;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 50px 50px 0 0;
+}
+
+footer .logo{
+    margin-left: 20px;
+}
+
+footer .logo img{
+    width: 250px;
+}
+
+footer p{
+    color: black;
+    font-weight: bold;
+}
+footer .redesSociais svg{
+    width: 60px;
+    margin-right: 20px;
+}
+
+/* BACKGROUND DO MODAL */
+#modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); 
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+/* CAIXA DO MODAL */
+.modal .container {
+  background: #666666;
+  padding: 30px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+  height: 500px;
+  text-align: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.textoModal{
+    color: white;
+}
+
+/* FORMULÁRIO DO MODAL */
+.modal .container form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.modal .container label i{
+    color: white;
+    font-size: 40px;
+}
+
+.modal .container form input{
+    margin-top: 10px;
+    width: 350px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    padding: 10px;
+}
+
+.modal .container form input::placeholder{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.modal .container form textarea{
+    margin-top: 20px;
+    width: 350px;
+    height: 100px;
+    text-transform: uppercase;
+    outline: none;
+    padding: 10px;
+}
+
+.modal .container form textarea::placeholder{
+    text-align: center;
+}
+
+.modal .container form button{
+    margin-top: 20px;
+    width: 100px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+/* MEDIA QUERIES */
+/* MAX-WIDTH 765PX */
+@media (max-width:765px) {
+    /* HEADER */
+    header{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 10px !important;
+    }
+
+    header .logo img{
+        width: 150px;
+    }
+
+    header .btnHeader{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+    }
+
+    header .btnHeader a{
+        text-transform: uppercase;
+        font-size: 0.8rem;
+    }
+
+    header .btnHeader button{
+        width: 120px;
+        height: 40px;
+        text-align: center;
+        font-size: 0.8rem;
+    }
+
+    /* MAIN */
+    main #gestaoStock{
+           font-size: 0.8rem;  
+    }
+
+    main #gestaoStock h1{
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    main #gestaoStock p{
+        font-size: 0.8rem; 
+         text-align: center;
+    }
+
+    main #controle h2{
+        text-align: center;
+    }
+
+    main #controle p{
+        text-align: center;
+        font-size: 0.9rem;
+        max-width: 350px;
+    }
+
+    main #relacionamento{
+        height: 600px;
+    }
+
+    main #relacionamento h2{
+        text-align: center;
+    }
+
+    main #relacionamento .container {
+       flex-direction: column !important;
+       gap: 10px;
+    }
+
+    main #relacionamento .container div{
+        width: 180px;
+        height: 180px;
+        font-size: 0.9rem;
+    }
+
+    main #relacionamento .container div p{
+        text-align: center;
+        margin: 10px auto;
+    }
+
+    main #financeira{
+        height: 600px;
+    }
+
+     main #financeira h2{
+        text-align: center;
+     }
+
+     main #financeira .container{
+        flex-direction: column !important;
+        gap: 10px;
+     }
+
+     main #financeira .container div{
+         width: 200px;
+        height: 150px;
+        font-size: 0.9rem;
+     }
+
+     main #financeira .container div p{
+        margin: 20px auto;
+        text-align: center;
+     }
+
+     main #eficiencia h2{
+        text-align: center;
+     }
+
+     main #eficiencia .container p{
+        font-size: 0.9rem;
+        max-width: 350px;
+     }
+
+     main #pronto h2{
+        text-align: center;
+     }
+    
+     main #pronto .container p{
+        font-size: 0.9rem;
+        max-width: 350px;
+        text-align: center;
+     }
+
+    /* FOOTER */
+    footer .logo{
+        margin-right: 20px;
+    }
+    footer .logo img{
+        width: 150px;
+    }
+
+    footer p{
+        font-size: 0.9rem;
+    }
+
+    footer .redesSociais svg{
+        width: 40px;
+    }
+    }
+
+@media (min-width:768px) and (max-width:920px){
+    main #gestaoStock h1{
+        margin-top: 50px;
+    }
+    main #gestaoStock p{
+        text-align: center;
+        font-size: 1.2rem;
+        width: 700px;
+    }
+
+    main #gestaoStock button{
+        font-size: 1.2rem;
+    }
+
+    main #controle .container p{
+        text-align: center;
+        font-size: 1.2rem;
+        width: 700px;
+    }
+
+    main #relacionamento .container p{
+        font-size: 1.2rem;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    main #relacionamento button{
+        font-size: 1.2rem;
+    }
+
+    main #financeira{
+        height: 600px;
+    }
+
+    main #financeira .container{
+        flex-direction: column !important;
+        gap: 10px;
+    }
+
+    main #financeira .container div{
+        height: 150px;
+    }
+
+    main #financeira .container div p{
+        margin: 20px auto;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+
+    main #eficiencia h2{
+        font-size: 1.8rem;
+    }
+
+    main #eficiencia .container p{
+        font-size: 1.2rem;
+        width: 600px;
+    }
+
+    main #pronto h2{
+        text-align: center;
+        font-size: 1.8rem;
+    }
+
+     main #pronto .container p{
+        font-size: 1.2rem;
+        width: 600px;
+     }
+
+     main #pronto .container #linkDemonstracao{
+        text-align: center;
+     }
+
+     /* FOOTER */
+     footer .logo img{
+        width: 200px;
+     }
+
+     footer p{
+        width: 200px;
+     }
+
+    footer .redesSociais svg{
+        width: 40px;
+     }
+}
