@@ -69,18 +69,36 @@ $matricula = $usuarioSessao['matricula'] ?? 'Sem matrícula';
             </label>
 
             <!-- Menus -->
-            <label><i class="material-icons iconMenu">manage_accounts</i><p>perfil</p></label>
-            <label><i class="material-icons iconMenu">groups</i><p>clientes</p></label>
-            <label><i class="material-icons iconMenu">construction</i><p>equipamentos</p></label>
-            <label><i class="material-icons iconMenu">group</i><p>fornecedores</p></label>
-            <label><i class="material-icons iconMenu">support_agent</i><p>suporte</p></label>
-            <label><i class="material-icons iconMenu">thumbs_up_down</i><p>feedback</p></label>
+            <a href="Profile.php" name="profile">
+                <i class="material-icons iconProfile">badge</i>
+                perfil
+            </a>
+            <a href="#">
+                <i class="material-icons iconClients">groups</i>
+                clientes
+            </a>
+            <a href="#">
+                <i class="material-icons iconEquipments">construction</i>
+                equipamentos
+            </a>
+            <a href="#">
+                <i class="material-icons iconSuppliers">group</i>
+                fornecedores
+            </a>
+            <a href="#">
+                <i class="material-icons iconSupport">support_agent</i>
+                suporte
+            </a>
+            <a href="#">
+                <i class="material-icons iconFeedback">thumbs_up_down</i>
+                feedback
+            </a>
 
             <!-- SAIR -->
-            <label>
-                <i class="material-icons iconMenu">keyboard_double_arrow_left</i>
-                <a href="Logout.php">sair</a>
-            </label>
+            <a href="Logout.php" class="iconLogout">
+                <i class="material-icons iconLogout">keyboard_double_arrow_left</i>
+                sair
+            </a>
         </aside>
     </div>
 

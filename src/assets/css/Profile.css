@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* RESETE PÁGINA */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+/* ROOT CORES */
+:root {
+    --background-color: #666666;
+    --background-color2: #F57C00;
+    --color-txt: #001E27;
+    --color-txt2: #ffffff;
+    
+} 
+
+/* BODY */
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    background-image: url(../img/img_background.svg);
+} 
+
+/* DIV DADOS USUÁRIOS */
+#container{
+    color: var(--color-txt2);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+#container> #dataUser{
+    display: flex;
+    flex-direction: column;
+}
+
+/* FORMULARIO */
+#container>form{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+#container>form>input{
+    width: 250px;
+    height: 40px;
+    margin: 10px auto;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+#container>form>input::placeholder{
+    text-align: center;
+}
+
+#container>button{
+    width: 250px;
+    height: 40px;
+    margin: 0 auto;
+    text-transform: capitalize;
+    border: none;
+    border-radius: 5px;
+    transition: 0.8s;
+}
+
+#container>button:hover{
+    background-color: var(--background-color2);
+    color: var(--color-txt2);
+}

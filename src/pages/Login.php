@@ -47,7 +47,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="../assets/css/Login.css">
     <!-- SCRIPT BTN CADASTRO -->
      <script src="../scripts/BtnCadastro.js" defer></script>
-    
 </head>
 
 <body>

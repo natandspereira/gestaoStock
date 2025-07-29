@@ -82,7 +82,7 @@ nav>#iconCircle {
 
 }
 
-#menu>aside>label:nth-child(2), aside>label:nth-child(3), aside>label:nth-child(4), aside>label:nth-child(5), aside>label:nth-child(6), aside>label:nth-child(7), aside>label:nth-child(8) {
+#menu>aside>a:nth-child(2), aside>a:nth-child(3), aside>a:nth-child(4), aside>a:nth-child(5), aside>a:nth-child(6), aside>a:nth-child(7), aside>a:nth-child(8), aside>a:nth-child(9) {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -91,18 +91,25 @@ nav>#iconCircle {
     gap: 5px;
     text-transform: capitalize;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
     transition: .8s;
     cursor: pointer;
 }
 
-#menu>aside>label:nth-child(2)>i, aside>label:nth-child(3)>i, aside>label:nth-child(4)>i, aside>label:nth-child(5)>i, aside>label:nth-child(6)>i, aside>label:nth-child(7)>i, aside>label:nth-child(8)>i{
-    font-size: 2.5rem;
+#menu>aside>a:nth-child(2), aside>a:nth-child(3), aside>a:nth-child(4), aside>a:nth-child(5), aside>a:nth-child(6), aside>a:nth-child(7), aside>a:nth-child(8){
+    font-size: 1.1rem;
 }
 
-#menu>aside>label:nth-child(2):hover, aside>label:nth-child(3):hover, aside>label:nth-child(4):hover, aside>label:nth-child(5):hover, aside>label:nth-child(6):hover, aside>label:nth-child(7):hover, aside>label:nth-child(8):hover {
+#menu>aside>a:nth-child(2), aside>a:nth-child(3), aside>a:nth-child(4), aside>a:nth-child(5), aside>a:nth-child(6), aside>a:nth-child(7), aside>a:nth-child(8), aside>a:nth-child(9){
+    text-decoration: none;
+    color: white;
+}
+
+#menu>aside>a:nth-child(2):hover, aside>a:nth-child(3):hover, aside>a:nth-child(4):hover, aside>a:nth-child(5):hover, aside>a:nth-child(6):hover, aside>a:nth-child(7):hover, aside>a:nth-child(8):hover, aside>a:nth-child(9):hover {
     background-color: var(--background-color2);
 }
+
+
 
 /* MAIN */
 .container:nth-child(1) {

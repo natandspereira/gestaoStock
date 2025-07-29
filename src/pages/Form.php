@@ -13,7 +13,6 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- LINK CSS -->
     <link rel="stylesheet" href="../assets/css/Form.css">
-
 </head>
 
 <body>
