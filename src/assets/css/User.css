@@ -245,6 +245,10 @@ nav>#iconCircle {
         position: fixed;
     }
 
+    #menu>aside>label:nth-child(2)>i, aside>label:nth-child(3)>i, aside>label:nth-child(4)>i, aside>label:nth-child(5)>i, aside>label:nth-child(6)>i, aside>label:nth-child(7)>i, aside>label:nth-child(8)>i{
+    font-size: 1rem;
+    }
+
     .container {
         display: flex;
         flex-direction: column;
