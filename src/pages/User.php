@@ -35,6 +35,7 @@ $matricula = $usuarioSessao['matricula'] ?? 'Sem matrícula';
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,6 +49,7 @@ $matricula = $usuarioSessao['matricula'] ?? 'Sem matrícula';
     <!-- SCRIPTS -->
     <script src="../scripts/Menu.js" defer></script>
     <script src="../scripts/BtnCloseMenu.js" defer></script>
+    <script src="../scripts/btnOptionMenu.js" defer></script>
 </head>
 
 <body>
@@ -69,31 +71,41 @@ $matricula = $usuarioSessao['matricula'] ?? 'Sem matrícula';
             </label>
 
             <!-- Menus -->
-            <a href="Profile.php" name="profile">
+            <!-- HOME -->
+            <a name="home" href="User.php">
+                <i class="material-icons iconProfile">home</i>
+                home
+            </a>
+            <!-- PERFIL -->
+            <a name="profile" onclick="exibirPerfil()">
                 <i class="material-icons iconProfile">badge</i>
                 perfil
             </a>
+            <!-- CLIENTES -->
             <a href="#">
                 <i class="material-icons iconClients">groups</i>
                 clientes
             </a>
+            <!-- EQUIPAMENTOS -->
             <a href="#">
                 <i class="material-icons iconEquipments">construction</i>
                 equipamentos
             </a>
+            <!-- FORNECEDORES -->
             <a href="#">
                 <i class="material-icons iconSuppliers">group</i>
                 fornecedores
             </a>
+            <!-- SUPORTE -->
             <a href="#">
                 <i class="material-icons iconSupport">support_agent</i>
                 suporte
             </a>
+            <!-- FEEDBACK -->
             <a href="#">
                 <i class="material-icons iconFeedback">thumbs_up_down</i>
                 feedback
             </a>
-
             <!-- SAIR -->
             <a href="Logout.php" class="iconLogout">
                 <i class="material-icons iconLogout">keyboard_double_arrow_left</i>
@@ -107,15 +119,21 @@ $matricula = $usuarioSessao['matricula'] ?? 'Sem matrícula';
         <div class="container">
             <div id="equipment">
                 <p>Equipamento precisando de reparos</p>
-                <span><p>0</p><i class="material-icons" id="iconError">error</i></span>
+                <span>
+                    <p>0</p><i class="material-icons" id="iconError">error</i>
+                </span>
             </div>
             <div id="amount">
                 <p>Quantidade de produtos no estoque</p>
-                <span><p>0</p><i class="material-icons" id="iconStock">inventory</i></span>
+                <span>
+                    <p>0</p><i class="material-icons" id="iconStock">inventory</i>
+                </span>
             </div>
             <div id="cost">
                 <p>Custo total de produtos</p>
-                <span><p>0</p><i class="material-icons" id="iconDolar">attach_money</i></span>
+                <span>
+                    <p>0</p><i class="material-icons" id="iconDolar">attach_money</i>
+                </span>
             </div>
         </div>
 
@@ -154,4 +172,5 @@ $matricula = $usuarioSessao['matricula'] ?? 'Sem matrícula';
         </div>
     </main>
 </body>
+
 </html>

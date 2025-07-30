@@ -28,7 +28,7 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
     <!-- LINK CSS  -->
-    <link rel="stylesheet" href="../assets/css/Profile.css">
+    <link rel="stylesheet" href="../assets/css/Profile.css?v1.0">
     <!-- LINK FAVICON -->
     <link rel="shortcut icon" href="../assets/img/favicon_logo.ico" type="image/x-icon">
     <!-- LINK ICONS GOOGLE -->
@@ -38,9 +38,7 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
 
     <?php foreach ($usuarios as $usuario): ?>
-         $temImagem = !empty($usuario['imagem_url']) && file_exists('uploads/' . $usuario['imagem_url']);
-         $imagem = $temImagem ? 'uploads/' . htmlspecialchars($usuario['imagem_url']) : 'img/default.png';
-        <div id="container">
+        <div id="containerProfile">
             <div id="dataUser">
                 <div id="imgUser">
                     <img src="<?= htmlspecialchars($usuario['imagem_url']); ?>" alt="Imagem do usuário" />
@@ -51,9 +49,10 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </div>
             <!-- FORMULARIO    -->
             <form action="">
-                <input type="text" placeholder="Nome">
-                <input type="password" placeholder="Senha">
-                <input type="password" placeholder="Confirmar senha">
+                <input type="text" placeholder="nome">
+                <input type="password" placeholder="senha">
+                <input type="password" placeholder="confirmar senha">
+                <input type="email" placeholder="email">
             </form>
             <button>update</button>
         <?php endforeach; ?>
