@@ -90,7 +90,7 @@ header .modalLogin, header .modalContac {
     align-items: center;
 }
 
-header .modalContent, header .modalContentForm {
+header .modalContent{
     width: 500px;
     height: 500px;
     background-color: var(--background-color-modal);
@@ -100,6 +100,20 @@ header .modalContent, header .modalContentForm {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
+    border: 2px solid white;
+}
+
+header .modalContentForm{
+    width: 500px;
+    height: 620px;
+    background-color: var(--background-color-modal);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    border: 2px solid white;
 }
 
 header .modalContent>#iconCancel, header .modalContentForm>#iconCancelForm {

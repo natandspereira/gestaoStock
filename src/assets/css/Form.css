@@ -5,6 +5,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background-image: url(../img/img_background.svg);
 }
 body .iconCancel{
     margin-top: 10px;
@@ -68,9 +69,18 @@ body form>.inputsContact {
     padding: 10px;
     margin-bottom: 10px;
     text-transform: capitalize;
+    transition: .8s;
+    border: none;
+    border-radius: 5px;
+    outline: none;
 }
 
-.inputsContact>label>#textForm {
+.inputsContact>button:hover{
+    background-color: #F57C00;
+    color: white;
+}
+
+.inputsContact>label>textarea {
     width: 300px;
     outline: none;
 }

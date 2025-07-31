@@ -12,14 +12,16 @@
     --background-color: #666666;
     --background-color2: #F57C00;
     --background-color3: #830808ef;
-    --color-span: #198FC6;
+    --color-span: #F57C00;
 }
+
 
 body {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background-image: url(../img/img_background.svg);
 }
 body .iconCancel{
     margin-top: 10px;

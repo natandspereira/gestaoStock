@@ -82,9 +82,14 @@ $matricula = $usuarioSessao['matricula'] ?? 'Sem matrícula';
                 perfil
             </a>
             <!-- CLIENTES -->
-            <a href="#">
+            <a href="#" onclick="exibirClientes()">
                 <i class="material-icons iconClients">groups</i>
                 clientes
+            </a>
+            <!-- TAREFAS -->
+             <a href="#" onclick="exibirTarefas()">
+                <i class="material-icons iconTasks">assignment</i>
+                tarefas
             </a>
             <!-- EQUIPAMENTOS -->
             <a href="#">

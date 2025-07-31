@@ -84,7 +84,7 @@ nav>#iconCircle {
 
 }
 
-#menu>aside>a:nth-child(2), aside>a:nth-child(3), aside>a:nth-child(4), aside>a:nth-child(5), aside>a:nth-child(6), aside>a:nth-child(7), aside>a:nth-child(8), aside>a:nth-child(9) {
+#menu>aside>a:nth-child(2), aside>a:nth-child(3), aside>a:nth-child(4), aside>a:nth-child(5), aside>a:nth-child(6), aside>a:nth-child(7), aside>a:nth-child(8), aside>a:nth-child(9), aside>a:nth-child(10){
     display: flex;
     align-items: center;
     justify-content: center;
@@ -98,16 +98,16 @@ nav>#iconCircle {
     cursor: pointer;
 }
 
-#menu>aside>a:nth-child(2), aside>a:nth-child(3), aside>a:nth-child(4), aside>a:nth-child(5), aside>a:nth-child(6), aside>a:nth-child(7), aside>a:nth-child(8){
+#menu>aside>a:nth-child(2), aside>a:nth-child(3), aside>a:nth-child(4), aside>a:nth-child(5), aside>a:nth-child(6), aside>a:nth-child(7), aside>a:nth-child(8), aside>a:nth-child(9), aside>a:nth-child(10){
     font-size: 1.1rem;
 }
 
-#menu>aside>a:nth-child(2), aside>a:nth-child(3), aside>a:nth-child(4), aside>a:nth-child(5), aside>a:nth-child(6), aside>a:nth-child(7), aside>a:nth-child(8), aside>a:nth-child(9){
+#menu>aside>a:nth-child(2), aside>a:nth-child(3), aside>a:nth-child(4), aside>a:nth-child(5), aside>a:nth-child(6), aside>a:nth-child(7), aside>a:nth-child(8), aside>a:nth-child(9), aside>a:nth-child(10){
     text-decoration: none;
     color: white;
 }
 
-#menu>aside>a:nth-child(2):hover, aside>a:nth-child(3):hover, aside>a:nth-child(4):hover, aside>a:nth-child(5):hover, aside>a:nth-child(6):hover, aside>a:nth-child(7):hover, aside>a:nth-child(8):hover, aside>a:nth-child(9):hover {
+#menu>aside>a:nth-child(2):hover, aside>a:nth-child(3):hover, aside>a:nth-child(4):hover, aside>a:nth-child(5):hover, aside>a:nth-child(6):hover, aside>a:nth-child(7):hover, aside>a:nth-child(8):hover, aside>a:nth-child(9):hover, aside>a:nth-child(10):hover {
     background-color: var(--background-color2);
 }
 

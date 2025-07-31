@@ -14,7 +14,7 @@ body{
 
 #containerProfile{
     margin: 250px 1000px;
-    border: 2px solid black;
+    border: 2px solid white;
     width: 600px;
     height: 450px;
     display: flex;
