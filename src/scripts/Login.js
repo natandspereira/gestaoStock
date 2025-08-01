@@ -12,7 +12,7 @@ function login() {
         
         
         // RECARREGA O IFRAME QUANDO O MODAL FOR ABERTO
-        iframe.src = iframe.src; //FORÇA O RECARREGAMENTO DO IFRAME
+        iframe.src = "./src/pages/login/Login.php"; //FORÇA O RECARREGAMENTO DO IFRAME
     });
 
     // FECHAR MODAL

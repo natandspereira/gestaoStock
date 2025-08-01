@@ -1,5 +1,5 @@
 <?php 
-require_once '../classes/Autoload.php';
+require_once '../../classes/Autoload.php';
 
 // Instancia o banco de dados
 $db = new Database();
@@ -34,15 +34,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criar Usuário</title>
     <!-- LINK CSS -->
-     <link rel="stylesheet" href="../assets/css/CreateUser.css">
+     <link rel="stylesheet" href="../../assets/css/createUser/CreateUser.css">
     <!-- LINK FAVICON -->
-     <link rel="shortcut icon" href="../assets/img/favicon_logo.ico" type="image/x-icon">
+     <link rel="shortcut icon" href="../../assets/img/favicon_logo.ico" type="image/x-icon">
 </head>
 <body>
     <!-- HEADER -->
     <header>
         <div class="logo">
-            <img src="../assets/img/logo.png" alt="logo">
+            <img src="../../assets/img/logo.png" alt="logo">
         </div>
     </header>
     <!-- FORMULÁRIO -->
@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <p>Li e concordo com os Termos de uso</p>
             </span>
             <button id="btnCadastrar">cadastrar</button>
-            <button id="btnSair" formaction="../../index.php" formnovalidate>sair</button>
+            <button id="btnSair" formaction="../../../index.php" formnovalidate>sair</button>
         </div>
     </form>
 </body>

@@ -1,5 +1,5 @@
 <?php
-require_once '../classes/Autoload.php';
+require_once '../../classes/Autoload.php';
 session_start();
 
 // Verifica se o formulário foi submetido
@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($resultado['sucesso']) && $resultado['sucesso'] === true) {
         // Redireciona para a página após o login bem-sucedido
         echo "<script>
-                window.open('../pages/User.php', '_blank'); // ABRE A PÁGINA EM OUTRA ABA
+                window.open('../../pages/User.php', '_blank'); // ABRE A PÁGINA EM OUTRA ABA
                 var modal = window.parent.document.getElementById('loginModal'); // ACESSA O MODAL DA PÁGINA PRINCIPAL
                 if (modal) {
                     modal.style.display = 'none'; // FECHA O MODAL
@@ -27,8 +27,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     } else {
         // Caso haja erro, redireciona para a página de login com a mensagem de erro
-        header('Location: ../pages/Login.php?erro=1');
-        exit();
+        echo "
+<script>
+    alert('Usuário ou senha inválidos');
+
+    // Após o alerta, recarrega o iframe da página principal
+    const iframe = window.parent.document.getElementById('loginIframe');
+    if (iframe) {
+        // Força recarregamento com parâmetro para evitar cache
+        iframe.src = './src/pages/login/Login.php?reload=' + new Date().getTime();
+    }
+</script>";
+exit();
+
     }
 }
 ?>
@@ -44,14 +55,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <!-- LINK ICONS GOOGLE -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- LINK CSS -->
-    <link rel="stylesheet" href="../assets/css/Login.css">
+    <link rel="stylesheet" href="../../assets/css/login/Login.css">
     <!-- SCRIPT BTN CADASTRO -->
-     <script src="../scripts/BtnCadastro.js" defer></script>
+    <script src="../../scripts/BtnCadastro.js" defer></script>
 </head>
 
 <body>
     <div class="logo">
-        <img src="../assets/img/logo.png" alt="Logo">
+        <img src="../../assets/img/logo.png" alt="Logo">
     </div>
     <form action="" method="POST">
         <h1>Acessar Conta</h1>

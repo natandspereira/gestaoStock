@@ -68,7 +68,7 @@ class CreateUser extends Database
 
     private function alertRedirect(string $mensagem)
     {
-        echo "<script>alert('$mensagem'); window.location.href = '../pages/CreateUser.php';</script>";
+        echo "<script>alert('$mensagem'); window.location.href = '../createUser/CreateUser.php';</script>";
         exit;
     }
 

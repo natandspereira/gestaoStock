@@ -11,12 +11,10 @@
 </head>
 <body>
     <!-- LINK CSS -->
-    <link rel="stylesheet" href="../assets/css/RegisterTasks.css">
+    <link rel="stylesheet" href="../assets/css/registerTasks/RegisterTasks.css?=1.1">
     <!-- FAVICON -->
     <link rel="shortcut icon" href="../assets/img/favicon_logo.ico" type="image/x-icon">
     <!-- GOOGLE ICONS -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- LINK SCRIPT -->
-     <script src="../scripts/btnOptionMenu.js" defer></script>
 </body>
 </html>

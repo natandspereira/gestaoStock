@@ -1,5 +1,5 @@
 <?php
-require_once '../classes/Autoload.php';
+require_once '../../classes/Autoload.php';
 
 //INSTANCIA O BANCO DE DADOS
 $db = new Database();
@@ -28,7 +28,7 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
     <!-- LINK CSS  -->
-    <link rel="stylesheet" href="../assets/css/Profile.css?v1.0">
+    <link rel="stylesheet" href="../assets/css/profile/Profile.css?=1.1">
     <!-- LINK FAVICON -->
     <link rel="shortcut icon" href="../assets/img/favicon_logo.ico" type="image/x-icon">
     <!-- LINK ICONS GOOGLE -->

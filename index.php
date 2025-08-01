@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GestãoStock</title>
     <!-- LINK CSS  -->
-    <link rel="stylesheet" href="./src/assets/css/Index.css">
+    <link rel="stylesheet" href="./src/assets/css/index/Index.css">
     <!-- LINK FAVICON -->
     <link rel="shortcut icon" href="./src/assets/img/favicon_logo.ico" type="image/x-icon">
     <!-- LINK ICONS GOOGLE -->
@@ -36,14 +36,14 @@
              <div id="loginModal" class="modalLogin">
                 <div class="modalContent">
                     <i class="material-icons" id="iconCancel">cancel</i>
-                    <iframe src="./src/pages/Login.php" id='loginIframe' frameborder="0"></iframe>
+                    <iframe src="./src/pages/login/Login.php" id='loginIframe' frameborder="0"></iframe>
                 </div>
              </div>
         <!-- MODAL FORM CONTATO -->
             <div class="contactModalForm modalContac">
                 <div class="modalContentForm">
                     <i class="material-icons" id="iconCancelForm">cancel</i>
-                    <iframe src="./src/pages/Form.php" frameborder="0"></iframe>
+                    <iframe src="./src/pages/form/Form.php" frameborder="0"></iframe>
                 </div>
             </div>
     </header>
@@ -182,6 +182,24 @@
             </svg>
         </div>
     </footer>
+    <script>
+window.addEventListener('message', function(event) {
+    if (event.data && event.data.action === 'reload-login-iframe') {
+        const iframe = document.getElementById('loginIframe');
+        const modal = document.getElementById('loginModal');
+
+        if (iframe && modal) {
+            // Recarrega o iframe
+            iframe.src = './src/pages/login/Login.php?reload=' + new Date().getTime();
+
+            // Garante que o modal esteja visível novamente (caso tenha sido afetado)
+            modal.style.display = 'block';
+        }
+    }
+});
+</script>
+
+
 </body>
 
 </html>

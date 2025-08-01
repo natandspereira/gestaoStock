@@ -12,12 +12,12 @@
     <!-- LINK ICONS GOOGLE -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- LINK CSS -->
-    <link rel="stylesheet" href="../assets/css/Form.css">
+    <link rel="stylesheet" href="../../assets/css/form/Form.css">
 </head>
 
 <body>
     <div class="logo">
-        <img src="../assets/img/logo.png" alt="Logo">
+        <img src="../../assets/img/logo.png" alt="Logo">
     </div>
     <form action="" method="POST">
         <h1>Entre em contato</h1>

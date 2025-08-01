@@ -9,7 +9,7 @@ function exibirPerfil() {
     // Mensagem de carregamento opcional
     main.innerHTML = "<p style='padding: 1rem;'>Carregando perfil...</p>";
 
-    fetch("Profile.php")
+    fetch("../pages/profile/Profile.php")
         .then(response => {
             if (!response.ok) {
                 throw new Error("Erro ao carregar o perfil.");
@@ -30,7 +30,7 @@ function exibirClientes() {
     // Mensagem de carregamento opcional
     main.innerHTML = "<p style='padding: 1rem;'>Carregando perfil...</p>";
 
-    fetch("RegisterCustomers.php")
+    fetch("../pages/registerCustomers/RegisterCustomers.php")
         .then(response => {
             if (!response.ok) {
                 throw new Error("Erro ao carregar o perfil.");
@@ -51,7 +51,7 @@ function exibirTarefas() {
     // Mensagem de carregamento opcional
     main.innerHTML = "<p style='padding: 1rem;'>Carregando perfil...</p>";
 
-    fetch("RegisterTasks.php")
+    fetch("../pages/registerTasks/RegisterTasks.php")
         .then(response => {
             if (!response.ok) {
                 throw new Error("Erro ao carregar o perfil.");

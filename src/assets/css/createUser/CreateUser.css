@@ -15,7 +15,7 @@
 /* BODY */
 body {
     background-color: var(--background-color);
-    background-image: url(../img/img_background.svg);
+    background-image: url(../../img/img_background.svg);
 }
 
 /* HEADER */

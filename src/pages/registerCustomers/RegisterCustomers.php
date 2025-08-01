@@ -6,13 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de clientes</title>
     <!-- LINK CSS  -->
-    <link rel="stylesheet" href="../assets/css/RegisterCustomers.css">
+    <link rel="stylesheet" href="../assets/css/registerCustomers/RegisterCustomers.css?=1.1">
     <!-- LINK FAVICON -->
     <link rel="shortcut icon" href="./src/assets/img/favicon_logo.ico" type="image/x-icon">
     <!-- LINK ICONS GOOGLE -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- LINK SCRIPT -->
-    <script src="../scripts/btnOptionMenu.js" defer></script>
 </head>
 
 <body>

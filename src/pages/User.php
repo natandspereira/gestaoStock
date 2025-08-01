@@ -112,7 +112,7 @@ $matricula = $usuarioSessao['matricula'] ?? 'Sem matrícula';
                 feedback
             </a>
             <!-- SAIR -->
-            <a href="Logout.php" class="iconLogout">
+            <a href="../pages/login/Logout.php" class="iconLogout">
                 <i class="material-icons iconLogout">keyboard_double_arrow_left</i>
                 sair
             </a>

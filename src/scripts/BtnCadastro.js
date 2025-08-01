@@ -4,7 +4,7 @@ function abrirCadastroENovaAba() {
     if (botaoCadastro) {
         botaoCadastro.addEventListener("click", function () {
             // Abre a página de cadastro em nova aba
-            window.open("CreateUser.php", "_blank");
+            window.open("../createUser/CreateUser.php", "_blank");
 
             // Fecha o modal se ele existir na janela principal
             const modal = window.parent.document.getElementById("loginModal");
