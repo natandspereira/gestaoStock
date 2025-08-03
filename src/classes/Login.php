@@ -35,7 +35,7 @@ class Login
             if ($usuario && password_verify($senha, $usuario['senha'])) {
                 //SALVA A MATRÍCULA DO USUÁRIO NA SESSÃO SE O LOGIN FOR BEM-SUCEDIDO
                 $_SESSION['usuario'] = [
-                    'id' => $usuario['id'],
+                    'usuario_id' => $usuario['usuario_id'],
                     'matricula' => $usuario['matricula'],
                     'nome' => $usuario['nome'] ?? '' 
                 ];

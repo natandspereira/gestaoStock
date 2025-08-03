@@ -3,6 +3,7 @@
 
 
 
+
 function exibirPerfil() {
     const main = document.querySelector("main");
 
