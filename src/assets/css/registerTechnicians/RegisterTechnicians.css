@@ -1,0 +1,115 @@
+@import "../default.css";
+
+/* BODY */
+body{
+    background-image: url(../../img/img_background.svg);
+    height: 100vh;
+}
+
+/* SECTION */
+section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: var(--color-title2);
+    margin: 10px auto;
+    font-size: 1.2rem;
+}
+
+.title{
+    margin-top: 10%;
+}
+
+.inputSearch{
+    label>input{
+        width: 400px;
+        height: 40px;
+        border: none;
+        border-radius: 5px;
+        outline: none;
+        transition: .8s;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    label>input::placeholder{
+        text-align: center;
+    }
+
+    label>input:hover{
+        outline: 2px solid var(--background-color2);
+    }
+}
+
+.dataTechnical{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.dataTechnical>div{
+    margin: 20px auto;
+    color: black;
+    border-left: 5px solid var(--background-color2);
+    border-radius: 10px;
+    background-color: var(--background-color-section);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 300px;
+    height: 180px;
+    cursor: pointer;
+    padding: 2px;
+    text-align: center;
+
+    h4{
+        text-transform: capitalize;
+        margin:10px auto;
+    }
+
+    div{
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        flex-direction: row;
+        margin: 10px 18px;
+    }
+
+    button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        border-radius: 5px;
+        background-color: var(--background-color);
+        outline: none;
+        width: 100px;
+        height: 40px;
+        margin: 10px auto;
+        color: var(--color-title2);
+        text-transform: capitalize;
+    }
+}
+
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    button{
+        width: 100px;
+        height: 40px;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        text-transform: capitalize;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        cursor: pointer;
+        transition: .8s;
+    }
+
+    button:hover{
+        background-color: var(--background-color2);
+        color: var(--color-title2);
+    }
+}
+

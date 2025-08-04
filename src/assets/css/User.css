@@ -60,12 +60,12 @@ header {
                 font-size: 2.5rem;
                 cursor: pointer;
             }
-            a:nth-child(2), a:nth-child(3), a:nth-child(4), a:nth-child(5), a:nth-child(6), a:nth-child(7), a:nth-child(8), a:nth-child(9), a:nth-child(10){
+            a:nth-child(2), a:nth-child(3), a:nth-child(4), a:nth-child(5), a:nth-child(6), a:nth-child(7), a:nth-child(8), a:nth-child(9), a:nth-child(10), a:nth-child(11){
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 flex-direction: column;
-                margin-top: 10px;
+                margin: 5px auto;
                 gap: 5px;
                 text-transform: capitalize;
                 padding: 10px;
@@ -73,14 +73,13 @@ header {
                 transition: .8s;
                 cursor: pointer;
             }
-            a:nth-child(2), a:nth-child(3), a:nth-child(4), a:nth-child(5), a:nth-child(6), a:nth-child(7), a:nth-child(8), a:nth-child(9), a:nth-child(10){
+            a:nth-child(2), a:nth-child(3), a:nth-child(4), a:nth-child(5), a:nth-child(6), a:nth-child(7), a:nth-child(8), a:nth-child(9), a:nth-child(10), a:nth-child(11){
                 font-size: 1.1rem;
-            }
-            a:nth-child(2), a:nth-child(3), a:nth-child(4), a:nth-child(5), a:nth-child(6), a:nth-child(7), a:nth-child(8), a:nth-child(9), a:nth-child(10){
-                text-decoration: none;
+                 text-decoration: none;
                 color: white;
             }
-            a:nth-child(2):hover, a:nth-child(3):hover, a:nth-child(4):hover, a:nth-child(5):hover, a:nth-child(6):hover, a:nth-child(7):hover, a:nth-child(8):hover, a:nth-child(9):hover, a:nth-child(10):hover {
+            
+            a:nth-child(2):hover, a:nth-child(3):hover, a:nth-child(4):hover, a:nth-child(5):hover, a:nth-child(6):hover, a:nth-child(7):hover, a:nth-child(8):hover, a:nth-child(9):hover, a:nth-child(10):hover, a:nth-child(11):hover {
                 background-color: var(--background-color2);
             }
     }

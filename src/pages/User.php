@@ -86,6 +86,11 @@ $matricula = $usuarioSessao['matricula'] ?? 'Sem matrícula';
                 <i class="material-icons iconClients">groups</i>
                 clientes
             </a>
+            <!-- TÉCNICOS -->
+             <a href="#" onclick="exibirTecnicos()">
+                <i class="material-icons iconClients">engineering</i>
+                tecnicos
+             </a>
             <!-- TAREFAS -->
              <a href="#" onclick="exibirTarefas()">
                 <i class="material-icons iconTasks">assignment</i>
