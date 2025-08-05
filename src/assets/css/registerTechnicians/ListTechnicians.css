@@ -95,21 +95,21 @@ section{
     justify-content: center;
     gap: 10px;
 
-    button{
-        width: 100px;
-        height: 40px;
-        outline: none;
+    a{
+        text-decoration: none;
+        color: black;
+        text-transform: capitalize;
+        background-color: var(--background-color-section);
+        padding: 10px;
         border: none;
         border-radius: 5px;
-        text-transform: capitalize;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         cursor: pointer;
         transition: .8s;
     }
 
-    button:hover{
+    a:hover{
+        color: white;
         background-color: var(--background-color2);
-        color: var(--color-title2);
     }
 }
 

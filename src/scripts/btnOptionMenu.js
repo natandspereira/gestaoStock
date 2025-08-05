@@ -73,7 +73,7 @@ function exibirTecnicos(){
     // Mensagem de carregamento opcional
     main.innerHTML = "<p style='padding: 1rem;'>Carregando perfil...</p>";
 
-    fetch("../pages/registerTechnicians/RegisterTechnicians.php")
+    fetch("../pages/registerTechnicians/ListTechnicians.php")
         .then(response => {
             if (!response.ok) {
                 throw new Error("Erro ao carregar o perfil.");
