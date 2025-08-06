@@ -19,19 +19,26 @@ $pdo = $db->getConnection();
 $createUser = new CreateUser($pdo);
 
 // Recupera o ID do usuário salvo na sessão
-$usuario_id = $usuarioSessao['id'] ?? null;
+$usuario_id = $usuarioSessao['usuario_id'] ?? null;
 
-// Busca os dados do usuário (inclusive imagem)
+// Busca os dados do usuário
 $usuario = $usuario_id ? $createUser->searchUserImage($usuario_id) : null;
 
-// Define a imagem padrão, caso não haja imagem cadastrada
-$imagem = (is_array($usuario) && isset($usuario['image_url']))
-    ? $usuario['image_url']
-    : "../assets/img/uploads_img_usuario/profile_user.svg";
+$baseUrl = 'http://' . $_SERVER['HTTP_HOST'] . '/gestaoStock/';
+
+// Verifica se a imagem do usuário existe no banco e é válida
+if (!empty($usuario['imagem_url']) && file_exists(__DIR__ . '/../../' . $usuario['imagem_url'])) {
+    // Imagem do usuário existe
+    $imagem = $baseUrl . ltrim($usuario['imagem_url'], '/');
+} else {
+    // Se não houver imagem, usa a imagem padrão
+    $imagem = $baseUrl . 'src/assets/img/uploads_img_usuario/profile_user.svg';
+}
 
 // Matrícula do usuário
 $matricula = $usuarioSessao['matricula'] ?? 'Sem matrícula';
-?>
+?> 
+
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -77,22 +84,23 @@ $matricula = $usuarioSessao['matricula'] ?? 'Sem matrícula';
                 home
             </a>
             <!-- PERFIL -->
-            <a name="profile" onclick="exibirPerfil()">
+            <a href="javascript:void(0);" onclick="exibirPerfil()">
                 <i class="material-icons iconProfile">badge</i>
-                perfil
+                Perfil
             </a>
+
             <!-- CLIENTES -->
             <a href="#" onclick="exibirClientes()">
                 <i class="material-icons iconClients">groups</i>
                 clientes
             </a>
             <!-- TÉCNICOS -->
-             <a href="#" onclick="exibirTecnicos()">
+            <a href="#" onclick="exibirTecnicos()">
                 <i class="material-icons iconClients">engineering</i>
                 tecnicos
-             </a>
+            </a>
             <!-- TAREFAS -->
-             <a href="#" onclick="exibirTarefas()">
+            <a href="#" onclick="exibirTarefas()">
                 <i class="material-icons iconTasks">assignment</i>
                 tarefas
             </a>

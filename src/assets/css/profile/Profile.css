@@ -8,7 +8,7 @@ body{
     margin: 10% auto;
     border: 2px solid white;
     width: 600px;
-    height: 450px;
+    height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,8 +21,11 @@ body{
 #containerProfile>#dataUser{
     display: flex;
     flex-direction: column;
-
     gap: 10px;
+
+    #imgUser>img{
+        width: 100px;
+    }
 }
 
 /* FORMULARIO */
@@ -56,7 +59,7 @@ body{
 }
 
 /* BOTÃO UPDATE */
-#containerProfile>button{
+#containerProfile>form>button{
     width: 250px;
     height: 40px;
     border: none;
@@ -69,7 +72,7 @@ body{
     margin: 10px 0;
 }
 
-#containerProfile>button:hover{
+#containerProfile>form>button:hover{
     background-color: #F57C00;
     color: white;
 }

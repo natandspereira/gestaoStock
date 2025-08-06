@@ -1,18 +1,16 @@
 <?php
 
-require_once  'Autoload.php';
+require_once 'Autoload.php';
 
 class CreateUser extends Database
 {
     private $pdo;
     private $dirPath;
-    private $urlBase;
 
     public function __construct(PDO $pdo)
     {
         $this->pdo = $pdo;
         $this->dirPath = realpath(__DIR__ . '/../assets/img/uploads_img_usuario');
-        $this->urlBase = __DIR__ . '/../assets/img/uploads_img_usuario';
 
         if (!is_dir($this->dirPath)) {
             mkdir($this->dirPath, 0777, true);
@@ -34,7 +32,7 @@ class CreateUser extends Database
 
         $imagem_url = $this->processImage($arquivoImagem);
         if (empty($imagem_url)) {
-            $imagem_url = $this->urlBase . '/profile_user.svg';
+            $imagem_url = 'src/assets/img/uploads_img_usuario/profile_user.svg';
         }
 
         $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
@@ -59,11 +57,11 @@ class CreateUser extends Database
     private function validatePassword($senha, $confirmar_senha): bool
     {
         return $senha === $confirmar_senha &&
-               strlen($senha) >= 8 &&
-               preg_match('/[A-Z]/', $senha) &&
-               preg_match('/[a-z]/', $senha) &&
-               preg_match('/[0-9]/', $senha) &&
-               preg_match('/[\W_]/', $senha);
+            strlen($senha) >= 8 &&
+            preg_match('/[A-Z]/', $senha) &&
+            preg_match('/[a-z]/', $senha) &&
+            preg_match('/[0-9]/', $senha) &&
+            preg_match('/[\W_]/', $senha);
     }
 
     private function alertRedirect(string $mensagem)
@@ -86,7 +84,8 @@ class CreateUser extends Database
             $fullPath = $this->dirPath . DIRECTORY_SEPARATOR . $uniqueName;
 
             if (move_uploaded_file($arquivo['image']['tmp_name'], $fullPath)) {
-                return $this->urlBase . '/' . $uniqueName;
+                // Retorna caminho relativo público
+                return 'src/assets/img/uploads_img_usuario/' . $uniqueName;
             } else {
                 echo "<script>alert('Erro ao mover a imagem. Verifique permissões da pasta.');</script>";
                 exit;
