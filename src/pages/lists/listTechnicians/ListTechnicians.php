@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contatos Técnicos</title>
+    <title>Técnicos</title>
     <!-- LINK CSS -->
     <link rel="stylesheet" href="../assets/css/registerTechnicians/ListTechnicians.css">
     <!-- GOOGLE ICONS -->

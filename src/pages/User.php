@@ -89,6 +89,12 @@ $matricula = $usuarioSessao['matricula'] ?? 'Sem matrícula';
                 Perfil
             </a>
 
+            <!-- CADASTROS -->
+            <a href="#" onclick="exibirCadastros()">
+                <i class="material-icons iconRegister">fact_check</i>
+                Cadastros
+            </a>
+
             <!-- CLIENTES -->
             <a href="#" onclick="exibirClientes()">
                 <i class="material-icons iconClients">groups</i>
@@ -105,12 +111,12 @@ $matricula = $usuarioSessao['matricula'] ?? 'Sem matrícula';
                 tarefas
             </a>
             <!-- EQUIPAMENTOS -->
-            <a href="#">
+            <a href="#" onclick="exibirEquip()">
                 <i class="material-icons iconEquipments">construction</i>
                 equipamentos
             </a>
             <!-- FORNECEDORES -->
-            <a href="#">
+            <a href="#" onclick="exibirFornecedores()">
                 <i class="material-icons iconSuppliers">group</i>
                 fornecedores
             </a>

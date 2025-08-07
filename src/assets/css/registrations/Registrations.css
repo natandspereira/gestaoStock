@@ -1,0 +1,41 @@
+@import "../default.css";
+
+/* BODY */
+body{
+    background-image: url(../../img/img_background.svg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+} 
+
+
+#container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    height: 80vh;
+
+    h4{
+        color: var(--color-title2);
+    }
+
+    a{
+    width: 300px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    background-color: white;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    text-transform: capitalize;
+    padding: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+}
+

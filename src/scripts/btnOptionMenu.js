@@ -1,3 +1,4 @@
+// EXIBIR PERFIL
 function exibirPerfil() {
     const main = document.querySelector("main");
 
@@ -79,23 +80,36 @@ function exibirPerfil() {
         });
 }
 
+// EXIBIR CADASTROS
+function exibirCadastros(){
+        const main = document.querySelector("main");
 
+    // Mensagem de carregamento opcional
+    main.innerHTML = "<p style='padding: 1rem;'>Carregando perfil...</p>";
 
+    fetch("../pages/registrations/Registrations.php")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Erro ao carregar o perfil.");
+            }
+            return response.text();
+        })
+        .then(data => {
+            main.innerHTML = data;
+        })
+        .catch(error => {
+            main.innerHTML = `<p style="color: red;">Erro: ${error.message}</p>`;
+        });
+}
 
-
-
-
-
-
-
-
+// EXIBIR CLIENTES
 function exibirClientes() {
     const main = document.querySelector("main");
 
     // Mensagem de carregamento opcional
     main.innerHTML = "<p style='padding: 1rem;'>Carregando perfil...</p>";
 
-    fetch("../pages/registerCustomers/RegisterCustomers.php")
+    fetch("../pages/lists/listCustomers/ListCustomers.php")
         .then(response => {
             if (!response.ok) {
                 throw new Error("Erro ao carregar o perfil.");
@@ -110,13 +124,14 @@ function exibirClientes() {
         });
 }
 
+// EXIBIR TAREFAS
 function exibirTarefas() {
     const main = document.querySelector("main");
 
     // Mensagem de carregamento opcional
     main.innerHTML = "<p style='padding: 1rem;'>Carregando perfil...</p>";
 
-    fetch("../pages/registerTasks/RegisterTasks.php")
+    fetch("../pages/lists/listTasks/ListTasks.php")
         .then(response => {
             if (!response.ok) {
                 throw new Error("Erro ao carregar o perfil.");
@@ -131,13 +146,58 @@ function exibirTarefas() {
         });
 }
 
+// EXIBIR TECNICOS
 function exibirTecnicos(){
         const main = document.querySelector("main");
 
     // Mensagem de carregamento opcional
     main.innerHTML = "<p style='padding: 1rem;'>Carregando perfil...</p>";
 
-    fetch("../pages/registerTechnicians/ListTechnicians.php")
+    fetch("../pages/lists/listTechnicians/ListTechnicians.php")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Erro ao carregar o perfil.");
+            }
+            return response.text();
+        })
+        .then(data => {
+            main.innerHTML = data;
+        })
+        .catch(error => {
+            main.innerHTML = `<p style="color: red;">Erro: ${error.message}</p>`;
+        });
+}
+
+// EXIBIR EQUIPAMENTOS
+function exibirEquip(){
+        const main = document.querySelector("main");
+
+    // Mensagem de carregamento opcional
+    main.innerHTML = "<p style='padding: 1rem;'>Carregando perfil...</p>";
+
+    fetch("../pages/lists/listEquip/ListEquip.php")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Erro ao carregar o perfil.");
+            }
+            return response.text();
+        })
+        .then(data => {
+            main.innerHTML = data;
+        })
+        .catch(error => {
+            main.innerHTML = `<p style="color: red;">Erro: ${error.message}</p>`;
+        });
+}
+
+// EXIBIR FORNECEDORES
+function exibirFornecedores(){
+        const main = document.querySelector("main");
+
+    // Mensagem de carregamento opcional
+    main.innerHTML = "<p style='padding: 1rem;'>Carregando perfil...</p>";
+
+    fetch("../pages/lists/listSuppliers/ListSuppliers.php")
         .then(response => {
             if (!response.ok) {
                 throw new Error("Erro ao carregar o perfil.");
