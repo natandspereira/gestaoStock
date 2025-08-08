@@ -3,7 +3,7 @@ session_start();
 require_once ('../../../classes/Autoload.php');
 
 $mensagem = '';
-$usuarios_id = $_SESSION['usuario']['usuario_id'] ?? null; // pega do login
+$usuarios_id = $_SESSION['usuario']['usuario_id'] ?? null; 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nome = isset($_POST['nome']) ? trim((string)$_POST['nome']) : '';
