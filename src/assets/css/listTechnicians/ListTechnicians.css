@@ -5,12 +5,16 @@ body {
     background-image: url(../../img/img_background.svg);
 }
 
-main {
-    h1 {
-        text-align: center;
-        margin: 20px 0;
-        color: var(--color-title2);
-    }
+main>p{
+    text-align: center;
+    margin: 20px 0;
+    color: var(--color-title2);    
+}
+
+main h1{
+    text-align: center;
+    color: var(--color-title2);
+    margin: 20px auto;
 }
 
 .mensagem {
@@ -22,7 +26,7 @@ main {
     max-width: 600px;
 }
 
-.clientes-container {
+.tecnicos-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,7 +35,7 @@ main {
     gap: 20px;
 }
 
-.cliente-card {
+.tecnico-card {
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 15px;
@@ -39,11 +43,12 @@ main {
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
     background: #fff;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
-.cliente-card img {
+.tecnico-card img {
     width: 120px;
     height: 120px;
     object-fit: cover;
@@ -52,17 +57,17 @@ main {
     border: 2px solid #007BFF;
 }
 
-.cliente-info {
+.tecnico-info {
     width: 100%;
 }
 
-.cliente-info p {
+.tecnico-info p {
     margin: 6px 0;
     font-size: 14px;
     color: #333;
 }
 
-.cliente-info p span {
+.tecnico-info p span {
     font-weight: bold;
     color: #555;
 }

@@ -21,7 +21,7 @@ main {
     transform: translate(-50%, -50%);
     background-color: #ffffff;
     padding: 20px 30px;
-    border: 2px solid orangered;
+    border: 2px solid rgb(8, 8, 214);
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     font-family: sans-serif;
@@ -43,13 +43,14 @@ main {
     }
 }
 
-.alert.success {
+.mensagem.sucesso {
     border-color: #4CAF50;
 }
 
-.alert.error {
+.mensagem.error {
     border-color: #f44336;
 }
+
 
 
 /* FORMULARIO */

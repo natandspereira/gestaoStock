@@ -33,20 +33,20 @@ try {
 
 <head>
     <meta charset="UTF-8">
-    <title>Todos os Clientes Cadastrados</title>
+    <title>Clientes Cadastrados</title>
     <link rel="stylesheet" href="../assets/css/listCustomers/ListCustomers.css">
 </head>
 
 <body>
     <main>
-        <h1>Todos os Clientes</h1>
+        <h1>Clientes Cadastrados</h1>
 
         <?php if (!empty($mensagem)) : ?>
             <div class="mensagem"><?php echo htmlspecialchars($mensagem); ?></div>
         <?php endif; ?>
 
         <?php if (empty($clientes)) : ?>
-            <p>Nenhum cliente cadastrado ainda.</p>
+            <p>Nenhum cliente cadastrado.</p>
         <?php else : ?>
             <div class="clientes-container">
                 <?php foreach ($clientes as $cliente) : ?>

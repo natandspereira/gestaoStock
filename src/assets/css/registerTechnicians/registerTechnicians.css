@@ -1,0 +1,112 @@
+@import "../default.css";
+
+body {
+    background-image: url(../../img/img_background.svg);
+}
+
+/* MENSAGEM */
+.mensagem{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 20px 30px;
+    border: 2px solid rgb(8, 8, 214);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    font-family: sans-serif;
+    font-size: 16px;
+    color: #333;
+    z-index: 9999;
+    animation: fadein 0.4s ease;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.mensagem.sucesso {
+    border-color: #4CAF50;
+}
+
+.mensagem.error {
+    border-color: #f44336;
+}
+
+/* FORMULARIO */
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 15%;
+}
+
+form>h2{
+    color: white;
+}
+
+span{
+position: relative;
+}
+
+span>i{
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 1;
+    color: #666;
+}
+
+span>input {
+    width: 300px;
+    height: 40px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin: 10px auto;
+    text-align: center;
+    cursor: pointer;
+    z-index: 2;
+}
+
+span>input::placeholder{
+    text-align: center;
+}
+
+form>button{
+    width: 100px;
+    height: 40px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin: 10px auto;
+    text-transform: capitalize;
+    transition: .8s;
+}
+
+#register:hover{
+    background-color: var(--background-color2);
+    color: var(--color-title2);
+}
+
+#senha {
+    display: flex;
+    flex-direction: column;
+}
+
+#address>h2{
+    color: var(--color-title2);
+}
