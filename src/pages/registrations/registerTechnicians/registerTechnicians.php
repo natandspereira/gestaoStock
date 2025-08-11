@@ -36,7 +36,7 @@ try {
     $_SESSION['mensagem'] = "Erro ao carregar especialidades: " . $e->getMessage();
 }
 
-// Variáveis para preservar valores do formulário
+// VARIÁVEIS PARA PRESERVAR VALORES DO FORMULÁRIO
 $nome = $email = $telefone = $rua = $numero = $bairro = $cidade = $estado = $cep = $especialidade = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -161,7 +161,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($stmt->execute()) {
                 $_SESSION['mensagem'] = "Técnico cadastrado com sucesso!";
 
-                // Limpa valores para não repassar para o formulário
+                // LIMPA VALORES PARA NÃO REPASSAR PARA O FORMULARIO
                 $nome = $email = $telefone = $rua = $numero = $bairro = $cidade = $estado = $cep = $especialidade = '';
             } else {
                 $_SESSION['mensagem'] = "Erro ao cadastrar o técnico.";
@@ -205,10 +205,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 }, 3000);
             </script>
         <?php endif; ?>
-
+                <h2>Cadastro de Técnicos</h2>
         <form action="" method="POST" enctype="multipart/form-data">
-            <h2>Cadastro de Técnicos</h2>
-
+            <h2>Dados Pessoais</h2>
             <span>
                 <i class="material-icons">account_circle</i>
                 <input type="text" name="nome" placeholder="Nome" value="<?= htmlspecialchars($nome) ?>">

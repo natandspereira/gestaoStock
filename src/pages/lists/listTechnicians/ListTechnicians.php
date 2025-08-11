@@ -45,9 +45,10 @@ try {
 <body>
     <main>
         <h1>Técnicos Cadastrados</h1>
+        
         <?php if (!empty($mensagem)) : ?>
-        <div class="mensagem"><?php echo htmlspecialchars($mensagem); ?></div>
-    <?php endif; ?>
+            <div class="mensagem"><?php echo htmlspecialchars($mensagem); ?></div>
+        <?php endif; ?>
     
     <?php if (empty($tecnicos)) : ?>
         <p>Nenhum técnico cadastrado.</p>
@@ -68,6 +69,7 @@ try {
                         <p><span>Telefone:</span> <?php echo htmlspecialchars($tecnico['telefone']); ?></p>
                         <p><span>Cidade:</span> <?php echo htmlspecialchars($tecnico['cidade']); ?></p>
                         <p><span>Estado:</span> <?php echo htmlspecialchars($tecnico['estado']); ?></p>
+                        <p><span>Especialidade:</span> <?php echo htmlspecialchars($tecnico['tp_tecnico']); ?></p>
                     </div>
                 </div>
             <?php endforeach; ?>
