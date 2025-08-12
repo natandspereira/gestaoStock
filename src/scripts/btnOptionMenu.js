@@ -105,15 +105,11 @@ function exibirCadastros(){
 // EXIBIR CLIENTES
 function exibirClientes() {
     const main = document.querySelector("main");
-
-    // Mensagem de carregamento opcional
-    main.innerHTML = "<p style='padding: 1rem;'>Carregando perfil...</p>";
+    main.innerHTML = "<p style='padding: 1rem;'>Carregando clientes...</p>";
 
     fetch("../pages/lists/listCustomers/ListCustomers.php")
         .then(response => {
-            if (!response.ok) {
-                throw new Error("Erro ao carregar o perfil.");
-            }
+            if (!response.ok) throw new Error("Erro ao carregar os clientes.");
             return response.text();
         })
         .then(data => {
@@ -123,6 +119,39 @@ function exibirClientes() {
             main.innerHTML = `<p style="color: red;">Erro: ${error.message}</p>`;
         });
 }
+
+function excluirCliente(id) {
+    if (!confirm("Tem certeza que deseja excluir este cliente?")) return;
+
+    const formData = new FormData();
+    formData.append("clientes_id", id);
+
+    fetch("../pages/lists/listCustomers/deleteCliente.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+        // Exibe mensagem na área de mensagens
+        const msgDiv = document.getElementById("mensagem-acao");
+        if (msgDiv) {
+            msgDiv.innerHTML = `<div class="${data.status}">${data.mensagem}</div>`;
+        }
+
+        // Atualiza lista de clientes sem perder a mensagem
+        if (data.status === "sucesso") {
+            setTimeout(exibirClientes, 1000);
+        }
+    })
+    .catch(err => {
+        const msgDiv = document.getElementById("mensagem-acao");
+        if (msgDiv) {
+            msgDiv.innerHTML = `<div class="erro">Erro: ${err}</div>`;
+        }
+    });
+}
+
+
 
 // EXIBIR TAREFAS
 function exibirTarefas() {

@@ -2,29 +2,21 @@
 session_start();
 require_once('../../../classes/Autoload.php');
 
-// Verifica se o usuário está autenticado
 if (!isset($_SESSION['usuario']['usuario_id'])) {
-    $_SESSION['mensagem'] = "Usuário não autenticado.";
-    header('Location: ../../../../index.php');
+    echo "<div class='mensagem erro'>Usuário não autenticado.</div>";
     exit;
 }
-
-$mensagem = $_SESSION['mensagem'] ?? '';
-unset($_SESSION['mensagem']);
-
-$clientes = [];
 
 try {
     $db = new Database();
     $conn = $db->getConnection();
 
-    // Pega todos os clientes, independente do usuário
     $stmt = $conn->prepare("SELECT * FROM cadastro_clientes ORDER BY nome ASC");
     $stmt->execute();
-
     $clientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
-    $mensagem = "Erro ao buscar clientes: " . $e->getMessage();
+    echo "<div class='mensagem erro'>Erro ao buscar clientes: " . htmlspecialchars($e->getMessage()) . "</div>";
+    exit;
 }
 ?>
 
@@ -33,43 +25,39 @@ try {
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clientes Cadastrados</title>
     <link rel="stylesheet" href="../assets/css/listCustomers/ListCustomers.css">
 </head>
 
 <body>
     <main>
+        <!-- Área de mensagens -->
+        <div id="mensagem-acao"></div>
+
         <h1>Clientes Cadastrados</h1>
+        <div class="clientes-container">
+            <?php foreach ($clientes as $cliente) : ?>
+                <div class="cliente-card">
+                    <?php if (!empty($cliente['imagem_url'])) : ?>
+                        <img src="/gestaoStock/<?php echo htmlspecialchars($cliente['imagem_url']); ?>" alt="Imagem de <?php echo htmlspecialchars($cliente['nome']); ?>">
+                    <?php else : ?>
+                        <img src="/gestaoStock/assets/img/default-user.png" alt="Sem imagem disponível">
+                    <?php endif; ?>
 
-        <?php if (!empty($mensagem)) : ?>
-            <div class="mensagem"><?php echo htmlspecialchars($mensagem); ?></div>
-        <?php endif; ?>
-
-        <?php if (empty($clientes)) : ?>
-            <p>Nenhum cliente cadastrado.</p>
-        <?php else : ?>
-            <div class="clientes-container">
-                <?php foreach ($clientes as $cliente) : ?>
-                    <div class="cliente-card">
-                         <?php if (!empty($cliente['imagem_url'])) : ?>
-                                <img src="/gestaoStock/<?php echo htmlspecialchars($cliente['imagem_url']); ?>" alt="Imagem de <?php echo htmlspecialchars($cliente['nome']); ?>">
-                            <?php else : ?>
-                                <img src="/gestaoStock/assets/img/default-user.png" alt="Sem imagem disponível">
-                            <?php endif; ?>
-
-
-                        <div class="cliente-info">
-                            <p><span>Nome:</span> <?php echo htmlspecialchars($cliente['nome']); ?></p>
-                            <p><span>CPF/CNPJ:</span> <?php echo htmlspecialchars($cliente['cpf_cnpj']); ?></p>
-                            <p><span>Email:</span> <?php echo htmlspecialchars($cliente['email']); ?></p>
-                            <p><span>Telefone:</span> <?php echo htmlspecialchars($cliente['telefone']); ?></p>
-                            <p><span>Cidade:</span> <?php echo htmlspecialchars($cliente['cidade']); ?></p>
-                            <p><span>Estado:</span> <?php echo htmlspecialchars($cliente['estado']); ?></p>
-                        </div>
+                    <div class="cliente-info">
+                        <p><span>Nome:</span> <?php echo htmlspecialchars($cliente['nome']); ?></p>
+                        <p><span>CPF/CNPJ:</span> <?php echo htmlspecialchars($cliente['cpf_cnpj']); ?></p>
+                        <p><span>Email:</span> <?php echo htmlspecialchars($cliente['email']); ?></p>
+                        <p><span>Telefone:</span> <?php echo htmlspecialchars($cliente['telefone']); ?></p>
+                        <p><span>Cidade:</span> <?php echo htmlspecialchars($cliente['cidade']); ?></p>
+                        <p><span>Estado:</span> <?php echo htmlspecialchars($cliente['estado']); ?></p>
                     </div>
-                <?php endforeach; ?>
-            </div>
-        <?php endif; ?>
+
+                    <button onclick="excluirCliente(<?php echo $cliente['clientes_id']; ?>)" class="btn-excluir">Excluir</button>
+                </div>
+            <?php endforeach; ?>
+        </div>
     </main>
 </body>
 

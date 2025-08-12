@@ -5,10 +5,16 @@ body {
     background-image: url(../../img/img_background.svg);
 }
 
-h1{
-    color: white;
-    margin: 20px auto;
+main>p{
     text-align: center;
+    margin: 20px 0;
+    color: var(--color-title2);    
+}
+
+main h1{
+    text-align: center;
+    color: var(--color-title2);
+    margin: 20px auto;
 }
 
 .mensagem {
@@ -20,7 +26,7 @@ h1{
     max-width: 600px;
 }
 
-.equips-container {
+.tasks-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,7 +35,7 @@ h1{
     gap: 20px;
 }
 
-.equip-card {
+.task-card {
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 15px;
@@ -37,11 +43,12 @@ h1{
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
     background: #fff;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
-.equip-card img {
+.task-card img {
     width: 120px;
     height: 120px;
     object-fit: cover;
@@ -50,17 +57,18 @@ h1{
     border: 2px solid #007BFF;
 }
 
-.equip-info {
+.task-info {
     width: 100%;
 }
 
-.equip-info p {
+.task-info p {
     margin: 6px 0;
     font-size: 14px;
     color: #333;
 }
 
-.equip-info p span {
+.task-info p span {
     font-weight: bold;
     color: #555;
 }
+
