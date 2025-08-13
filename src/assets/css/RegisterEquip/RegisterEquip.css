@@ -1,4 +1,4 @@
-@import "default.css";
+@import url("../../css/default.css");
 
 body{
     background-image: url(../../img/img_background.svg);

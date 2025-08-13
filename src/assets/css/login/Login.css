@@ -1,4 +1,5 @@
-@import "../default.css";
+@import url("../../css/default.css");
+
 
 body {
     display: flex;

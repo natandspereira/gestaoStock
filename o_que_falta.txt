@@ -7,7 +7,7 @@
 * Home, exibir informações e configurar atalhos;
 
 * Cadastro:
-1) Categoria, adicionar campo numero,para identeficar a catregoria,
+1) Categoria, adicionar campo numero,para identeficar a categoria,
 e criar a opção na hora do cadastro pelo site.
 2) Adicionar background-color, em todas as opções de cadastro;
 3) Centralizar melhor todas as opções de cadastro.
@@ -18,6 +18,6 @@ e criar a opção na hora do cadastro pelo site.
 
 *Criar tela de confirmação, quando for sair;
 
-*Testa verificações de cadastro.
+*Testar verificações de cadastro.
 
 *Clicar em cada CARD, e editar as informações já cadastradas.

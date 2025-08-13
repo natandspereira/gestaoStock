@@ -66,7 +66,8 @@ try {
                         data-email="<?= htmlspecialchars($cliente['email']); ?>"
                         data-telefone="<?= htmlspecialchars($cliente['telefone']); ?>"
                         data-cidade="<?= htmlspecialchars($cliente['cidade']); ?>"
-                        data-estado="<?= htmlspecialchars($cliente['estado']); ?>">
+                        data-estado="<?= htmlspecialchars($cliente['estado']); ?>"
+                    >
                         Editar
                     </button>
                     <button onclick="excluirCliente(<?php echo $cliente['clientes_id']; ?>)" class="btn-excluir">Excluir</button>

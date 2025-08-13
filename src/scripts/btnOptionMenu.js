@@ -39,7 +39,7 @@ function exibirPerfil() {
                 `;
 
                 // Adiciona evento ao formulário para atualizar perfil via AJAX
-                document.getElementById("profileForm").addEventListener("submit", function(event) {
+                document.getElementById("profileForm").addEventListener("submit", function (event) {
                     event.preventDefault();
                     const formData = new FormData(this);
 
@@ -47,29 +47,29 @@ function exibirPerfil() {
                         method: 'POST',
                         body: formData
                     })
-                    .then(response => response.json())
-                    .then(responseData => {
-                        if (responseData.status === 'success') {
-                            // Atualiza imagem do perfil (força reload da imagem com timestamp para evitar cache)
-                            const imgPerfil = document.getElementById("imgPerfil");
-                            if (imgPerfil && responseData.imagem_url) {
-                                imgPerfil.src = responseData.imagem_url + "?t=" + new Date().getTime();
+                        .then(response => response.json())
+                        .then(responseData => {
+                            if (responseData.status === 'success') {
+                                // Atualiza imagem do perfil (força reload da imagem com timestamp para evitar cache)
+                                const imgPerfil = document.getElementById("imgPerfil");
+                                if (imgPerfil && responseData.imagem_url) {
+                                    imgPerfil.src = responseData.imagem_url + "?t=" + new Date().getTime();
+                                }
+                                // Atualiza nome e email exibidos
+                                document.getElementById("nomeUser").innerHTML = `<strong>Nome:</strong> ${responseData.nome}`;
+                                document.getElementById("emailUser").innerHTML = `<strong>Email:</strong> ${responseData.email}`;
+                                // Limpa campos de senha do formulário
+                                this.senha.value = '';
+                                this.confirmar_senha.value = '';
+                                // Opcional: exibe mensagem de sucesso
+                                alert("Perfil atualizado com sucesso!");
+                            } else {
+                                alert("Erro: " + responseData.message);
                             }
-                            // Atualiza nome e email exibidos
-                            document.getElementById("nomeUser").innerHTML = `<strong>Nome:</strong> ${responseData.nome}`;
-                            document.getElementById("emailUser").innerHTML = `<strong>Email:</strong> ${responseData.email}`;
-                            // Limpa campos de senha do formulário
-                            this.senha.value = '';
-                            this.confirmar_senha.value = '';
-                            // Opcional: exibe mensagem de sucesso
-                            alert("Perfil atualizado com sucesso!");
-                        } else {
-                            alert("Erro: " + responseData.message);
-                        }
-                    })
-                    .catch(error => {
-                        alert("Erro: " + error.message);
-                    });
+                        })
+                        .catch(error => {
+                            alert("Erro: " + error.message);
+                        });
                 });
             } else {
                 main.innerHTML = `<p style="color: red;">Erro: ${data.message}</p>`;
@@ -82,8 +82,8 @@ function exibirPerfil() {
 // ======================================
 
 // EXIBIR CADASTROS
-function exibirCadastros(){
-        const main = document.querySelector("main");
+function exibirCadastros() {
+    const main = document.querySelector("main");
 
     // Mensagem de carregamento opcional
     main.innerHTML = "<p style='padding: 1rem;'>Carregando perfil...</p>";
@@ -139,17 +139,17 @@ function excluirCliente(id) {
         method: "POST",
         body: formData
     })
-    .then(res => res.json())
-    .then(data => {
-        mostrarMensagem(data.status, data.mensagem);
+        .then(res => res.json())
+        .then(data => {
+            mostrarMensagem(data.status, data.mensagem);
 
-        if (data.status === "sucesso") {
-            setTimeout(exibirClientes, 1000);
-        }
-    })
-    .catch(() => {
-        mostrarMensagem("erro", "❌ Ocorreu um erro inesperado ao excluir o cliente.");
-    });
+            if (data.status === "sucesso") {
+                setTimeout(exibirClientes, 1000);
+            }
+        })
+        .catch(() => {
+            mostrarMensagem("erro", "❌ Ocorreu um erro inesperado ao excluir o cliente.");
+        });
 }
 
 function salvarEdicaoCliente() {
@@ -176,23 +176,23 @@ function salvarEdicaoCliente() {
     formData.append("cidade", cidade);
     formData.append("estado", estado);
 
-    fetch("../pages/edit/editCustomers/editCustomers.php", { 
+    fetch("../pages/edit/editCustomers/editCustomers.php", {
         method: "POST",
         body: formData
     })
-    .then(response => response.json())
-    .then(data => {
-        mostrarMensagem(data.status, data.mensagem);
+        .then(response => response.json())
+        .then(data => {
+            mostrarMensagem(data.status, data.mensagem);
 
-        if (data.status === "sucesso") {
-            fecharModal();
-            exibirClientes(); // Atualiza lista na tela
-        }
-    })
-    .catch(error => {
-        console.error("Erro na edição:", error);
-        mostrarMensagem("erro", "Ocorreu um erro ao salvar a edição.");
-    });
+            if (data.status === "sucesso") {
+                fecharModal();
+                exibirClientes(); // Atualiza lista na tela
+            }
+        })
+        .catch(error => {
+            console.error("Erro na edição:", error);
+            mostrarMensagem("erro", "Ocorreu um erro ao salvar a edição.");
+        });
 }
 
 
@@ -230,23 +230,71 @@ function excluirTarefa(id) {
         method: "POST",
         body: formData
     })
-    .then(res => res.json())
+        .then(res => res.json())
+        .then(data => {
+            mostrarMensagem(data.status, data.mensagem);
+
+            if (data.status === "sucesso") {
+                setTimeout(exibirTarefas, 1000);
+            }
+        })
+        .catch(() => {
+            mostrarMensagem("erro", "❌ Ocorreu um erro inesperado ao excluir o tecnico.");
+        });
+}
+
+function salvarEdicaoTarefa() {
+    const id = document.getElementById("edit_id").value.trim();
+    const nome = document.getElementById("edit_nome").value.trim();
+    const prazo = document.getElementById("edit_prazo").value.trim();
+    const qt_reparos = document.getElementById("edit_quantidade_reparos").value.trim();
+    const dt_conclusao = document.getElementById("edit_data_conclusao").value.trim();
+    const observacao = document.getElementById("edit_observacoes").value.trim();
+    const status = document.getElementById("edit_status").value.trim();
+    const categoria = document.getElementById("edit_categoria_id").value;
+    const equipamentos = document.getElementById("edit_equipamentos_id").value;
+
+    // Valida se os IDs são válidos antes de enviar
+    if (!id || !categoria || !equipamentos) {
+        mostrarMensagem("erro", "Por favor, selecione categoria e equipamento válidos.");
+        return;
+    }
+
+    const formData = new FormData();
+    formData.append("id", id);
+    formData.append("nome", nome);
+    formData.append("prazo", prazo);
+    formData.append("quantidade_reparos", qt_reparos);
+    formData.append("data_conclusao", dt_conclusao);
+    formData.append("observacoes", observacao);
+    formData.append("status", status);
+    formData.append("categoria_id", parseInt(categoria)); // garante que seja número
+    formData.append("equipamentos_id", parseInt(equipamentos)); // garante que seja número
+
+    fetch("../pages/edit/editTask/editTask.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.json())
     .then(data => {
         mostrarMensagem(data.status, data.mensagem);
 
         if (data.status === "sucesso") {
-            setTimeout(exibirTarefas, 1000);
+            fecharModal();
+            exibirTarefas(); // Atualiza lista na tela
         }
     })
-    .catch(() => {
-        mostrarMensagem("erro", "❌ Ocorreu um erro inesperado ao excluir o tecnico.");
+    .catch(error => {
+        console.error("Erro na edição:", error);
+        mostrarMensagem("erro", "Ocorreu um erro ao salvar a edição.");
     });
 }
+
 // ======================================
 
 // EXIBIR TECNICOS - EXCLUIR TECNICOS
-function exibirTecnicos(){
-        const main = document.querySelector("main");
+function exibirTecnicos() {
+    const main = document.querySelector("main");
 
     // Mensagem de carregamento opcional
     main.innerHTML = "<p style='padding: 1rem;'>Carregando perfil...</p>";
@@ -276,23 +324,67 @@ function excluirTecnico(id) {
         method: "POST",
         body: formData
     })
-    .then(res => res.json())
-    .then(data => {
-        mostrarMensagem(data.status, data.mensagem);
+        .then(res => res.json())
+        .then(data => {
+            mostrarMensagem(data.status, data.mensagem);
 
-        if (data.status === "sucesso") {
-            setTimeout(exibirTecnicos, 1000);
-        }
-    })
-    .catch(() => {
-        mostrarMensagem("erro", "❌ Ocorreu um erro inesperado ao excluir o tecnico.");
-    });
+            if (data.status === "sucesso") {
+                setTimeout(exibirTecnicos, 1000);
+            }
+        })
+        .catch(() => {
+            mostrarMensagem("erro", "❌ Ocorreu um erro inesperado ao excluir o tecnico.");
+        });
 }
+
+function salvarEdicaoTecnico() {
+    const id = document.getElementById("edit_id").value.trim();
+    const nome = document.getElementById("edit_nome").value.trim();
+    const email = document.getElementById("edit_email").value.trim();
+    const telefone = document.getElementById("edit_telefone").value.trim();
+    const cidade = document.getElementById("edit_cidade").value.trim();
+    const estado = document.getElementById("edit_estado").value.trim();
+    const tp_tecnico = document.getElementById("edit_especialidade").value.trim(); // <-- renomeado
+
+    // Validação básica
+    if (!id || !nome) {
+        mostrarMensagem("erro", "Preencha todos os campos obrigatórios.");
+        return;
+    }
+
+    const formData = new FormData();
+    formData.append("id", id);
+    formData.append("nome", nome);
+    formData.append("email", email);
+    formData.append("telefone", telefone);
+    formData.append("cidade", cidade);
+    formData.append("estado", estado);
+    formData.append("tp_tecnico", tp_tecnico); // <-- envia com o mesmo nome do banco
+
+    fetch("../pages/edit/editTechnicians/editTechnicians.php", {
+        method: "POST",
+        body: formData
+    })
+        .then(response => response.json())
+        .then(data => {
+            mostrarMensagem(data.status, data.mensagem);
+
+            if (data.status === "sucesso") {
+                fecharModal();
+                exibirTecnicos(); // Atualiza lista na tela
+            }
+        })
+        .catch(error => {
+            console.error("Erro na edição:", error);
+            mostrarMensagem("erro", "Ocorreu um erro ao salvar a edição.");
+        });
+}
+
 // ======================================
 
 // EXIBIR EQUIPAMENTOS - EXCLUIR EQUIPAMENTOS
-function exibirEquip(){
-        const main = document.querySelector("main");
+function exibirEquip() {
+    const main = document.querySelector("main");
 
     // Mensagem de carregamento opcional
     main.innerHTML = "<p style='padding: 1rem;'>Carregando perfil...</p>";
@@ -322,23 +414,23 @@ function excluirEquip(id) {
         method: "POST",
         body: formData
     })
-    .then(res => res.json())
-    .then(data => {
-        mostrarMensagem(data.status, data.mensagem);
+        .then(res => res.json())
+        .then(data => {
+            mostrarMensagem(data.status, data.mensagem);
 
-        if (data.status === "sucesso") {
-            setTimeout(exibirEquip, 1000);
-        }
-    })
-    .catch(() => {
-        mostrarMensagem("erro", "❌ Ocorreu um erro inesperado ao excluir o equipamento.");
-    });
+            if (data.status === "sucesso") {
+                setTimeout(exibirEquip, 1000);
+            }
+        })
+        .catch(() => {
+            mostrarMensagem("erro", "❌ Ocorreu um erro inesperado ao excluir o equipamento.");
+        });
 }
 // ======================================
 
 // EXIBIR FORNECEDORES - EXCLUIR FORNECEDORES
-function exibirFornecedores(){
-        const main = document.querySelector("main");
+function exibirFornecedores() {
+    const main = document.querySelector("main");
 
     // Mensagem de carregamento opcional
     main.innerHTML = "<p style='padding: 1rem;'>Carregando perfil...</p>";
@@ -368,17 +460,17 @@ function excluirFornecedor(id) {
         method: "POST",
         body: formData
     })
-    .then(res => res.json())
-    .then(data => {
-        mostrarMensagem(data.status, data.mensagem);
+        .then(res => res.json())
+        .then(data => {
+            mostrarMensagem(data.status, data.mensagem);
 
-        if (data.status === "sucesso") {
-            setTimeout(exibirFornecedores, 1000);
-        }
-    })
-    .catch(() => {
-        mostrarMensagem("erro", "❌ Ocorreu um erro inesperado ao excluir o fornecedor.");
-    });
+            if (data.status === "sucesso") {
+                setTimeout(exibirFornecedores, 1000);
+            }
+        })
+        .catch(() => {
+            mostrarMensagem("erro", "❌ Ocorreu um erro inesperado ao excluir o fornecedor.");
+        });
 }
 // ======================================
 
@@ -401,31 +493,33 @@ function mostrarMensagem(tipo, texto) {
 
 // MODAL
 document.addEventListener("click", function(e) {
-    if (e.target.classList.contains("btn-editar")) {
-        document.getElementById("modalEditar").style.display = "flex";
-        
-        // PREENCHE OS CAMPOS DO MODAL COM OS DADOS DO BOTÃO
-        document.getElementById("edit_id").value = e.target.dataset.id;
-        document.getElementById("edit_nome").value = e.target.dataset.nome;
-        document.getElementById("edit_cpf_cnpj").value = e.target.dataset.cpf_cnpj;
-        document.getElementById("edit_email").value = e.target.dataset.email;
-        document.getElementById("edit_telefone").value = e.target.dataset.telefone;
-        document.getElementById("edit_cidade").value = e.target.dataset.cidade;
-        document.getElementById("edit_estado").value = e.target.dataset.estado;
+    const btn = e.target.closest(".btn-editar");
+    if (!btn) return;
+
+    const modal = document.getElementById("modalEditar");
+    modal.style.display = "flex";
+
+    for (const [key, value] of Object.entries(btn.dataset)) {
+        const el = document.getElementById("edit_" + key);
+        if (!el) continue;
+
+        // Select ou input
+        el.value = value;
     }
 });
 
-// FECHAR O MODAL AO CLICAR FORA
+// Fechar modal
+function fecharModal() {
+    const modal = document.getElementById("modalEditar");
+    modal.style.display = "none";
+}
+
 window.addEventListener("click", function(e) {
     const modal = document.getElementById("modalEditar");
-    if (e.target === modal) {
-        fecharModal();
-    }
+    if (e.target === modal) fecharModal();
 });
 
-function fecharModal() {
-    document.getElementById("modalEditar").style.display = "none";
-}
+
 // ======================================
 
 
