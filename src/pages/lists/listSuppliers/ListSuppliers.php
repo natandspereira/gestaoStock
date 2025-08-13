@@ -34,7 +34,8 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fornecedores</title>
-    <link rel="stylesheet" href="../assets/css/listSuppliers/listSuppliers.css">
+    <link rel="stylesheet" href="../assets/css/listSuppliers/listSuppliers.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="/gestaoStock/src/pages/delete/delete.css?v=<?php echo time(); ?>">
 </head>
 
 <body>
@@ -47,9 +48,9 @@ try {
     <?php if (empty($suppliers )) : ?>
         <p>Nenhum equipamento cadastrado.</p>
     <?php else : ?>
-         <div class="equips-container">
+         <div class="suppliers-container">
             <?php foreach ($suppliers  as $supplier) : ?>
-                <div class="equip-card">
+                <div class="supplier-card">
                     <?php if (!empty($supplier['imagem_url'])) : ?>
                         <img src="/gestaoStock/<?php echo htmlspecialchars($supplier['imagem_url']); ?>" alt="Imagem do fornecedor">
                     <?php else : ?>
@@ -57,7 +58,7 @@ try {
                     <?php endif; ?>
 
 
-                    <div class="equip-info">
+                    <div class="supplier-info">
                         <p><span>Razão Social:</span> <?php echo htmlspecialchars($supplier['razao_social']); ?></p>
                         <p><span>Nome Fantasia:</span> <?php echo htmlspecialchars($supplier['nome_fantasia']); ?></p>
                         <p><span>Cnpj:</span> <?php echo htmlspecialchars($supplier['cnpj']); ?></p>
@@ -72,6 +73,7 @@ try {
                         <p><span>Numero:</span> <?php echo htmlspecialchars($supplier['numero']); ?></p>
                         <p><span>Complemento:</span> <?php echo htmlspecialchars($supplier['complemento']); ?></p>
                     </div>
+                    <button onclick=" excluirFornecedor(<?php echo $supplier['fornecedor_id']; ?>)" class="btn-excluir">Excluir</button>
                 </div>
             <?php endforeach; ?>
         </div>

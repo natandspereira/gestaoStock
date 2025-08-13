@@ -1,28 +1,33 @@
 @import "../default.css";
 
 /* BODY */
-body{
+body {
     background-image: url(../../img/img_background.svg);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-} 
+}
 
 
-#container{
+#container {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     gap: 10px;
-    height: 80vh;
+    border: 2px solid white;
+    border-radius: 10px;
+    width: 500px;
+    height: 500px;
+    margin: 20% auto;
+}
 
-    h4{
-        color: var(--color-title2);
-    }
+#container>h1 {
+    color: var(--color-title2);
+}
 
-    a{
+#container>a {
     width: 300px;
     height: 40px;
     border: none;
@@ -36,6 +41,10 @@ body{
     text-transform: capitalize;
     padding: 5px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    }
+    transition: .8s;
 }
 
+#container>a:hover{
+    background-color: var(--background-color2);
+    color: white;
+}

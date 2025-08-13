@@ -143,7 +143,7 @@ exit;
 <head>
     <meta charset="UTF-8">
     <title>Perfil</title>
-    <link rel="stylesheet" href="../assets/css/profile/Profile.css?=1.1">
+    <link rel="stylesheet" href="../../../assets/css/profile/Profile.css?v=<?php echo time(); ?>">
     <link rel="shortcut icon" href="../assets/img/favicon_logo.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>

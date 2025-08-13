@@ -9,11 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastros</title>
     <!-- LINK CSS -->
-     <link rel="stylesheet" href="../assets/css/registrations/Registrations.css">
+     <link rel="stylesheet" href="../assets/css/registrations/Registrations.css?v=<?php echo time(); ?>">
 </head>
 <body>
     <div id="container">
-        <h4>Cadastros</h4>
+        <h1>Cadastros</h1>
         <a href="registrations/category/DisplayCategory.php" target="_blank">categorias</a>
         <a href="registrations/registerCustomers/RegisterCustomers.php" target="_blank">clientes</a>
         <a href="registrations/registerEquip/RegisterEquip.php" target="_blank">equipamentos</a>

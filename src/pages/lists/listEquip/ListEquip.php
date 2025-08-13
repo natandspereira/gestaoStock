@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 require_once('../../../classes/Autoload.php');
 
@@ -14,7 +14,7 @@ unset($_SESSION['mensagem']);
 
 $equips = [];
 
-try{
+try {
     $db = new Database();
     $conn = $db->getConnection();
 
@@ -22,7 +22,7 @@ try{
     $stmt->execute();
 
     $equips = $stmt->fetchAll(PDO::FETCH_ASSOC);
-}catch (PDOException $e) {
+} catch (PDOException $e) {
     $mensagem = "Erro ao buscar técnicos: " . $e->getMessage();
 }
 
@@ -36,22 +36,24 @@ try{
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Equipamentos</title>
     <!-- LINK CSS -->
-    <link rel="stylesheet" href="../assets/css/listEquip/ListEquip.css">
+    <link rel="stylesheet" href="../assets/css/listEquip/ListEquip.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="/gestaoStock/src/pages/delete/delete.css?v=<?php echo time(); ?>">
     <!-- GOOGLE ICONS -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
+
 </head>
+
 <body>
     <h1>Equipamentos Cadastrados</h1>
 
     <?php if (!empty($mensagem)) : ?>
-            <div class="mensagem"><?php echo htmlspecialchars($mensagem); ?></div>
+        <div class="mensagem"><?php echo htmlspecialchars($mensagem); ?></div>
     <?php endif; ?>
 
     <?php if (empty($equips)) : ?>
         <p>Nenhum equipamento cadastrado.</p>
     <?php else : ?>
-         <div class="equips-container">
+        <div class="equips-container">
             <?php foreach ($equips as $equip) : ?>
                 <div class="equip-card">
                     <?php if (!empty($equip['imagem_url'])) : ?>
@@ -72,6 +74,7 @@ try{
                         <p><span>Valor de Aluguel:</span> <?php echo htmlspecialchars($equip['valor_aluguel']); ?></p>
                         <p><span>Valor de Manuntenção:</span> <?php echo htmlspecialchars($equip['valor_manutencao']); ?></p>
                     </div>
+                    <button onclick="excluirEquip(<?php echo $equip['equipamentos_id']; ?>)" class="btn-excluir">Excluir</button>
                 </div>
             <?php endforeach; ?>
         </div>

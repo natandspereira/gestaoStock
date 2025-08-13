@@ -1,0 +1,34 @@
+.toast {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza no meio */
+    padding: 16px 24px;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 9999;
+}
+
+/* Quando for exibido */
+.toast.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Tipos de mensagem */
+.toast.sucesso {
+    background-color: #28a745;
+}
+
+.toast.erro {
+    background-color: #dc3545;
+}
+
+.toast.aviso {
+    background-color: #ffc107;
+    color: #000;
+}

@@ -2,8 +2,10 @@
 session_start();
 require_once('../../../classes/Autoload.php');
 
+// Se não autenticado, retorna JSON para o JS tratar
 if (!isset($_SESSION['usuario']['usuario_id'])) {
-    echo "<div class='mensagem erro'>Usuário não autenticado.</div>";
+    header("Content-Type: application/json");
+    echo json_encode(["status" => "erro", "mensagem" => "Usuário não autenticado."]);
     exit;
 }
 
@@ -15,7 +17,8 @@ try {
     $stmt->execute();
     $clientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
-    echo "<div class='mensagem erro'>Erro ao buscar clientes: " . htmlspecialchars($e->getMessage()) . "</div>";
+    header("Content-Type: application/json");
+    echo json_encode(["status" => "erro", "mensagem" => "Erro ao buscar clientes: " . $e->getMessage()]);
     exit;
 }
 ?>
@@ -27,16 +30,17 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clientes Cadastrados</title>
-    <link rel="stylesheet" href="../assets/css/listCustomers/ListCustomers.css">
+    <link rel="stylesheet" href="../assets/css/listCustomers/ListCustomers.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="/gestaoStock/src/pages/delete/delete.css?v=<?php echo time(); ?>">
 </head>
 
 <body>
     <main>
-        <!-- Área de mensagens -->
-        <div id="mensagem-acao"></div>
-
         <h1>Clientes Cadastrados</h1>
         <div class="clientes-container">
+            <?php if (empty($clientes)) : ?>
+                <p id="msgNenhum">Nenhum cliente cadastrado.</p>
+            <?php endif; ?>
             <?php foreach ($clientes as $cliente) : ?>
                 <div class="cliente-card">
                     <?php if (!empty($cliente['imagem_url'])) : ?>

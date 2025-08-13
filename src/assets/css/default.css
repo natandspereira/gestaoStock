@@ -27,4 +27,18 @@
     --border-color3: #666666;
 }
 
+.btn-excluir {
+    width: 100px;
+    height: 40px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: .8s;
+    cursor: pointer;
+}
 
+.btn-excluir:hover {
+    background-color: var(--background-color2);
+    color: white;
+}

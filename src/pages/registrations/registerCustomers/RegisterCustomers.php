@@ -272,7 +272,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </span>
 
             <button type="submit" id="register">Cadastrar</button>
-            <button type="button" id="toGoOut" onclick="window.location.href='logout.php'">Sair</button>
         </form>
     </main>
 

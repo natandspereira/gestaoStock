@@ -1,17 +1,16 @@
-@import "default.css";
-
+@import url("default.css");
 
 body {
     background-image: url(../../img/img_background.svg);
 }
 
-main>p{
+main > p {
     text-align: center;
     margin: 20px 0;
     color: var(--color-title2);    
 }
 
-main h1{
+main h1 {
     text-align: center;
     color: var(--color-title2);
     margin: 20px auto;
@@ -71,4 +70,3 @@ main h1{
     font-weight: bold;
     color: #555;
 }
-

@@ -11,6 +11,11 @@ h1{
     text-align: center;
 }
 
+p{
+    color: white;
+    text-align: center;
+}
+
 .mensagem {
     background-color: #f0f0f0;
     padding: 10px;
@@ -58,6 +63,7 @@ h1{
     margin: 6px 0;
     font-size: 14px;
     color: #333;
+    text-align: left;
 }
 
 .equip-info p span {

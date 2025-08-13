@@ -43,6 +43,7 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tarefas</title>
     <link rel="stylesheet" href="../assets/css/listTask/listTask.css">
+    <link rel="stylesheet" href="/gestaoStock/src/pages/delete/delete.css?v=<?php echo time(); ?>">
 </head>
 <body>
     <h1>Tarefas Cadastradas</h1>
@@ -73,6 +74,7 @@ try {
                         <p><span>Equipamento:</span> <?= htmlspecialchars($task['equipamento_nome'] ?? ''); ?></p>
                         <p><span>Observações:</span> <?= htmlspecialchars($task['observacoes']); ?></p>
                     </div>
+                    <button id="btnDelete" onclick="excluirTarefa(<?php echo $task['tarefas_id']; ?>)" class="btn-excluir">Excluir</button>
                 </div>
             <?php endforeach; ?>
         </div>

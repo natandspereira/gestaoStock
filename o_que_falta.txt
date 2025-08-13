@@ -1,0 +1,23 @@
+* Responsividade;
+
+* Formulario, enviar para e-mail;
+
+* Login, recuperar senha;
+
+* Home, exibir informações e configurar atalhos;
+
+* Cadastro:
+1) Categoria, adicionar campo numero,para identeficar a catregoria,
+e criar a opção na hora do cadastro pelo site.
+2) Adicionar background-color, em todas as opções de cadastro;
+3) Centralizar melhor todas as opções de cadastro.
+
+* Criar a página de suporte;
+
+* Criar a página de feedback;
+
+*Criar tela de confirmação, quando for sair;
+
+*Testa verificações de cadastro.
+
+*Clicar em cada CARD, e editar as informações já cadastradas.

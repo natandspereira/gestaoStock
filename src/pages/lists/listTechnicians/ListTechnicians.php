@@ -18,7 +18,7 @@ try {
     $db = new Database();
     $conn = $db->getConnection();
 
-   
+
     $stmt = $conn->prepare("SELECT * FROM cadastro_tecnico ORDER BY nome ASC");
     $stmt->execute();
 
@@ -36,7 +36,8 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Técnicos</title>
     <!-- LINK CSS -->
-    <link rel="stylesheet" href="../assets/css/listTechnicians/ListTechnicians.css?=1.2">
+    <link rel="stylesheet" href="../assets/css/listTechnicians/ListTechnicians.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="/gestaoStock/src/pages/delete/delete.css?v=<?php echo time(); ?>">
     <!-- GOOGLE ICONS -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -45,36 +46,37 @@ try {
 <body>
     <main>
         <h1>Técnicos Cadastrados</h1>
-        
+
         <?php if (!empty($mensagem)) : ?>
             <div class="mensagem"><?php echo htmlspecialchars($mensagem); ?></div>
         <?php endif; ?>
-    
-    <?php if (empty($tecnicos)) : ?>
-        <p>Nenhum técnico cadastrado.</p>
-    <?php else : ?>
-        <div class="tecnicos-container">
-            <?php foreach ($tecnicos as $tecnico) : ?>
-                <div class="tecnico-card">
-                    <?php if (!empty($tecnico['imagem_url'])) : ?>
-                        <img src="/gestaoStock/<?php echo htmlspecialchars($tecnico['imagem_url']); ?>" alt="Imagem de <?php echo htmlspecialchars($tecnico['nome']); ?>">
-                    <?php else : ?>
-                        <img src="/gestaoStock/assets/img/default-user.png" alt="Sem imagem disponível">
-                    <?php endif; ?>
 
+        <?php if (empty($tecnicos)) : ?>
+            <p>Nenhum técnico cadastrado.</p>
+        <?php else : ?>
+            <div class="tecnicos-container">
+                <?php foreach ($tecnicos as $tecnico) : ?>
+                    <div class="tecnico-card">
+                        <?php if (!empty($tecnico['imagem_url'])) : ?>
+                            <img src="/gestaoStock/<?php echo htmlspecialchars($tecnico['imagem_url']); ?>" alt="Imagem de <?php echo htmlspecialchars($tecnico['nome']); ?>">
+                        <?php else : ?>
+                            <img src="/gestaoStock/assets/img/default-user.png" alt="Sem imagem disponível">
+                        <?php endif; ?>
 
-                    <div class="tecnico-info">
-                        <p><span>Nome:</span> <?php echo htmlspecialchars($tecnico['nome']); ?></p>
-                        <p><span>Email:</span> <?php echo htmlspecialchars($tecnico['email']); ?></p>
-                        <p><span>Telefone:</span> <?php echo htmlspecialchars($tecnico['telefone']); ?></p>
-                        <p><span>Cidade:</span> <?php echo htmlspecialchars($tecnico['cidade']); ?></p>
-                        <p><span>Estado:</span> <?php echo htmlspecialchars($tecnico['estado']); ?></p>
-                        <p><span>Especialidade:</span> <?php echo htmlspecialchars($tecnico['tp_tecnico']); ?></p>
+                        <div class="tecnico-info">
+                            <p><span>Nome:</span> <?php echo htmlspecialchars($tecnico['nome']); ?></p>
+                            <p><span>Email:</span> <?php echo htmlspecialchars($tecnico['email']); ?></p>
+                            <p><span>Telefone:</span> <?php echo htmlspecialchars($tecnico['telefone']); ?></p>
+                            <p><span>Cidade:</span> <?php echo htmlspecialchars($tecnico['cidade']); ?></p>
+                            <p><span>Estado:</span> <?php echo htmlspecialchars($tecnico['estado']); ?></p>
+                            <p><span>Especialidade:</span> <?php echo htmlspecialchars($tecnico['tp_tecnico']); ?></p>
+                        </div>
+                        <button onclick="excluirTecnico(<?php echo $tecnico['tecnico_id']; ?>)" class="btn-excluir">Excluir</button>
                     </div>
-                </div>
-            <?php endforeach; ?>
-        </div>
-    <?php endif; ?>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
     </main>
 </body>
+
 </html>

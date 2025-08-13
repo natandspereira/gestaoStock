@@ -79,6 +79,7 @@ function exibirPerfil() {
             main.innerHTML = `<p style="color: red;">Erro: ${error.message}</p>`;
         });
 }
+// ======================================
 
 // EXIBIR CADASTROS
 function exibirCadastros(){
@@ -101,22 +102,30 @@ function exibirCadastros(){
             main.innerHTML = `<p style="color: red;">Erro: ${error.message}</p>`;
         });
 }
+// ======================================
 
-// EXIBIR CLIENTES
+// EXIBIR CLIENTES - EXCLUIR CLIENTES
 function exibirClientes() {
     const main = document.querySelector("main");
     main.innerHTML = "<p style='padding: 1rem;'>Carregando clientes...</p>";
 
     fetch("../pages/lists/listCustomers/ListCustomers.php")
         .then(response => {
-            if (!response.ok) throw new Error("Erro ao carregar os clientes.");
+            const contentType = response.headers.get("content-type");
+            if (contentType && contentType.includes("application/json")) {
+                return response.json();
+            }
             return response.text();
         })
         .then(data => {
+            if (typeof data === "object") {
+                mostrarMensagem(data.status, data.mensagem);
+                return;
+            }
             main.innerHTML = data;
         })
         .catch(error => {
-            main.innerHTML = `<p style="color: red;">Erro: ${error.message}</p>`;
+            mostrarMensagem("erro", "Erro ao carregar clientes: " + error.message);
         });
 }
 
@@ -126,34 +135,25 @@ function excluirCliente(id) {
     const formData = new FormData();
     formData.append("clientes_id", id);
 
-    fetch("../pages/lists/listCustomers/deleteCliente.php", {
+    fetch("../pages/delete/deleteCustomers/deleteCustomers.php", {
         method: "POST",
         body: formData
     })
     .then(res => res.json())
     .then(data => {
-        // Exibe mensagem na área de mensagens
-        const msgDiv = document.getElementById("mensagem-acao");
-        if (msgDiv) {
-            msgDiv.innerHTML = `<div class="${data.status}">${data.mensagem}</div>`;
-        }
+        mostrarMensagem(data.status, data.mensagem);
 
-        // Atualiza lista de clientes sem perder a mensagem
         if (data.status === "sucesso") {
             setTimeout(exibirClientes, 1000);
         }
     })
-    .catch(err => {
-        const msgDiv = document.getElementById("mensagem-acao");
-        if (msgDiv) {
-            msgDiv.innerHTML = `<div class="erro">Erro: ${err}</div>`;
-        }
+    .catch(() => {
+        mostrarMensagem("erro", "❌ Ocorreu um erro inesperado ao excluir o cliente.");
     });
 }
+// ======================================
 
-
-
-// EXIBIR TAREFAS
+// EXIBIR TAREFAS - EXCLUIR TAREFAS
 function exibirTarefas() {
     const main = document.querySelector("main");
 
@@ -175,7 +175,31 @@ function exibirTarefas() {
         });
 }
 
-// EXIBIR TECNICOS
+function excluirTarefa(id) {
+    if (!confirm("Tem certeza que deseja excluir essa tarefa?")) return;
+
+    const formData = new FormData();
+    formData.append("tarefas_id", id);
+
+    fetch("../pages/delete/deleteTask/deleteTask.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+        mostrarMensagem(data.status, data.mensagem);
+
+        if (data.status === "sucesso") {
+            setTimeout(exibirTarefas, 1000);
+        }
+    })
+    .catch(() => {
+        mostrarMensagem("erro", "❌ Ocorreu um erro inesperado ao excluir o tecnico.");
+    });
+}
+// ======================================
+
+// EXIBIR TECNICOS - EXCLUIR TECNICOS
 function exibirTecnicos(){
         const main = document.querySelector("main");
 
@@ -197,7 +221,31 @@ function exibirTecnicos(){
         });
 }
 
-// EXIBIR EQUIPAMENTOS
+function excluirTecnico(id) {
+    if (!confirm("Tem certeza que deseja excluir este Tecnico?")) return;
+
+    const formData = new FormData();
+    formData.append("tecnico_id", id);
+
+    fetch("../pages/delete/deleteTechnicians/deleteTechnicians.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+        mostrarMensagem(data.status, data.mensagem);
+
+        if (data.status === "sucesso") {
+            setTimeout(exibirTecnicos, 1000);
+        }
+    })
+    .catch(() => {
+        mostrarMensagem("erro", "❌ Ocorreu um erro inesperado ao excluir o tecnico.");
+    });
+}
+// ======================================
+
+// EXIBIR EQUIPAMENTOS - EXCLUIR EQUIPAMENTOS
 function exibirEquip(){
         const main = document.querySelector("main");
 
@@ -219,7 +267,31 @@ function exibirEquip(){
         });
 }
 
-// EXIBIR FORNECEDORES
+function excluirEquip(id) {
+    if (!confirm("Tem certeza que deseja excluir este Equipamento?")) return;
+
+    const formData = new FormData();
+    formData.append("equipamentos_id", id);
+
+    fetch("../pages/delete/deleteEquip/deleteEquip.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+        mostrarMensagem(data.status, data.mensagem);
+
+        if (data.status === "sucesso") {
+            setTimeout(exibirEquip, 1000);
+        }
+    })
+    .catch(() => {
+        mostrarMensagem("erro", "❌ Ocorreu um erro inesperado ao excluir o equipamento.");
+    });
+}
+// ======================================
+
+// EXIBIR FORNECEDORES - EXCLUIR FORNECEDORES
 function exibirFornecedores(){
         const main = document.querySelector("main");
 
@@ -240,3 +312,44 @@ function exibirFornecedores(){
             main.innerHTML = `<p style="color: red;">Erro: ${error.message}</p>`;
         });
 }
+
+function excluirFornecedor(id) {
+    if (!confirm("Tem certeza que deseja excluir esse Fornecedor?")) return;
+
+    const formData = new FormData();
+    formData.append("fornecedor_id", id);
+
+    fetch("../pages/delete/deleteSuppliers/deleteSuppliers.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+        mostrarMensagem(data.status, data.mensagem);
+
+        if (data.status === "sucesso") {
+            setTimeout(exibirFornecedores, 1000);
+        }
+    })
+    .catch(() => {
+        mostrarMensagem("erro", "❌ Ocorreu um erro inesperado ao excluir o fornecedor.");
+    });
+}
+// ======================================
+
+// FUNÇÃO PARA EXIBIR MENSAGEM
+function mostrarMensagem(tipo, texto) {
+    const toast = document.createElement('div');
+    toast.classList.add('toast', tipo);
+    toast.textContent = texto;
+
+    document.body.appendChild(toast);
+
+    setTimeout(() => toast.classList.add('show'), 50);
+
+    setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => toast.remove(), 300);
+    }, 3000);
+}
+

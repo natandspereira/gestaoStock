@@ -227,7 +227,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="file" name="imagem_url" id="imagem" accept="image/*">
 
         <button type="submit" id="register">Cadastrar</button>
-        <button type="button" id="toGoOut" onclick="window.location.href='logout.php'">Sair</button>
     </form>
 </body>
 
