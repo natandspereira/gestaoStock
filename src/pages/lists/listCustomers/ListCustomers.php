@@ -58,11 +58,56 @@ try {
                         <p><span>Estado:</span> <?php echo htmlspecialchars($cliente['estado']); ?></p>
                     </div>
 
+                    <button
+                        class="btn-editar"
+                        data-id="<?= $cliente['clientes_id']; ?>"
+                        data-nome="<?= htmlspecialchars($cliente['nome']); ?>"
+                        data-cpf_cnpj="<?= htmlspecialchars($cliente['cpf_cnpj']); ?>"
+                        data-email="<?= htmlspecialchars($cliente['email']); ?>"
+                        data-telefone="<?= htmlspecialchars($cliente['telefone']); ?>"
+                        data-cidade="<?= htmlspecialchars($cliente['cidade']); ?>"
+                        data-estado="<?= htmlspecialchars($cliente['estado']); ?>">
+                        Editar
+                    </button>
                     <button onclick="excluirCliente(<?php echo $cliente['clientes_id']; ?>)" class="btn-excluir">Excluir</button>
                 </div>
             <?php endforeach; ?>
         </div>
+        <!-- Modal de edição -->
+        <div id="modalEditar">
+            <div class="modal-content">
+                <h2>Editar Cliente</h2>
+                <input type="hidden" id="edit_id">
+                <span>
+                    <label>Nome:</label>
+                    <input type="text" id="edit_nome">
+                </span>
+                <span>
+                    <label>CPF/CNPJ:</label>
+                    <input type="text" id="edit_cpf_cnpj">
+                </span>
+                <span>
+                    <label>Email:</label>
+                    <input type="text" id="edit_email">
+                </span>
+                <span>
+                    <label>Telefone:</label>
+                    <input type="text" id="edit_telefone">
+                </span>
+                <span>
+                    <label>Cidade:</label>
+                    <input type="text" id="edit_cidade">
+                </span>
+                <span>
+                    <label>Estado:</label>
+                    <input type="text" id="edit_estado">
+                </span>
+                <button onclick="salvarEdicaoCliente()">Salvar</button>
+                <button onclick="fecharModal()">Cancelar</button>
+            </div>
+        </div>
     </main>
+
 </body>
 
 </html>

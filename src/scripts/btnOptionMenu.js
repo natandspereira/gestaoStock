@@ -104,7 +104,7 @@ function exibirCadastros(){
 }
 // ======================================
 
-// EXIBIR CLIENTES - EXCLUIR CLIENTES
+// EXIBIR CLIENTES - EXCLUIR CLIENTES - EDITAR CLIENTES
 function exibirClientes() {
     const main = document.querySelector("main");
     main.innerHTML = "<p style='padding: 1rem;'>Carregando clientes...</p>";
@@ -151,6 +151,51 @@ function excluirCliente(id) {
         mostrarMensagem("erro", "❌ Ocorreu um erro inesperado ao excluir o cliente.");
     });
 }
+
+function salvarEdicaoCliente() {
+    const id = document.getElementById("edit_id").value.trim();
+    const nome = document.getElementById("edit_nome").value.trim();
+    const cpf_cnpj = document.getElementById("edit_cpf_cnpj").value.trim();
+    const email = document.getElementById("edit_email").value.trim();
+    const telefone = document.getElementById("edit_telefone").value.trim();
+    const cidade = document.getElementById("edit_cidade").value.trim();
+    const estado = document.getElementById("edit_estado").value.trim();
+
+    // Validação básica
+    if (!id || !nome || !cpf_cnpj || !email) {
+        mostrarMensagem("erro", "Preencha todos os campos obrigatórios.");
+        return;
+    }
+
+    const formData = new FormData();
+    formData.append("id", id);
+    formData.append("nome", nome);
+    formData.append("cpf_cnpj", cpf_cnpj);
+    formData.append("email", email);
+    formData.append("telefone", telefone);
+    formData.append("cidade", cidade);
+    formData.append("estado", estado);
+
+    fetch("../pages/edit/editCustomers/editCustomers.php", { 
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        mostrarMensagem(data.status, data.mensagem);
+
+        if (data.status === "sucesso") {
+            fecharModal();
+            exibirClientes(); // Atualiza lista na tela
+        }
+    })
+    .catch(error => {
+        console.error("Erro na edição:", error);
+        mostrarMensagem("erro", "Ocorreu um erro ao salvar a edição.");
+    });
+}
+
+
 // ======================================
 
 // EXIBIR TAREFAS - EXCLUIR TAREFAS
@@ -352,4 +397,37 @@ function mostrarMensagem(tipo, texto) {
         setTimeout(() => toast.remove(), 300);
     }, 3000);
 }
+// ======================================
+
+// MODAL
+document.addEventListener("click", function(e) {
+    if (e.target.classList.contains("btn-editar")) {
+        document.getElementById("modalEditar").style.display = "flex";
+        
+        // PREENCHE OS CAMPOS DO MODAL COM OS DADOS DO BOTÃO
+        document.getElementById("edit_id").value = e.target.dataset.id;
+        document.getElementById("edit_nome").value = e.target.dataset.nome;
+        document.getElementById("edit_cpf_cnpj").value = e.target.dataset.cpf_cnpj;
+        document.getElementById("edit_email").value = e.target.dataset.email;
+        document.getElementById("edit_telefone").value = e.target.dataset.telefone;
+        document.getElementById("edit_cidade").value = e.target.dataset.cidade;
+        document.getElementById("edit_estado").value = e.target.dataset.estado;
+    }
+});
+
+// FECHAR O MODAL AO CLICAR FORA
+window.addEventListener("click", function(e) {
+    const modal = document.getElementById("modalEditar");
+    if (e.target === modal) {
+        fecharModal();
+    }
+});
+
+function fecharModal() {
+    document.getElementById("modalEditar").style.display = "none";
+}
+// ======================================
+
+
+
 
