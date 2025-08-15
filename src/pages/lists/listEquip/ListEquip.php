@@ -74,10 +74,45 @@ try {
                         <p><span>Valor de Aluguel:</span> <?php echo htmlspecialchars($equip['valor_aluguel']); ?></p>
                         <p><span>Valor de Manuntenção:</span> <?php echo htmlspecialchars($equip['valor_manutencao']); ?></p>
                     </div>
+
+                     <!-- Botão Editar com IDs -->
+                <button class="btn-editar"
+                    data-id="<?= (int)$equip['equipamentos_id'] ?>"
+                    data-nome="<?= htmlspecialchars($equip['nome']); ?>"
+                    data-codigo="<?= htmlspecialchars($equip['codigo']); ?>"
+                    data-patrimonio="<?= htmlspecialchars($equip['patrimonio']); ?>"
+                    data-qt_atual="<?= htmlspecialchars($equip['qt_atual']); ?>"
+                    data-qt_minima="<?= htmlspecialchars($equip['qt_minima']); ?>"
+                    data-valor_custo="<?= htmlspecialchars($equip['valor_custo']); ?>"
+                    data-valor_venda="<?= htmlspecialchars($equip['valor_venda']); ?>"
+                    data-valor_aluguel="<?= htmlspecialchars($equip['valor_aluguel']); ?>"
+                    data-valor_manutencao="<?= htmlspecialchars($equip['valor_manutencao']); ?>">
+                    Editar
+                </button>        
+
                     <button onclick="excluirEquip(<?php echo $equip['equipamentos_id']; ?>)" class="btn-excluir">Excluir</button>
                 </div>
             <?php endforeach; ?>
         </div>
+
+        <!-- Modal -->
+    <div id="modalEditar">
+        <div class="modal-content">
+            <h2>Editar Equipamento</h2>
+            <input type="hidden" id="edit_id">
+            <span><label>Nome:</label><input type="text" id="edit_nome"></span>
+            <span><label>Codigo:</label><input type="text" id="edit_codigo"></span>
+            <span><label>Patrimonio:</label><input type="text" id="edit_patrimonio"></span>
+            <span><label>Quantidade Atual:</label><input type="text" id="edit_qt_atual"></span>
+            <span><label>Quantidade Minima:</label><input type="text" id="edit_qt_minima"></span>
+            <span><label>Valor de Custo:</label><input type="text" id="edit_valor_custo"></span>
+            <span><label>Valor de Venda:</label><input type="text" id="edit_valor_venda"></span>
+            <span><label>Valor de Aluguel:</label><input type="text" id="edit_valor_aluguel"></span>
+            <span><label>Valor de Manuntenção:</label><input type="text" id="edit_valor_manutencao"></span>
+            <button onclick="salvarEdicaoEquip()">Salvar</button>
+            <button onclick="fecharModal()">Cancelar</button>
+        </div>
+    </div>
     <?php endif; ?>
 </body>
 

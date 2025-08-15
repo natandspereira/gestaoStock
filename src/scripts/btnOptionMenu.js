@@ -426,6 +426,50 @@ function excluirEquip(id) {
             mostrarMensagem("erro", "❌ Ocorreu um erro inesperado ao excluir o equipamento.");
         });
 }
+
+function salvarEdicaoEquip() {
+    const id = document.getElementById("edit_id").value.trim();
+    const nome = document.getElementById("edit_nome").value.trim();
+    const codigo = document.getElementById("edit_codigo").value.trim();
+    const patrimonio = document.getElementById("edit_patrimonio").value.trim();
+    const qt_atual = document.getElementById("edit_qt_atual").value.trim();
+    const qt_minima = document.getElementById("edit_qt_minima").value.trim();
+    const valor_custo = document.getElementById("edit_valor_custo").value.trim();
+    const valor_venda = document.getElementById("edit_valor_venda").value.trim();
+    const valor_aluguel = document.getElementById("edit_valor_aluguel").value.trim();
+    const valor_manutencao = document.getElementById("edit_valor_manutencao").value.trim();
+    
+    const formData = new FormData();
+    formData.append("id", id);
+    formData.append("nome", nome);
+    formData.append("codigo", codigo);
+    formData.append("patrimonio", patrimonio);
+    formData.append("qt_atual", qt_atual);
+    formData.append("qt_minima", qt_minima);
+    formData.append("valor_custo", valor_custo);
+    formData.append("valor_venda", valor_venda);
+    formData.append("valor_aluguel", valor_aluguel);
+    formData.append("valor_manutencao", valor_manutencao);
+    
+
+    fetch("../pages/edit/editEquip/editEquip.php", {
+        method: "POST",
+        body: formData
+    })
+        .then(response => response.json())
+        .then(data => {
+            mostrarMensagem(data.status, data.mensagem);
+
+            if (data.status === "sucesso") {
+                fecharModal();
+                exibirEquip(); // Atualiza lista na tela
+            }
+        })
+        .catch(error => {
+            console.error("Erro na edição:", error);
+            mostrarMensagem("erro", "Ocorreu um erro ao salvar a edição.");
+        });
+}
 // ======================================
 
 // EXIBIR FORNECEDORES - EXCLUIR FORNECEDORES
@@ -470,6 +514,60 @@ function excluirFornecedor(id) {
         })
         .catch(() => {
             mostrarMensagem("erro", "❌ Ocorreu um erro inesperado ao excluir o fornecedor.");
+        });
+}
+
+function salvarEdicaoFornecedor() {
+    const id = document.getElementById("edit_id").value.trim();
+    const razao_social = document.getElementById("edit_razao_social").value.trim();
+    const nome_fantasia = document.getElementById("edit_nome_fantasia").value.trim();
+    const cnpj = document.getElementById("edit_cnpj").value.trim();
+    const inscricao_estadual = document.getElementById("edit_inscricao_estadual").value.trim();
+    const telefone = document.getElementById("edit_telefone").value.trim();
+    const email = document.getElementById("edit_email").value.trim();
+    const cep = document.getElementById("edit_cep").value.trim();
+    const endereco = document.getElementById("edit_endereco").value.trim();
+    const bairro = document.getElementById("edit_bairro").value.trim();
+    const cidade = document.getElementById("edit_cidade").value.trim();
+    const estado = document.getElementById("edit_estado").value.trim();
+    const numero = document.getElementById("edit_numero").value.trim();
+    const complemento = document.getElementById("edit_complemento").value.trim();
+    const observacoes = document.getElementById("edit_observacoes").value.trim();
+   
+    const formData = new FormData();
+    formData.append("id", id);
+    formData.append("razao_social", razao_social);
+    formData.append("nome_fantasia", nome_fantasia);
+    formData.append("cnpj", cnpj);
+    formData.append("inscricao_estadual", inscricao_estadual);
+    formData.append("telefone", telefone);
+    formData.append("email", email);
+    formData.append("cep", cep);
+    formData.append("endereco", endereco);
+    formData.append("bairro", bairro);
+    formData.append("cidade", cidade);
+    formData.append("estado", estado);
+    formData.append("numero", numero);
+    formData.append("complemento", complemento);
+    formData.append("observacoes", observacoes);
+    
+
+    fetch("../pages/edit/editSuppliers/editSuppliers.php", {
+        method: "POST",
+        body: formData
+    })
+        .then(response => response.json())
+        .then(data => {
+            mostrarMensagem(data.status, data.mensagem);
+
+            if (data.status === "sucesso") {
+                fecharModalSuppliers();
+                exibirFornecedores(); // Atualiza lista na tela
+            }
+        })
+        .catch(error => {
+            console.error("Erro na edição:", error);
+            mostrarMensagem("erro", "Ocorreu um erro ao salvar a edição.");
         });
 }
 // ======================================
@@ -518,10 +616,34 @@ window.addEventListener("click", function(e) {
     const modal = document.getElementById("modalEditar");
     if (e.target === modal) fecharModal();
 });
-
-
 // ======================================
 
+// MODAL Suppliers
+document.addEventListener("click", function(e) {
+    const btn = e.target.closest(".btn-editar");
+    if (!btn) return;
 
+    const modal = document.getElementById("modalEditarSuppliers");
+    modal.style.display = "flex";
+
+    for (const [key, value] of Object.entries(btn.dataset)) {
+        const el = document.getElementById("edit_" + key);
+        if (!el) continue;
+
+        // Select ou input
+        el.value = value;
+    }
+});
+
+// Fechar modal
+function fecharModalSuppliers() {
+    const modal = document.getElementById("modalEditarSuppliers");
+    modal.style.display = "none";
+}
+
+window.addEventListener("click", function(e) {
+    const modal = document.getElementById("modalEditarSuppliers");
+    if (e.target === modal) fecharModalSuppliers();
+});
 
 

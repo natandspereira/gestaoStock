@@ -133,7 +133,6 @@ try {
                     <input type="text" id="edit_estado">
                 </span>
 
-                <label for="edit_especialidade">Especialidade:</label>
                 <select id="edit_especialidade" name="especialidade">
                     <option value="">Selecione</option>
                     <?php foreach ($especialidades as $esp): ?>

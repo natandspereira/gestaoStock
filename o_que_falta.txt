@@ -20,4 +20,3 @@ e criar a opção na hora do cadastro pelo site.
 
 *Testar verificações de cadastro.
 
-*Clicar em cada CARD, e editar as informações já cadastradas.
