@@ -2,6 +2,8 @@
 require_once '../../classes/Autoload.php';
 session_start();
 
+
+
 // Verifica se o formulário foi submetido
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Obtém os dados do formulário
@@ -78,7 +80,7 @@ exit();
             </label>
             <button type="submit" id="entrar">entrar</button>
             <button type="button" id="btnCadastro">cadastro</button>
-            <p>Esqueceu sua senha?<span>Recupere a sua senha aqui</span></p>
+            <p>Esqueceu sua senha?<a href="../recoverPassword/recoverPassword.php" target="_blank">Recupere a sua senha aqui</a> </p>
         </div>
     </form>
 </body>

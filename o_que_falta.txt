@@ -1,10 +1,10 @@
 * Responsividade;
 
-* Formulario, enviar para e-mail;
+* Formulario => enviar para e-mail ?;
 
-* Login, recuperar senha;
+* Login => recuperar senha;
 
-* Home, exibir informações e configurar atalhos;
+* Home => exibir informações e configurar atalhos;
 
 * Cadastro:
 1) Categoria, adicionar campo numero,para identeficar a categoria,

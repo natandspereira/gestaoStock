@@ -96,6 +96,17 @@ body form>.inputsLogin {
     cursor: pointer;
 }
 
+.inputsLogin>p>a{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    transition: .8s;
+}
+
+.inputsLogin>p>a:hover{
+    background-color: var(--background-color2);
+}
+
 
 
 
