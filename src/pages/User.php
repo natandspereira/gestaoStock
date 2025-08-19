@@ -49,6 +49,7 @@ $matricula = $usuarioSessao['matricula'] ?? 'Sem matrícula';
     <title>Painel do Usuário</title>
     <!-- LINK CSS -->
     <link rel="stylesheet" href="../assets/css/User.css">
+    <link rel="stylesheet" href="../assets/css/sair/sair.css">
     <!-- FAVICON -->
     <link rel="shortcut icon" href="../assets/img/favicon_logo.ico" type="image/x-icon">
     <!-- GOOGLE ICONS -->
@@ -125,13 +126,8 @@ $matricula = $usuarioSessao['matricula'] ?? 'Sem matrícula';
                 <i class="material-icons iconSupport">support_agent</i>
                 suporte
             </a>
-            <!-- FEEDBACK -->
-            <a href="#">
-                <i class="material-icons iconFeedback">thumbs_up_down</i>
-                feedback
-            </a>
             <!-- SAIR -->
-            <a href="../pages/login/Logout.php" class="iconLogout">
+            <a href="../pages/login/Logout.php" class="iconLogout" id="btnSair">
                 <i class="material-icons iconLogout">keyboard_double_arrow_left</i>
                 sair
             </a>
@@ -141,60 +137,103 @@ $matricula = $usuarioSessao['matricula'] ?? 'Sem matrícula';
     <!-- MAIN -->
     <main>
         <div class="container">
-            <div id="equipment">
-                <p>Equipamento precisando de reparos</p>
-                <span>
-                    <p>0</p><i class="material-icons" id="iconError">error</i>
-                </span>
-            </div>
-            <div id="amount">
-                <p>Quantidade de produtos no estoque</p>
-                <span>
-                    <p>0</p><i class="material-icons" id="iconStock">inventory</i>
-                </span>
-            </div>
-            <div id="cost">
-                <p>Custo total de produtos</p>
-                <span>
-                    <p>0</p><i class="material-icons" id="iconDolar">attach_money</i>
-                </span>
-            </div>
+            
         </div>
 
         <div class="container">
             <span>
-                <div id="equipamentRegistration">
+                <a href="registrations/registerEquip/RegisterEquip.php" target="_blank"  id="equipamentRegistration">
                     <i class="material-icons" id="iconEquipament">construction</i>
                     <p>Cadastro de equipamentos</p>
-                </div>
-                <div id="contacts">
-                    <i class="material-icons" id="iconContacts">groups</i>
-                    <p>Contatos Técnicos</p>
-                </div>
-                <div id="finance">
-                    <i class="material-icons" id="iconFinance">attach_money</i>
-                    <p>Finanças</p>
-                </div>
+                </a>
+                <a href="registrations/registerCustomers/RegisterCustomers.php" target="_blank" target="_blank"  id="equipamentRegistration">
+                    <i class="material-icons" id="iconEquipament">group_add</i>
+                    <p>Cadastro de clientes</p>
+                </a>
+                <a href="registrations/registerSuppliers/RegisterSuppliers.php" target="_blank"  id="equipamentRegistration">
+                    <i class="material-icons" id="iconEquipament">group</i>
+                    <p>Cadastro de fornecedores</p>
+                </a>
+                
             </span>
         </div>
 
         <div class="container">
             <span>
-                <div id="customersRegistration">
-                    <i class="material-icons" id="iconCustomers">group_add</i>
-                    <p>Cadastro de clientes</p>
-                </div>
-                <div id="favorites">
-                    <i class="material-icons" id="iconFavorites">workspace_premium</i>
-                    <p>Equipamentos mais utilizados</p>
-                </div>
-                <div id="history">
-                    <i class="material-icons" id="iconHistory">history</i>
-                    <p>Últimas movimentações</p>
-                </div>
+                <a id="customersRegistration">
+                    <i class="material-icons" id="iconCustomers">support_agent</i>
+                    <p>Suporte</p>
+                </a>
+                <a href="registrations/category/DisplayCategory.php" target="_blank"  id="favorites">
+                    <i class="material-icons" id="iconFavorites">category</i>
+                    <p>Cadastro de categoria</p>
+                </a>
+                <a  href="registrations/registerTechnicians/registerTechnicians.php" target="_blank" id="history">
+                    <i class="material-icons" id="iconHistory">engineering</i>
+                    <p>Cadastro de técnicos</p>
+                </a>
             </span>
         </div>
     </main>
+    <!-- Container para carregar o modal -->
+<div id="containerModalSair"></div>
+
+<script>
+    const btnSair = document.getElementById("btnSair");
+    const containerModalSair = document.getElementById("containerModalSair");
+
+    btnSair.addEventListener("click", (e) => {
+        e.preventDefault(); // impede redirecionamento
+
+        // Cria o modal diretamente no DOM
+        containerModalSair.innerHTML = `
+            <div id="modalSair" class="modal">
+                <div class="modal-content">
+                    <p>Tem certeza que deseja sair?</p>
+                    <div class="modal-buttons">
+                        <button id="btnConfirmarSair" class="btn btn-confirm">Sim</button>
+                        <button id="cancelarSair" class="btn btn-cancel">Não</button>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        const modalSair = document.getElementById("modalSair");
+        modalSair.style.display = "flex";
+
+        const btnConfirmarSair = document.getElementById("btnConfirmarSair");
+        const cancelarSair = document.getElementById("cancelarSair");
+
+        // Confirma logout via fetch
+        btnConfirmarSair.addEventListener("click", () => {
+            fetch('../pages/login/Logout.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: 'logout_confirm=1'
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    window.location.href = data.redirect; // Redireciona para index.php
+                }
+            });
+        });
+
+        // Cancela logout
+        cancelarSair.addEventListener("click", () => {
+            modalSair.style.display = "none";
+            containerModalSair.innerHTML = '';
+        });
+
+        // Fecha modal ao clicar fora
+        window.addEventListener("click", (event) => {
+            if (event.target === modalSair) {
+                modalSair.style.display = "none";
+                containerModalSair.innerHTML = '';
+            }
+        });
+    });
+</script>
 </body>
 
 </html>

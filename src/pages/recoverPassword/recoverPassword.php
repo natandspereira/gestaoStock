@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <form method="POST">
         <div class="container">
             <h2>Recuperar Senha</h2>
-            <input type="text" name="matricula" id="matricula" placeholder="Informe a sua matrícula" value="<?php echo htmlspecialchars($matricula); ?>">
+            <input type="text" name="matricula" id="matricula" placeholder="Informe o seu login" value="<?php echo htmlspecialchars($matricula); ?>">
             <input type="password" name="senha" id="novaSenha" placeholder="Nova Senha">
             <input type="password" name="confirmarSenha" id="confirmarNovaSenha" placeholder="Confirmar Senha">
             <button type="submit">Cadastrar</button>

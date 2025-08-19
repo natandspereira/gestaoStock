@@ -4,7 +4,6 @@ header('Content-Type: application/json');  // Retorno em JSON
 
 session_start();
 
-// Verifica login
 if (!isset($_SESSION['usuario']) || !isset($_SESSION['usuario']['usuario_id'])) {
     echo json_encode(['status' => 'error', 'message' => 'Usuário não logado.']);
     exit;
@@ -30,10 +29,8 @@ if (!$usuario) {
 function getImagemUrl(string $imagem_url): string {
     $caminhoImagemFisico = __DIR__ . '/../../' . ltrim($imagem_url, '/');
     if (!empty($imagem_url) && file_exists($caminhoImagemFisico)) {
-        // Ajuste o caminho base da URL conforme seu projeto
         return '/gestaoStock/' . ltrim($imagem_url, '/');
     } else {
-        // Imagem padrão caso não exista
         return '/gestaoStock/src/assets/img/uploads_img_usuario/profile_user.svg';
     }
 }
@@ -46,9 +43,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $confirmarSenha = $_POST['confirmar_senha'] ?? '';
     $novaImagemUrl = '';
 
-    if (!empty($senha) && $senha !== $confirmarSenha) {
-        echo json_encode(['status' => 'error', 'message' => 'As senhas não coincidem.']);
+    // Verifica campos obrigatórios
+    if (empty($nome) || empty($email)) {
+        echo json_encode(['status' => 'error', 'message' => 'Todos os campos obrigatórios devem ser preenchidos.']);
         exit;
+    }
+
+    // Valida senha, se fornecida
+    if (!empty($senha)) {
+        if ($senha !== $confirmarSenha) {
+            echo json_encode(['status' => 'error', 'message' => 'As senhas não coincidem.']);
+            exit;
+        }
+
+        if (
+            strlen($senha) < 8 ||
+            !preg_match('/[A-Z]/', $senha) ||
+            !preg_match('/[a-z]/', $senha) ||
+            !preg_match('/[0-9]/', $senha) ||
+            !preg_match('/[\W]/', $senha)
+        ) {
+            echo json_encode(['status' => 'error', 'message' => 'A senha deve ter no mínimo 8 caracteres, contendo pelo menos uma letra maiúscula, uma minúscula, um número e um caractere especial.']);
+            exit;
+        }
     }
 
     // Upload da nova imagem, se enviada
@@ -136,8 +153,6 @@ exit;
 ?>
 
 
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -146,8 +161,11 @@ exit;
     <link rel="stylesheet" href="../../../assets/css/profile/Profile.css?v=<?php echo time(); ?>">
     <link rel="shortcut icon" href="../assets/img/favicon_logo.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- SCRIPT -->
+     <script src="../../scripts/btnOptionMenu.js" defer></script>
 </head>
 <body>
+
 
     <div id="containerProfile">
         <div id="dataUser">
@@ -156,7 +174,6 @@ exit;
             </div>
             <p><strong>Nome:</strong> <?= htmlspecialchars($usuario['nome']); ?></p>
             <p><strong>Email:</strong> <?= htmlspecialchars($usuario['email']); ?></p>
-            <p><strong>Senha:</strong> <?= str_repeat('*', 10); ?></p>
         </div>
 
         <form id="profileForm" method="POST" enctype="multipart/form-data">

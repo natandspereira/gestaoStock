@@ -4,6 +4,49 @@ body{
     background-image: url(../../img/img_background.svg);
 }
 
+/* MENSAGEM */
+/* Container da mensagem centralizada */
+#mensagemPerfil {
+    position: fixed;                 /* Fica fixo na tela */
+    top: 50%;                        /* Central vertical */
+    left: 50%;                       /* Central horizontal */
+    transform: translate(-50%, -50%); /* Ajusta para ficar perfeitamente centralizado */
+    padding: 20px 30px;
+    background-color: #fff;          /* Fundo branco */
+    border-radius: 8px;              /* Cantos arredondados */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* Sombra suave */
+    font-weight: bold;
+    text-align: center;
+    min-width: 300px;
+    z-index: 9999;                   /* Fica acima de outros elementos */
+    display: none;                    /* Inicialmente escondido */
+    transition: all 0.3s ease;       /* Animação suave */
+    color: #000;                      /* Texto preto */
+    border: 2px solid transparent;   /* Borda padrão transparente */
+    word-wrap: break-word;           /* Quebra de linha caso a mensagem seja longa */
+}
+
+/* Borda verde para sucesso */
+#mensagemPerfil.sucesso {
+    border-color: #28a745;
+}
+
+/* Borda vermelha para erro */
+#mensagemPerfil.erro {
+    border-color: #dc3545;
+}
+
+/* Mostrar a mensagem */
+#mensagemPerfil.show {
+    display: block;
+}
+
+
+
+
+
+
+
 #containerProfile{
     margin: 4% auto;
     border: 2px solid white;

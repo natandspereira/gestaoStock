@@ -2,47 +2,37 @@
 require_once '../../classes/Autoload.php';
 session_start();
 
+$mensagem = '';
+$matriculaValue = '';
 
-
-// Verifica se o formulário foi submetido
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Obtém os dados do formulário
     $matricula = $_POST['matricula'] ?? '';
     $senha = $_POST['senha'] ?? '';
 
-    // Instancia a classe Login
+    // mantém o valor digitado no campo em caso de erro
+    $matriculaValue = $matricula;
+
+    // INSTANCIA A CLASSE LOGIN
     $login = new Login();
 
-    // Chama o método de autenticação e passa os dados do formulário
+    // CHAMA O MÉTODO DE AUTENTICAÇÃO E PASSA OS DADOS DO FORMULÁRIO
     $resultado = $login->autenticar($matricula, $senha);
 
-    // Verifica o resultado do login
-    if (isset($resultado['sucesso']) && $resultado['sucesso'] === true) {
-        // Redireciona para a página após o login bem-sucedido
+    // CAPTURA A MENSAGEM RETORNADA
+    $mensagem = $resultado['mensagem'] ?? '';
+
+    if (stripos($mensagem, 'sucesso') !== false) {
+        // SUCESSO: ABRE A PÁGINA EM OUTRA ABA E FECHA O MODAL
         echo "<script>
-                window.open('../../pages/User.php', '_blank'); // ABRE A PÁGINA EM OUTRA ABA
-                var modal = window.parent.document.getElementById('loginModal'); // ACESSA O MODAL DA PÁGINA PRINCIPAL
+                window.open('../../pages/User.php', '_blank');
+                var modal = window.parent.document.getElementById('loginModal');
                 if (modal) {
-                    modal.style.display = 'none'; // FECHA O MODAL
+                    modal.style.display = 'none';
                 }
               </script>";
         exit();
-    } else {
-        // Caso haja erro, redireciona para a página de login com a mensagem de erro
-        echo "
-<script>
-    alert('Usuário ou senha inválidos');
-
-    // Após o alerta, recarrega o iframe da página principal
-    const iframe = window.parent.document.getElementById('loginIframe');
-    if (iframe) {
-        // Força recarregamento com parâmetro para evitar cache
-        iframe.src = './src/pages/login/Login.php?reload=' + new Date().getTime();
     }
-</script>";
-exit();
-
-    }
+    // ERRO: não faz alert nem recarrega iframe; apenas deixa seguir para renderizar a mensagem no HTML
 }
 ?>
 
@@ -63,24 +53,48 @@ exit();
 </head>
 
 <body>
+    <?php if (!empty($mensagem)): ?>
+        <div class="alert <?php echo (stripos($mensagem, 'sucesso') !== false ? 'sucesso' : 'error') ?>">
+            <?php echo htmlspecialchars($mensagem); ?>
+        </div>
+        <script>
+            // REMOVE O ALERTA VISUAL DEPOIS DE 3 SEGUNDOS (sem popup)
+            setTimeout(() => {
+                const alertBox = document.querySelector('.alert');
+                if (alertBox) alertBox.remove();
+            }, 3000);
+        </script>
+    <?php endif; ?>
+
     <div class="logo">
         <img src="../../assets/img/logo.png" alt="Logo">
     </div>
-    <form action="" method="POST">
+    <form action="" method="POST" autocomplete="on">
         <h1>Acessar Conta</h1>
         <p>Bem vindo! Faça login para gerenciar seu estoque</p>
         <div class="inputsLogin">
             <label for="matricula">
                 <i class="material-icons" id="iconCircle">account_circle</i>
-                <input type="text" id="matricula" name="matricula" placeholder="Matricula" required>
+                <input
+                    type="text"
+                    id="matricula"
+                    name="matricula"
+                    placeholder="Matricula"
+                    value="<?php echo htmlspecialchars($matriculaValue); ?>"
+                    autocomplete="username">
             </label>
             <label for="senha">
                 <i class="material-icons" id="iconCircle">lock</i>
-                <input type="password" id="senha" name="senha" placeholder="Senha" required>
+                <input
+                    type="password"
+                    id="senha"
+                    name="senha"
+                    placeholder="Senha"
+                    autocomplete="current-password">
             </label>
             <button type="submit" id="entrar">entrar</button>
             <button type="button" id="btnCadastro">cadastro</button>
-            <p>Esqueceu sua senha?<a href="../recoverPassword/recoverPassword.php" target="_blank">Recupere a sua senha aqui</a> </p>
+            <p>Esqueceu sua senha? <a href="../recoverPassword/recoverPassword.php" target="_blank">Recupere a sua senha aqui</a></p>
         </div>
     </form>
 </body>

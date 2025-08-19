@@ -1,52 +1,59 @@
 <?php
-require_once 'Autoload.php'; //CARREGAMENTO DAS CLASSES DE FORMA AUTOMATICA
+require_once 'Autoload.php'; // CARREGAMENTO DAS CLASSES DE FORMA AUTOMÁTICA
 
 class Login
 {
-
     private $pdo;
 
-    //INICIA A CONEXÃO COM O DB
+    // INICIA A CONEXÃO COM O DB
     public function __construct()
     {
-        //INSTANCIA A CLASSE DATABASE E OBTÉM A CONEXÃO COM O PDO
+        // INSTANCIA A CLASSE DATABASE E OBTÉM A CONEXÃO COM O PDO
         $db = new Database();
         $this->pdo = $db->getConnection();
     }
 
-    //FUNÇÃO PARA FAZER O LOGIN
+    // FUNÇÃO PARA FAZER O LOGIN
     public function autenticar($matricula, $senha)
     {
-        //SANITIZA AS ENTRADAS
+        // SANITIZA AS ENTRADAS
         $matricula = trim($matricula);
         $senha = trim($senha);
 
         if (empty($matricula) || empty($senha)) {
-            return ['erro' => 'Por favor, preencha todos os campos.'];
+            $mensagem = 'Por favor, preencha todos os campos.';
+            return ['mensagem' => $mensagem];
         }
 
         try {
             $stmt = $this->pdo->prepare("SELECT * FROM usuarios WHERE matricula = :matricula");
             $stmt->execute(['matricula' => $matricula]);
 
-            //VERIFICA SE O USUÁRIO FOI ENCONTRADO
+            // VERIFICA SE O USUÁRIO FOI ENCONTRADO
             $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
             if ($usuario && password_verify($senha, $usuario['senha'])) {
-                //SALVA A MATRÍCULA DO USUÁRIO NA SESSÃO SE O LOGIN FOR BEM-SUCEDIDO
+                // SALVA A MATRÍCULA DO USUÁRIO NA SESSÃO SE O LOGIN FOR BEM-SUCEDIDO
                 $_SESSION['usuario'] = [
                     'usuario_id' => $usuario['usuario_id'],
-                    'matricula' => $usuario['matricula'],
-                    'nome' => $usuario['nome'] ?? '' 
+                    'matricula'  => $usuario['matricula'],
+                    'nome'       => $usuario['nome'] ?? ''
                 ];
-                return ['sucesso' => true];
+                $mensagem = 'Login realizado com sucesso.';
+                return ['mensagem' => $mensagem];
             } else {
-                return ['erro' => 'Credenciais inválidas.'];
+                $mensagem = 'Credenciais inválidas.';
+                return ['mensagem' => $mensagem];
             }
         } catch (PDOException $erro) {
-            //SE ACONTECER ERRO NA CONEXÃO COM O BANCO
-            error_log("[" . date('Y-m-d H:i:s') . "] Erro ao tentar logar: " . $erro->getMessage() . "\n", 3, __DIR__ . '/../../logs/error.log');
-            return ['erro' => 'Erro interno no sistema. Tente novamente mais tarde.'];
+            // SE ACONTECER ERRO NA CONEXÃO COM O BANCO
+            error_log(
+                "[" . date('Y-m-d H:i:s') . "] Erro ao tentar logar: " . $erro->getMessage() . "\n",
+                3,
+                __DIR__ . '/../../logs/error.log'
+            );
+            $mensagem = 'Erro interno no sistema. Tente novamente mais tarde.';
+            return ['mensagem' => $mensagem];
         }
     }
 }
