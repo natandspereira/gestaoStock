@@ -235,7 +235,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </span>
 
             <!-- Especialidade -->
-            <span>
+            <span class="especialidade">
                 <label for="especialidade">Especialidade:</label>
                 <select name="especialidade" id="especialidade" required>
                     <option value="">Selecione a especialidade</option>

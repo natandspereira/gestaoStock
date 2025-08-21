@@ -211,35 +211,110 @@ header {
 
 /* RESPONSIVIDADE */
 @media (max-width: 765px) {
-    #menu>aside {
-        top: 0 !important;
-        position: fixed !important;
-        
-        a{
-            font-size: 1rem !important;
-            margin: 8px auto !important;
-        }
-    }
+    /* MAIN */
+    main {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 20px !important;
+    padding: 12px !important;
+    width: 100% !important;
+  }
 
-    #menu>aside>label:nth-child(2)>i, aside>label:nth-child(3)>i, aside>label:nth-child(4)>i, aside>label:nth-child(5)>i, aside>label:nth-child(6)>i, aside>label:nth-child(7)>i, aside>label:nth-child(8)>i{
-            font-size: 1rem;
-    }
+  main .container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 16px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    float: none !important;         
+  }
 
-    .container {
+  main .container > span {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  main .container > span > a {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    width: min(100%, 320px) !important;  
+    margin: 0 auto !important;
+    padding: 12px !important;
+    float: none !important;              
+  }
+
+  main .container > span > a i {
+    font-size: 2rem !important;
+    margin-bottom: 6px !important;
+  }
+  main .container > span > a p {
+    margin: 0 !important;
+  }
+    /* MENU */
+    #menu aside {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 20px;
-        margin-top: 10px !important;
+        padding: 10px;
+        max-height: 100vh;
+        overflow-y: auto;
+        position: relative; 
     }
 
-    .container:nth-child(2)>span,
-    .container:nth-child(3)>span {
+    
+    #menu > aside > label {
+        display: flex;
         flex-direction: column;
-        gap: 20px;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 15px;
+        position: relative; 
+        width: 100%;        
+    }
+
+    #menu > aside > .imgUser> img {
+        width: 100px;
+        height: 100px;
+        border: 2px solid white;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+
+    #menu > aside > label p {
+        font-size: 0.9rem;
+        font-weight: bold;
+    }
+
+    
+    #menu > aside > label i#iconClose {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+   
+    #menu > aside > a {
+        font-size: 1rem !important;
+        margin: 6px 0;
+        text-align: center;
+        width: 100%;
     }
 }
 
+/* 768PX */
 @media (max-width: 768px) {
 
     .container:nth-child(1)>#equipment,

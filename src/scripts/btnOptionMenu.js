@@ -22,12 +22,8 @@ function exibirPerfil() {
                 <div id="containerProfile">
                     <div id="mensagemPerfil"></div>
                     <div id="dataUser">
-                        <div id="imgUser">
-                            <img id="imgPerfil" src="${data.imagem_url}" alt="Imagem do usuário" width="150">
-                        </div>
                         <p id="nomeUser"><strong>Nome:</strong> ${data.nome}</p>
                         <p id="emailUser"><strong>Email:</strong> ${data.email}</p>
-                        <p><strong>Senha:</strong> **********</p>
                     </div>
                     <form id="profileForm" method="POST" enctype="multipart/form-data">
                         <input type="text" name="nome" value="${data.nome}" required>

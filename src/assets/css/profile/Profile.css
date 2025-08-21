@@ -1,29 +1,42 @@
 @import url("../../css/default.css");
 
-body{
+body {
     background-image: url(../../img/img_background.svg);
 }
 
 /* MENSAGEM */
 /* Container da mensagem centralizada */
 #mensagemPerfil {
-    position: fixed;                 /* Fica fixo na tela */
-    top: 50%;                        /* Central vertical */
-    left: 50%;                       /* Central horizontal */
-    transform: translate(-50%, -50%); /* Ajusta para ficar perfeitamente centralizado */
+    position: fixed;
+    /* Fica fixo na tela */
+    top: 50%;
+    /* Central vertical */
+    left: 50%;
+    /* Central horizontal */
+    transform: translate(-50%, -50%);
+    /* Ajusta para ficar perfeitamente centralizado */
     padding: 20px 30px;
-    background-color: #fff;          /* Fundo branco */
-    border-radius: 8px;              /* Cantos arredondados */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* Sombra suave */
+    background-color: #fff;
+    /* Fundo branco */
+    border-radius: 8px;
+    /* Cantos arredondados */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    /* Sombra suave */
     font-weight: bold;
     text-align: center;
     min-width: 300px;
-    z-index: 9999;                   /* Fica acima de outros elementos */
-    display: none;                    /* Inicialmente escondido */
-    transition: all 0.3s ease;       /* Animação suave */
-    color: #000;                      /* Texto preto */
-    border: 2px solid transparent;   /* Borda padrão transparente */
-    word-wrap: break-word;           /* Quebra de linha caso a mensagem seja longa */
+    z-index: 9999;
+    /* Fica acima de outros elementos */
+    display: none;
+    /* Inicialmente escondido */
+    transition: all 0.3s ease;
+    /* Animação suave */
+    color: #000;
+    /* Texto preto */
+    border: 2px solid transparent;
+    /* Borda padrão transparente */
+    word-wrap: break-word;
+    /* Quebra de linha caso a mensagem seja longa */
 }
 
 /* Borda verde para sucesso */
@@ -41,13 +54,7 @@ body{
     display: block;
 }
 
-
-
-
-
-
-
-#containerProfile{
+#containerProfile {
     margin: 4% auto;
     border: 2px solid white;
     width: 600px;
@@ -61,25 +68,25 @@ body{
     color: white;
 }
 
-#containerProfile>#dataUser{
+#containerProfile>#dataUser {
     display: flex;
     flex-direction: column;
     gap: 10px;
 
-    #imgUser>img{
+    #imgUser>img {
         width: 100px;
     }
 }
 
 /* FORMULARIO */
-#containerProfile>form{
+#containerProfile>form {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
 
-#containerProfile>form>input{
+#containerProfile>form>input {
     width: 250px;
     height: 40px;
     margin: 10px 0;
@@ -92,17 +99,17 @@ body{
     transition: .8s;
 }
 
-#containerProfile>form>input::placeholder{
+#containerProfile>form>input::placeholder {
     text-align: center;
     text-transform: capitalize;
 }
 
-#containerProfile>form>input:hover{
+#containerProfile>form>input:hover {
     outline: 2px solid #F57C00;
 }
 
 /* BOTÃO UPDATE */
-#containerProfile>form>button{
+#containerProfile>form>button {
     width: 250px;
     height: 40px;
     border: none;
@@ -115,7 +122,17 @@ body{
     margin: 10px 0;
 }
 
-#containerProfile>form>button:hover{
+#containerProfile>form>button:hover {
     background-color: #F57C00;
     color: white;
+}
+
+/* RESPONVIDADE */
+@media (max-width: 768px) {
+    #containerProfile {
+        margin: 50% auto;
+        border: none;
+        width: 200px;
+        height: 200px;
+    }
 }

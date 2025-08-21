@@ -14,7 +14,7 @@ main {
 }
 
 /* MENSAGEM */
-.mensagem{
+.mensagem {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -72,13 +72,13 @@ form>h2 {
     color: white;
 }
 
-form>span{
+form>span {
     position: relative;
     width: 500px;
     margin: 10px 0;
 }
 
-form>span>i{
+form>span>i {
     position: absolute;
     left: 10px;
     top: 50%;
@@ -103,7 +103,7 @@ form>span>input {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-form>span>input::placeholder{
+form>span>input::placeholder {
     text-align: center;
 }
 
@@ -120,7 +120,7 @@ form>#address>span {
     text-transform: capitalize;
 }
 
-form>#address>span>input{
+form>#address>span>input {
     width: 250px;
     height: 40px;
     border: none;
@@ -134,7 +134,7 @@ form>#address>span>input{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-form>#address>span>input::placeholder{
+form>#address>span>input::placeholder {
     text-align: center;
 }
 
@@ -143,7 +143,7 @@ form>#address>span>input:hover {
     outline: 2px solid #F57C00;
 }
 
-#register{
+#register {
     width: 100px;
     padding: 10px;
     border: none;
@@ -155,7 +155,7 @@ form>#address>span>input:hover {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-#toGoOut{
+#toGoOut {
     width: 100px;
     padding: 10px;
     border: none;
@@ -167,7 +167,48 @@ form>#address>span>input:hover {
 }
 
 
-#register:hover{
+#register:hover {
     background-color: #F57C00;
     color: white;
+}
+
+/* RESPONVIDADE */
+@media (max-width: 768px) {
+    form {
+        margin-top: 150px;
+        border: none !important;
+        width: 350px !important;
+        height: 750px !important;
+    }
+
+    form>span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    form>span>i {
+        left: 160px;
+    }
+
+    form>span>input {
+        width: 200px;
+        height: 40px;
+    }
+
+    form>#address>h2 {
+        text-align: center;
+    }
+
+    form>#address {
+        width: 300px;
+        height: 300px;
+        border: none !important;
+    }
+
+    form>#address>span>input {
+        width: 150px;
+        height: 40px;
+    }
 }

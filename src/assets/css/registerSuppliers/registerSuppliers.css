@@ -56,7 +56,7 @@ form {
     padding: 5px;
     border: 2px solid white;
     border-radius: 10px;
-    margin: 50px 0;
+    margin: 150px 0;
 }
 
 form>h1 {
@@ -149,4 +149,24 @@ form>button {
     outline: none;
     margin: 5px auto;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/* RESPONVIDADE */
+@media (max-width: 768px) {
+    form {
+        border: none;
+    }
+
+    form>h1, #endereço>h2{
+        font-size: 1rem;
+        text-align: center !important;
+    }
+
+    #dadosEmpresa>div>input, #endereço>div>input{
+        width: 180px !important;
+    }
+
+    #endereço>div{
+        flex-direction: column;
+    }
 }

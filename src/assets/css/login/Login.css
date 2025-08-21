@@ -146,5 +146,16 @@ body form>.inputsLogin {
 }
 
 
+/* RESPONVIDADE */
+@media (max-width: 768px) {
+    form>h1{
+        font-size: 1.5rem;
+    }
 
+    form>p, form>.inputsLogin>p {
+        font-size: .8rem;
+    }
+
+   
+}
 

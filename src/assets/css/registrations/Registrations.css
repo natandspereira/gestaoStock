@@ -48,3 +48,13 @@ body {
     background-color: var(--background-color2);
     color: white;
 }
+
+/* RESPONVIDADE */
+@media (max-width: 768px) {
+    #container{
+        margin: 50% auto;
+        border: none;
+        width: 200px;
+        height: 200px;
+    }
+}

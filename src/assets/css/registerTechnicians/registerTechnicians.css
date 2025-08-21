@@ -49,7 +49,7 @@ body {
 main>h2{
     color: white;
     text-align: center;
-    margin: 10px auto;
+    margin-top: 50px;
 }
 
 /* FORMULARIO */
@@ -101,6 +101,23 @@ span>input::placeholder{
     text-align: center;
 }
 
+.especialidade{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+     .especialidade>label{
+        color: white;
+     }
+
+      .especialidade>select{
+        width: 300px;
+        height: 40px;
+      }
+
 form>button{
     width: 100px;
     height: 40px;
@@ -137,4 +154,37 @@ form>button{
 #address>span{
     display: flex;
     gap: 20px;
+}
+
+/* RESPONVIDADE */
+@media (max-width: 768px) {
+    form {
+        border: none;  
+        width: 350px;
+    }
+
+    .especialidade{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+     .especialidade>label{
+        color: white;
+     }
+
+      .especialidade>select{
+        width: 200px;
+        height: 40px;
+      }
+
+    form>span>input, form>#senha>span>input{
+        width: 200px;
+    }
+
+    form>#address>span>input{
+        width: 150px;
+    }
 }

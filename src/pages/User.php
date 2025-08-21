@@ -72,7 +72,7 @@ $matricula = $usuarioSessao['matricula'] ?? 'Sem matrícula';
     <!-- MENU ASIDE -->
     <div id="menu">
         <aside>
-            <label for="close">
+            <label for="close" class="imgUser">
                 <img src="<?= htmlspecialchars($imagem); ?>" alt="Imagem do usuário">
                 <i class="material-icons iconMenu" name="close" id="iconClose">cancel</i>
                 <p><?= htmlspecialchars($matricula); ?></p>
@@ -143,15 +143,15 @@ $matricula = $usuarioSessao['matricula'] ?? 'Sem matrícula';
         <div class="container">
             <span>
                 <a href="registrations/registerEquip/RegisterEquip.php" target="_blank"  id="equipamentRegistration">
-                    <i class="material-icons" id="iconEquipament">construction</i>
+                    <i class="material-icons" >construction</i>
                     <p>Cadastro de equipamentos</p>
                 </a>
                 <a href="registrations/registerCustomers/RegisterCustomers.php" target="_blank" target="_blank"  id="equipamentRegistration">
-                    <i class="material-icons" id="iconEquipament">group_add</i>
+                    <i class="material-icons" >group_add</i>
                     <p>Cadastro de clientes</p>
                 </a>
                 <a href="registrations/registerSuppliers/RegisterSuppliers.php" target="_blank"  id="equipamentRegistration">
-                    <i class="material-icons" id="iconEquipament">group</i>
+                    <i class="material-icons" >group</i>
                     <p>Cadastro de fornecedores</p>
                 </a>
                 

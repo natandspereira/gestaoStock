@@ -165,13 +165,8 @@ exit;
      <script src="../../scripts/btnOptionMenu.js" defer></script>
 </head>
 <body>
-
-
     <div id="containerProfile">
         <div id="dataUser">
-            <div id="imgUser">
-                <img src="<?= htmlspecialchars($imagem); ?>" alt="Imagem do usuário" width="150">
-            </div>
             <p><strong>Nome:</strong> <?= htmlspecialchars($usuario['nome']); ?></p>
             <p><strong>Email:</strong> <?= htmlspecialchars($usuario['email']); ?></p>
         </div>
@@ -185,6 +180,5 @@ exit;
             <button type="submit">Atualizar</button>
         </form>
     </div>
-
 </body>
 </html>
