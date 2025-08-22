@@ -66,8 +66,7 @@ try {
                         data-email="<?= htmlspecialchars($cliente['email']); ?>"
                         data-telefone="<?= htmlspecialchars($cliente['telefone']); ?>"
                         data-cidade="<?= htmlspecialchars($cliente['cidade']); ?>"
-                        data-estado="<?= htmlspecialchars($cliente['estado']); ?>"
-                    >
+                        data-estado="<?= htmlspecialchars($cliente['estado']); ?>">
                         Editar
                     </button>
                     <button onclick="excluirCliente(<?php echo $cliente['clientes_id']; ?>)" class="btn-excluir">Excluir</button>
@@ -102,6 +101,10 @@ try {
                 <span>
                     <label>Estado:</label>
                     <input type="text" id="edit_estado">
+                </span>
+                <span>
+                    <label>Imagem:</label>
+                    <input type="file" id="edit_imagem" accept="image/*" onchange="previewImage(event)">
                 </span>
                 <button onclick="salvarEdicaoCliente()">Salvar</button>
                 <button onclick="fecharModal()">Cancelar</button>

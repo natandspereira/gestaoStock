@@ -54,10 +54,12 @@ body form>.inputsLogin {
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     font-family: sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
+    width: 350px;
     color: #333;
     z-index: 9999;
     animation: fadein 0.4s ease;
+    text-align: center;
 }
 
 @keyframes fadein {

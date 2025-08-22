@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         echo "<script>
             alert('Usuário criado com sucesso!');
-            window.location.href = 'User.php';
+            window.location.href = '../../../index.php';
         </script>";
         exit;
 

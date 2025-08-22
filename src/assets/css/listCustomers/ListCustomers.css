@@ -32,6 +32,10 @@ main {
     gap: 20px;
 }
 
+.clientes-container>p{
+    color: white;
+}
+
 .cliente-card {
     border: 1px solid #ccc;
     border-radius: 8px;

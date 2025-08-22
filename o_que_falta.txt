@@ -1,10 +1,10 @@
-* Responsividade;
-
 * Formulario => enviar para e-mail ?;
-
-Centralizar melhor todas as opções de cadastro.
 
 * Criar a página de suporte;
 
-*Testar verificações de cadastro.
+*Exibir categorias cadastradas e poder excluir;
+
+*Campos obrigatórios, colocar como primeiro
+
+
 

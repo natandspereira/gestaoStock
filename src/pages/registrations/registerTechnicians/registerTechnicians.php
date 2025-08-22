@@ -54,6 +54,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $especialidade = trim($_POST['especialidade'] ?? '');
     $imagem_url = null;
 
+    //VALIDAÇÃO DE CAMPOS OBRIGATÓRIOS
+    if ($nome === '' || $senha === '' || $confirmarSenha === '') {
+        $_SESSION['mensagem'] = "Preencha os campos nome, senha e confirmar senha; eles são obrigatórios.";
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit;
+    }
+
     //VALIDAÇÃO DE E-MAIL
     $emailPattern = '/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/';
     if (!preg_match($emailPattern, $email)) {
@@ -62,17 +69,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
+    
+
     //VALIDAÇÃO DE TELEFONE
     $telefonePattern = '/^\d{11}$/';
     if (!preg_match($telefonePattern, $telefone)) {
         $_SESSION['mensagem'] = "Telefone inválido. Use o formato XXXXXXXXXXX (11 dígitos).";
-        header("Location: " . $_SERVER['PHP_SELF']);
-        exit;
-    }
-
-    //VALIDAÇÃO DE CAMPOS OBRIGATÓRIOS
-    if ($nome === '' || $senha === '' || $confirmarSenha === '') {
-        $_SESSION['mensagem'] = "Preencha os campos nome, senha e confirmar senha; eles são obrigatórios.";
         header("Location: " . $_SERVER['PHP_SELF']);
         exit;
     }

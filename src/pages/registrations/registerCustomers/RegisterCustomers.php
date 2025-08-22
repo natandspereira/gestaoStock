@@ -79,6 +79,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $cep = trim($_POST['cep'] ?? '');
     $imagem_url = null;
 
+    // VALIDAÇÃO CAMPOS NOME/CPF-CNPJ/TELEFONE
+    if ($nome === '' || $cpf_cnpj === '' || $telefone === '') {
+        $_SESSION['mensagem'] = "Preencha os campos nome, cnpj/cpf e telefone eles são obrigatórios.";
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit;
+    }
+
     //VALIDAÇÃO DE E-MAIL
     $emailPattern = '/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/';
 
@@ -98,13 +105,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-    // VALIDAÇÃO CAMPOS NOME/CPF-CNPJ/TELEFONE
-    if ($nome === '' || $cpf_cnpj === '' || $telefone === '') {
-        $_SESSION['mensagem'] = "Preencha os campos nome, cnpj/cpf e telefone eles são obrigatórios.";
-        header("Location: " . $_SERVER['PHP_SELF']);
-        exit;
-    }
-    
     // VALIDAÇÃO CPF/CNPJ
     $cpf_cnpj_limpo = preg_replace('/[^0-9]/', '', $cpf_cnpj);
 

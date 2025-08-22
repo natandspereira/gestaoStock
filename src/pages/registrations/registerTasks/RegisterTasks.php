@@ -129,7 +129,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <form method="POST">
         <h1>Cadastrar Nova Tarefa</h1>
         <input type="text" name="nome" placeholder="Nome da Tarefa">
-        <input type="date" name="prazo" placeholder="Prazo">
+        <span>
+            <label for="">Data de Início</label>
+            <input type="date" name="prazo" placeholder="Prazo">
+        </span>
         <input type="number" name="quantidade_reparos" min="0" placeholder="Quantidade de Reparos">
 
         <select name="status" required>
@@ -139,7 +142,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <?php endforeach; ?>
         </select>
 
-        <input type="date" name="data_conclusao" placeholder="Data de Conclusão">
+       <span>
+        <label for="">Data de Conclusão</label>
+         <input type="date" name="data_conclusao" placeholder="Data de Conclusão">
+       </span>
 
 
         <select name="categoria_id" required>

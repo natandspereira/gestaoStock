@@ -63,10 +63,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $complemento        = trim($_POST['complemento'] ?? '');
     $imagem_url         = null;
 
+    // Campos obrigatórios
+    if ($nome_fantasia === '' || $cnpj === '') {
+        $_SESSION['mensagem'] = "Preencha os campos Nome Fantasia e CNPJ.";
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit;
+    }
+
     // Validação de e-mail
     $emailPattern = '/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/';
     if (!preg_match($emailPattern, $email)) {
-        $_SESSION['mensagem'] = "E-mail inválido.";
+        $_SESSION['mensagem'] = "E-mail inválido. Verifique o formato: exemplo@dominio.com";
         header("Location: " . $_SERVER['PHP_SELF']);
         exit;
     }
@@ -75,13 +82,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $telefonePattern = '/^\d{11}$/';
     if (!preg_match($telefonePattern, $telefone)) {
         $_SESSION['mensagem'] = "Telefone inválido. Use apenas números, ex: 11912345678.";
-        header("Location: " . $_SERVER['PHP_SELF']);
-        exit;
-    }
-
-    // Campos obrigatórios
-    if ($nome_fantasia === '' || $cnpj === '') {
-        $_SESSION['mensagem'] = "Preencha os campos Nome Fantasia e CNPJ.";
         header("Location: " . $_SERVER['PHP_SELF']);
         exit;
     }
