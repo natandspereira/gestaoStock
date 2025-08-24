@@ -122,7 +122,7 @@ $matricula = $usuarioSessao['matricula'] ?? 'Sem matrícula';
                 fornecedores
             </a>
             <!-- SUPORTE -->
-            <a href="#">
+            <a href="../pages/suport/suport.php" target="_blank">
                 <i class="material-icons iconSupport">support_agent</i>
                 suporte
             </a>
@@ -160,7 +160,7 @@ $matricula = $usuarioSessao['matricula'] ?? 'Sem matrícula';
 
         <div class="container">
             <span>
-                <a id="customersRegistration">
+                <a  href="../pages/suport/suport.php" target="_blank" id="customersRegistration">
                     <i class="material-icons" id="iconCustomers">support_agent</i>
                     <p>Suporte</p>
                 </a>

@@ -63,6 +63,10 @@ form>.container>span{
     justify-content: center;
 }
 
+form>.container>span>p{
+    cursor: pointer;
+}
+
 form>.container>button{
     width: 100px;
     padding: 10px;
@@ -71,6 +75,119 @@ form>.container>button{
     border-radius: 5px;
     margin-top: 5px;
 }
+
+/* Estilo do fundo do modal */
+.modal {
+  display: none; /* oculto por padrão */
+  position: fixed;
+  z-index: 1000; /* acima de tudo */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* rolagem se o conteúdo for grande */
+  background-color: rgba(0, 0, 0, 0.6); /* fundo escuro translúcido */
+  backdrop-filter: blur(4px); /* leve desfoque */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Conteúdo do modal */
+.modal-content {
+     position: relative; 
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  margin: auto;
+  padding: 20px 25px;
+  border-radius: 12px;
+  max-width: 900px;
+  width: 100%;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  animation: fadeInScale 0.3s ease-in-out;
+  max-height: 90vh; 
+  overflow-y: auto; 
+}
+
+.modal-content>h2{
+    margin-top: 800px;
+}
+
+
+.close {
+   position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #666;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+  z-index: 10;
+}
+
+.close:hover {
+  color: #000;
+}
+
+/* Títulos dentro do modal */
+.modal-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.modal-content h3 {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  color: #444;
+}
+
+/* Parágrafos e listas */
+.modal-content p,
+.modal-content ul {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+.modal-content ul {
+  margin: 10px 0 20px 20px;
+}
+
+/* Animação de entrada */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+
+  .modal-content h2 {
+    font-size: 1rem !important;
+    margin-top: 1650px !important;
+  }
+
+  .modal-content h3 {
+    font-size: 1rem;
+  }
+
+  .close{
+    margin-top: -15px;
+  }
+}
+
 
 @media (max-width: 768px) {
     form>.container {

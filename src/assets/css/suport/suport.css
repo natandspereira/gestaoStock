@@ -1,0 +1,65 @@
+@import url("../../css/default.css");
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin: 30px;
+    color: #333;
+}
+
+.faq-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h2 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #222;
+}
+
+.card p,
+.card ol,
+.card ul {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.icon {
+    font-size: 28px;
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #1976d2;
+}
+
+@media (max-width: 600px) {
+    .card h2 {
+        font-size: 16px;
+    }
+
+    .icon {
+        font-size: 24px;
+    }
+}

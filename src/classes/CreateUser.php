@@ -49,8 +49,7 @@ class CreateUser extends Database
                 ':imagem_url' => $imagem_url
             ]);
         } catch (PDOException $e) {
-            error_log("[" . date('Y-m-d H:i:s') . "] Erro ao criar usuário: " . $e->getMessage(), 3, __DIR__ . '/../../logs/error.log');
-            echo "<script>alert('Erro ao salvar usuário no banco.');</script>";
+            echo "<script>alert('Erro ao salvar usuário no banco.');</script>" . $e->getMessage();
         }
     }
 
